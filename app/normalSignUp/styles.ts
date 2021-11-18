@@ -6,10 +6,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: 'center',
     },
 
     image: {
+        // flex: 1,
         marginBottom: 40,
         height: 200,
         width: 300
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         width: "80%",
         height: 45,
-        marginBottom: 20,
+        marginBottom: 30,
         alignItems: 'flex-start',
     },
 
@@ -33,8 +34,20 @@ const styles = StyleSheet.create({
 
     forgot_button: {
         height: 30,
-        marginBottom: 30,
-        fontSize: 15
+        margin: 5,
+        fontSize: 15,
+        // textDecorationLine: "underline",
+        fontStyle: "italic",
+        // fontWeight: "bold",
+    },
+
+    signin_button: {
+        height: 30,
+        margin: 5,
+        fontSize: 15,
+        textDecorationLine: 'underline',
+        fontStyle: 'italic',
+        fontWeight: 'bold',
     },
 
     SignUpBtn: {
@@ -45,8 +58,15 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 40,
         backgroundColor: "#3cc340",
+        fontWeight: 'bold',
     },
-});
+    errorMsg: {
+        color: '#FF0000',
+        fontSize: 11,
+        paddingHorizontal: 46
+
+    }
+    });
 
 
 export default styles;
