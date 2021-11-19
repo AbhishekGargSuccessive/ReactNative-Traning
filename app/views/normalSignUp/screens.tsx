@@ -1,9 +1,7 @@
-// import { StatusBar } from "react-native";
 import React, { useState } from "react";
-import { Text, View, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, Image, TouchableOpacity, ScrollView, ImageBackground } from "react-native";
 import styles from "./styles";
-
-import { Input } from "../../common";
+import { Input, Email, Password } from "../../common";
 
 export default function SignUpScreen() {
     return (
@@ -21,11 +19,15 @@ export default function SignUpScreen() {
                 </View>
 
                 <View style={styles.inputView}>
-                    <Input placeholder='Email ID'></Input>
+                    <Email placeholder='Email ID'></Email>
                 </View>
 
                 <View style={styles.inputView}>
-                    <Input placeholder="Password"></Input>
+                    <Password placeholder='Password'></Password>
+                </View>
+
+                <View style={styles.inputView}>
+                    <Password placeholder='Confirm Password'></Password>
                 </View>
 
                 <View style={{ flexDirection: 'row' }}>
@@ -45,5 +47,9 @@ export default function SignUpScreen() {
                 </TouchableOpacity>
             </View>
         </ScrollView>
+        // </ImageBackground>
     );
 }
+
+
+// ImageBackground source={require('../../assets/images/back.jpg')}

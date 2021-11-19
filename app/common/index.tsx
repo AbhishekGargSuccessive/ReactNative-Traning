@@ -1,3 +1,5 @@
 import Input from "./textInput/textInput";
+import { Email, Password } from "./textInput/textInput";
 
-export {Input}
+
+export {Input, Email, Password}
