@@ -1,55 +1,137 @@
 import React, { useState } from "react";
 import { Text, View, Image, TouchableOpacity, ScrollView, ImageBackground } from "react-native";
 import styles from "./styles";
-import { Input, Email, Password } from "../../common";
+import { Input, Email, Password, Button } from "../../common";
 
-export default function SignUpScreen() {
+
+interface RootSignUp {
+    navigation: any
+
+    invalidUsername: boolean
+    invalidEmail: boolean
+    invalidPassword: boolean
+    invalidConfirmPassword: boolean
+
+    ClickHandle: () => void
+
+    username: string
+    email: string
+    password: string
+    confirmPassword: string
+
+    setInvalidUsername: (text: boolean) => void;
+    setInvalidEmail: (text: boolean) => void;
+    setInvalidPassword: (text: boolean) => void;
+    setInvalidConfirmPassword: (text: boolean) => void;
+
+    setusername: (text: string) => void;
+    setEmail: (text: string) => void;
+    setPassword: (text: string) => void;
+    setConfirmPassword: (text: string) => void;
+}
+
+export default function SignUpScreen(props: RootSignUp) {
+    const { navigation,
+        invalidUsername,
+        invalidEmail,
+        invalidPassword,
+        invalidConfirmPassword,
+        username,
+        email,
+        password,
+        confirmPassword,
+        setusername,
+        setEmail,
+        setPassword,
+        setConfirmPassword,
+        setInvalidUsername,
+        setInvalidEmail,
+        setInvalidPassword,
+        setInvalidConfirmPassword,
+        ClickHandle
+    } = props
+
+
     return (
-        <ScrollView>
+        <ScrollView style={{ backgroundColor: '#fff', flex: 1 }}>
             <View style={styles.container}>
 
                 <Image style={styles.image} source={require('.././../assets/images/signup.jpg')} />
 
-                <View style={styles.inputView}>
-                    <Input placeholder="First Name"></Input>
+                <View style={{ flex: 2 }}>
+
+                    <View style={styles.inputView}>
+                        <Input
+                            placeholder="Full Name"
+                            commonText={username}
+                            Switch={invalidUsername}
+                            secureTextEntry={false}
+                            setCommonText={(username) => setusername(username)}
+                            setSwitch={setInvalidUsername}
+                        />
+                    </View>
+
+                    <View style={styles.inputView}>
+                        <Input
+                            placeholder="Email"
+                            commonText={email}
+                            Switch={invalidEmail}
+                            secureTextEntry={false}
+                            setCommonText={(email) => setEmail(email)}
+                            setSwitch={setInvalidEmail}
+                        />
+                    </View>
+
+                    <View style={styles.inputView}>
+                        <Input
+                            placeholder="Password"
+                            commonText={password}
+                            Switch={invalidPassword}
+                            secureTextEntry={true}
+                            setCommonText={(password) => setPassword(password)}
+                            setSwitch={setInvalidPassword}
+                        />
+                    </View>
+
+                    <View style={styles.inputView}>
+                        <Input
+                            placeholder="Confirm Password"
+                            commonText={confirmPassword}
+                            Switch={invalidConfirmPassword}
+                            secureTextEntry={true}
+                            setCommonText={(confirmPassword) => setConfirmPassword(confirmPassword)}
+                            setSwitch={setInvalidConfirmPassword}
+                        />
+                    </View>
+
                 </View>
 
-                <View style={styles.inputView}>
-                    <Input placeholder="Last Name"></Input>
+                <View >
+                    <Button text='SIGN UP'
+                        name={username}
+                        func={ClickHandle}
+                        Switch={invalidUsername}
+                        setSwitch={(invalidUsername) => setInvalidUsername(invalidUsername)}
+                    />
                 </View>
 
-                <View style={styles.inputView}>
-                    <Email placeholder='Email ID'></Email>
-                </View>
-
-                <View style={styles.inputView}>
-                    <Password placeholder='Password'></Password>
-                </View>
-
-                <View style={styles.inputView}>
-                    <Password placeholder='Confirm Password'></Password>
-                </View>
-
-                <View style={{ flexDirection: 'row' }}>
-
-                    <TouchableOpacity>
-                        <Text style={styles.forgot_button}>Forgot Password?</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <Text style={styles.signin_button}>Sign In</Text>
-                    </TouchableOpacity>
-
-                </View>
-
-                <TouchableOpacity style={styles.SignUpBtn}>
-                    <Text>SIGN UP</Text>
-                </TouchableOpacity>
             </View>
-        </ScrollView>
-        // </ImageBackground>
+        </ScrollView >
     );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+// navigation={navigation} onPress={undefined} 
 
 // ImageBackground source={require('../../assets/images/back.jpg')}

@@ -4,15 +4,18 @@ import { StyleSheet } from "react-native"
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: "#fff",
-        alignItems: "center",
+        backgroundColor: "#fff",
+        // alignItems: "center",
         justifyContent: "center",
     },
 
     image: {
+        flex: 1,
         marginBottom: 40,
+        resizeMode: 'contain',
         height: 200,
-        width: 300
+        width: 300,
+        alignSelf: 'center'
     },
 
     inputView: {
@@ -21,7 +24,8 @@ const styles = StyleSheet.create({
         width: "80%",
         height: 45,
         marginBottom: 30,
-        alignItems: 'flex-start',
+        // alignItems: 'flex-start',
+        alignSelf:'center'
     },
 
     TextInput: {
@@ -59,6 +63,11 @@ const styles = StyleSheet.create({
         marginTop: 20,
         backgroundColor: "#3cc340",
     },
+
+    errormsg:{
+        fontSize: 15,
+        color: 'red'
+    }
 });
 
 
