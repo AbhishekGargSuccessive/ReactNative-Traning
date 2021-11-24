@@ -11,6 +11,12 @@ const styles = StyleSheet.create({
 
     },
 
+    errormsg: {
+        color: "red",
+        marginBottom: 40,
+        marginLeft: 15
+    }
+
 
 });
 

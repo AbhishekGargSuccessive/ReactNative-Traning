@@ -1,3 +1,4 @@
+
 export const ValidationUsername = (username: string) => {
     const usernameRegex = /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/
 

@@ -1,4 +1,3 @@
-import { useLinkProps } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Text, TouchableOpacity, View, TextInput, ScrollView, Image } from "react-native";
 import styles from "./styles";
@@ -10,7 +9,6 @@ interface RootSignUp {
     secureTextEntry: boolean
     setCommonText: (t: string) => void
     setSwitch: (t: boolean) => void
-    // onChangeText: (text: string) => void
 }
 
 const Input = (props: RootSignUp) => {
@@ -29,7 +27,7 @@ const Input = (props: RootSignUp) => {
                     }
                 />
             </View>
-            {props.Switch && <Text style={{ color: "red", marginBottom: 40, marginLeft: 15 }}>{props.commonText} is invalid</Text>}
+            {props.Switch && <Text style={styles.errormsg}>{props.commonText} is invalid</Text>}
         </View>
 
     )

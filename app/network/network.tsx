@@ -1,16 +1,5 @@
 const axios = require('react-native-axios');
-// import store from '../redux/store';
-// import { Asset } from 'react-native-image-picker';
-// import { RootObject } from '../controllers/apiResponses/IAuth';
-// import { Platform } from 'react-native';
-// import { APIConstants } from '../config/apiConstants';
 import { IApiResponse } from '../controllers/apiResponses/IAPIResponse';
-
-// const token = () => {
-//     const state = store.getState();
-//     const authToken = (state.auth.data as RootObject).content?.accessToken;
-//     return 'Bearer ' + authToken;
-// };
 
 const instance = axios.create({
     // baseURL: APIConstants.BaseURL,
@@ -26,7 +15,6 @@ interface NetworkModel {
 }
 
 export function sendGetRequest<T>(url: string) {
-    // instance.defaults.headers.common.Authorization = token();
     return instance
         .get(url)
         .then((response: any) => {
@@ -39,8 +27,6 @@ export function sendGetRequest<T>(url: string) {
             return handleError(err.response.data);
         })
         .finally(() => {
-            // hide loader
-            // dispatch(toggleLoader());
         });
 }
 
@@ -58,13 +44,10 @@ export function sendPostRequest<T>(url: any, body: any): any {
             return handleError(err.response.data);
         })
         .finally(() => {
-            // hide loader
-            //   dispatch(toggleLoader());
         });
 }
 
 export function sendPutRequest<T>(url: any, body: any): any {
-    // instance.defaults.headers.common.Authorization = token();
     return instance
         .put(url, body)
         .then((response: any) => handleResponse(response.data))
@@ -75,13 +58,10 @@ export function sendPutRequest<T>(url: any, body: any): any {
             return handleError(err.response.data);
         })
         .finally(() => {
-            // hide loader
-            //   dispatch(toggleLoader());
         });
 }
 
 export function sendPatchRequest<T>(url: any): any {
-    // instance.defaults.headers.common.Authorization = token();
     return instance
         .patch(url)
         .then((response: any) => handleResponse(response.data))
@@ -92,19 +72,13 @@ export function sendPatchRequest<T>(url: any): any {
             return handleError(err.response.data);
         })
         .finally(() => {
-            // hide loader
-            //   dispatch(toggleLoader());
         });
 }
 
 export function deleteRequest<T>(url: any, body: any): any {
-    //instance.defaults.headers.common.Authorization = token();
     console.log(url, body);
     return instance
         .delete(url, {
-            // headers: {
-            //     Authorization: token(),
-            // },
             data: body,
         })
         .then((response: any) => handleResponse(response.data))
@@ -116,8 +90,6 @@ export function deleteRequest<T>(url: any, body: any): any {
             return handleError(err.response.data);
         })
         .finally(() => {
-            // hide loader
-            //   dispatch(toggleLoader());
         });
 }
 

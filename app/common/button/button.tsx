@@ -14,11 +14,10 @@ interface RootButton {
 
 const Button = (props: RootButton) => {
     return (
-        <View style={{ alignItems: 'center' }}>
+        <View style={styles.btnstyle}>
             <TouchableOpacity
                 style={styles.SignUpBtn}
                 onPress={() => props.func()}
-            // onPress={() => navigation.push("Home")}
             >
                 <Text>{props.text}</Text>
             </TouchableOpacity>
@@ -27,5 +26,3 @@ const Button = (props: RootButton) => {
 }
 
 export default Button;
-
-// ToastAndroid.show("Done", ToastAndroid.SHORT)

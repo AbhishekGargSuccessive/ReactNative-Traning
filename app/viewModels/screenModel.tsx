@@ -43,7 +43,6 @@ const ScreenModel = (props: RootScreenModel) => {
 
             navigation={navigation}
 
-            // ClickHandle={() => ClickHandle()}
             ClickHandle={ClickHandle}
 
             invalidUsername={invalidUsername}

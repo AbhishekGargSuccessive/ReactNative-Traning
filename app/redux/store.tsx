@@ -19,7 +19,7 @@ const Counterdemo = () => {
             <View style={{ width: 200, justifyContent: "center", alignItems: 'center', }}>
 
                 <Animatable.Text
-                    animation="bounce" //duration='150'
+                    animation="bounce"
                     style={{ fontSize: 30 }} >{counter}</Animatable.Text>
 
                 <TouchableOpacity style={{ borderWidth: 3 }} onPress={() => dispatch({ type: 'INCREAMENT', payload: 1 })}>

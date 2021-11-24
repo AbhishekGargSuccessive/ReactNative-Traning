@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
-        // alignItems: "center",
         justifyContent: "center",
     },
 
@@ -24,8 +23,7 @@ const styles = StyleSheet.create({
         width: "80%",
         height: 45,
         marginBottom: 30,
-        // alignItems: 'flex-start',
-        alignSelf:'center'
+        alignSelf: 'center'
     },
 
     TextInput: {
@@ -39,9 +37,7 @@ const styles = StyleSheet.create({
         height: 30,
         marginBottom: 30,
         fontSize: 15,
-        // textDecorationLine: "underline",
         fontStyle: "italic",
-        // fontWeight: "bold",
     },
 
     signin_button: {
@@ -64,9 +60,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#3cc340",
     },
 
-    errormsg:{
+    errormsg: {
         fontSize: 15,
         color: 'red'
+    },
+
+    scrollview: {
+        backgroundColor: '#fff',
+        flex: 1
+    },
+
+    placestyle:{
+        flex: 2
     }
 });
 

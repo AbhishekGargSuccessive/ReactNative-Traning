@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Text, View, Image, TouchableOpacity, ScrollView, ImageBackground } from "react-native";
 import styles from "./styles";
-import { Input, Email, Password, Button } from "../../common";
+import { Input, Button } from "../../common";
+import Images from "../../common/images/images";
 
 
 interface RootSignUp {
@@ -53,12 +54,12 @@ export default function SignUpScreen(props: RootSignUp) {
 
 
     return (
-        <ScrollView style={{ backgroundColor: '#fff', flex: 1 }}>
+        <ScrollView style={styles.scrollview}>
             <View style={styles.container}>
 
-                <Image style={styles.image} source={require('.././../assets/images/signup.jpg')} />
+                <Images />
 
-                <View style={{ flex: 2 }}>
+                <View style={styles.placestyle}>
 
                     <View style={styles.inputView}>
                         <Input
@@ -119,19 +120,3 @@ export default function SignUpScreen(props: RootSignUp) {
         </ScrollView >
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// navigation={navigation} onPress={undefined} 
-
-// ImageBackground source={require('../../assets/images/back.jpg')}
