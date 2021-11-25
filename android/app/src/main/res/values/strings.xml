@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TypeScript</string>
+    <string name="facebook_app_id">593477231915808</string>
+    <string name="fb_login_protocol_scheme">fb593477231915808</string>
 </resources>
