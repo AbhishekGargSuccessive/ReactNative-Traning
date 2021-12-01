@@ -1,4 +1,4 @@
-# ReactNative-Traning
+# ReactNative-Traning (Google Map Integration)
 
 GOOGLE MAP INTEGRATION IN REACT NATIVE
 
