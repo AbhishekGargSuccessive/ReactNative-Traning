@@ -2,7 +2,7 @@
 
 GOOGLE MAP INTEGRATION IN REACT NATIVE
 
-Step 1: Install react-native-maps package :-
+##Step 1: Install react-native-maps package :-
 
 npm install --save react-native-maps command.
 
