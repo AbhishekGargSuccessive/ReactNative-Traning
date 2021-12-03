@@ -1,12 +1,12 @@
 # ReactNative-Traning (Google Map Integration)
 
-GOOGLE MAP INTEGRATION IN REACT NATIVE
+## GOOGLE MAP INTEGRATION IN REACT NATIVE
 
-##Step 1: Install react-native-maps package :-
+## Step 1: Install react-native-maps package :-
 
 npm install --save react-native-maps command.
 
-Step 2: Open a ‘build.gradle file’ under the android folder. Find an “ext” section and add the following lines :-
+## Step 2: Open a ‘build.gradle file’ under the android folder. Find an “ext” section and add the following lines :-
 
 ext {
   ...
@@ -14,15 +14,15 @@ ext {
   androidMapsUtilsVersion = "0.5+"
 }
 
-Step 3: Create a Google Maps API Key :-
+## Step 3: Create a Google Maps API Key :-
 
-https://developers.google.com/maps/documentation/ios-sdk/get-api-key
+### https://developers.google.com/maps/documentation/ios-sdk/get-api-key
 
-After that, we will see another pop-up and there we need to choose Maps and click Continue. Then, we will see a section where we need to choose the project. Choose Create a new project in the drop-down menu and name it ‘MapsAndroidDemoApp’, then click Next. After a few steps, we will see a confirmation pop-up window, which says that You’re all set. Copy the ‘Key’ for future actions.
+### After that, we will see another pop-up and there we need to choose Maps and click Continue. Then, we will see a section where we need to choose the project. Choose Create a new project in the drop-down menu and name it ‘MapsAndroidDemoApp’, then click Next. After a few steps, we will see a confirmation pop-up window, which says that You’re all set. Copy the ‘Key’ for future actions.
 
-Step 4: Specify the Google Maps API Key :-
+## Step 4: Specify the Google Maps API Key :-
 
-After previous steps, we need to specify our Google Maps API Key into the manifest file. Open the “AndroidManifes.xml’ file under the ‘android/app/src/main/’ folder. Then, add the following ‘meta-data’ XML tag into the ‘application’ XML tag.
+### After previous steps, we need to specify our Google Maps API Key into the manifest file. Open the “AndroidManifes.xml’ file under the ‘android/app/src/main/’ folder. Then, add the following ‘meta-data’ XML tag into the ‘application’ XML tag.
 
 <application>
    <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
@@ -34,7 +34,7 @@ After previous steps, we need to specify our Google Maps API Key into the manife
    <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 </application>
 
-Step 5: Now, Paste this Code in VS Code :-
+## Step 5: Now, Paste this Code in VS Code :-
 
 import { MapView } from 'react-native-maps';
 
