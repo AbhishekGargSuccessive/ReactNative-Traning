@@ -1,13 +1,14 @@
 import React from 'react';
 import MainStack from './app/routes/StackNavigator';
-import ReduxApp from './app/redux';
-import TestModel from './app/viewModels/testModel';
+import FirstPackage from 'custom_abhi_text'
+
 
 const App = () => {
   return (
-    <MainStack />
-    // <ReduxApp />/
-    // <TestModel />
+    // <MainStack />
+    <FirstPackage />
+
   )
 }
 export default App;
+
