@@ -4,10 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 // import {HomeOutlined, SettingFilled} from '@ant-design/icons';
 
-import HomeScreen from './HomeScreen';
-import DetailsScreen from './DetailsScreen';
-import ExploreScreen from './ExploreScreen';
-import ProfileScreen from './ProfileScreen';
+import HomeScreen from '../HomeScreen/HomeScreen'
+import DetailsScreen from '../DetailsScreen/DetailsScreen'
+import ExploreScreen from '../ExploreScreen/ExploreScreen'
+import ProfileScreen from '../ProfileScreen/ProfileScreen'
+
+// interface TabProps {
+//   color: any
+// }
 
 const HomeStack = createStackNavigator();
 const DetailsStack = createStackNavigator();
@@ -24,7 +28,7 @@ const MainTabScreen = () => (
       options={{
         tabBarLabel: 'Home',
         tabBarColor: '#009387',
-        tabBarIcon: ({ color }) => 
+        tabBarIcon: ({ color }) =>
         (
           <Icon name="Homes" color={color} size={20} />
         ),

@@ -2,14 +2,19 @@ import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import styles from '../DetailsScreen/style';
 
-const DetailsScreen = ({ navigation }) => {
+interface DetailsProps {
+    navigation: any
+}
+
+const DetailsScreen = (props: DetailsProps) => {
+    const { navigation } = props;
     return (
         <View style={styles.container}>
             <Text>Details Screen</Text>
-            <Button
+            {/* <Button
                 title="Go to details screen...again"
                 onPress={() => navigation.push("Details")}
-            />
+            /> */}
             <Button
                 title="Go to home"
                 onPress={() => navigation.navigate("Home")}

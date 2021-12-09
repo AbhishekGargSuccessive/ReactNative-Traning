@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet,Alert } from 'react-native';
 
 const SupportScreen = () => {
     return (
@@ -7,7 +7,7 @@ const SupportScreen = () => {
         <Text>Support Screen</Text>
         <Button
           title="Click Here"
-          onPress={() => alert('Button Clicked!')}
+          onPress={() => Alert.alert('Button Clicked!')}
         />
       </View>
     );
