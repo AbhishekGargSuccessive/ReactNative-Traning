@@ -72,7 +72,7 @@ const MainTab = () => {
             />
             <Tab.Screen
                 name="Settings"
-                component={SettingsModel}
+                component={BookmarkModel}
                 options={{
                     headerStyle: { backgroundColor: 'teal' },
                     headerTitle: () => (<Header />),
