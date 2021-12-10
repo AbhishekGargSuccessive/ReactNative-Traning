@@ -5,8 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 // import {HomeOutlined, SettingFilled} from '@ant-design/icons';
 
 import HomeScreen from '../HomeScreen/HomeScreen'
-import DetailsScreen from '../DetailsScreen/DetailsScreen'
-import ExploreScreen from '../ExploreScreen/ExploreScreen'
+import DetailsScreen from '../ProgressScreen/ProgressScreen'
+import ExploreScreen from '../ExploreScreen/InboxScreen'
 import ProfileScreen from '../ProfileScreen/ProfileScreen'
 
 // interface TabProps {

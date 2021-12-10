@@ -15,17 +15,31 @@ const styles = StyleSheet.create({
     rightlogo: {
         resizeMode: 'contain',
         tintColor: 'black',
-        width: 30,
-        height: 30,
+        width: 27,
+        height: 27,
     },
     borderlogo: {
         margin: 15,
+        borderRadius: 50,
+        height: 42,
+        width: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgb(176, 174, 171)'
+    },
+    leftlogo:{
+        resizeMode: 'contain',
+        tintColor: 'black',
+        width: 30,
+        height: 30
+    },
+    borderleftlogo:{
         borderRadius: 50,
         height: 50,
         width: 50,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgb(164, 158, 151)'
+        backgroundColor: 'white'
     }
 })
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { BookmarkModel, ExploreModel, DetailsModel, HomeModel, CourseModel } from "../viewModels";
-import { Header, Help } from '../components/Logo';
+import { BookmarkModel, CourseModel, InboxModel, ProgressModel, SettingsModel } from "../viewModels";
+import { Header, Help, LeftArrow } from '../components/Logo';
 import { Home, Inbox, Progress, Settings } from '../assets/images/images';
 
 
@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator<Tabprops>()
 
 const MainTab = () => {
     return (
-        <Tab.Navigator screenOptions={{ tabBarStyle: { height: 60 } }}>
+        <Tab.Navigator screenOptions={{ tabBarStyle: { height: 55 } }}>
             <Tab.Screen
                 name="Home"
                 component={CourseModel}
@@ -37,9 +37,14 @@ const MainTab = () => {
 
             <Tab.Screen
                 name="Progress"
-                component={DetailsModel}
+                component={ProgressModel}
                 options={{
-                    tabBarLabelStyle: { fontSize: 14 },
+                    headerStyle: { backgroundColor: 'teal' },
+                    headerTitle: () => (<Header />),
+                    headerRight: () => (<Help />),
+                    tabBarLabelStyle: { fontSize: 13 },
+                    tabBarLabelPosition: 'below-icon',
+                    headerStatusBarHeight: 10,
                     tabBarIcon: () => {
                         return (
                             <Progress />
@@ -50,9 +55,14 @@ const MainTab = () => {
 
             <Tab.Screen
                 name="Inbox"
-                component={ExploreModel}
+                component={InboxModel}
                 options={{
-                    tabBarLabelStyle: { fontSize: 14 },
+                    headerStyle: { backgroundColor: 'teal' },
+                    headerTitle: () => (<Header />),
+                    headerRight: () => (<Help />),
+                    tabBarLabelStyle: { fontSize: 13 },
+                    tabBarLabelPosition: 'below-icon',
+                    headerStatusBarHeight: 10,
                     tabBarIcon: () => {
                         return (
                             <Inbox />
@@ -62,9 +72,14 @@ const MainTab = () => {
             />
             <Tab.Screen
                 name="Settings"
-                component={BookmarkModel}
+                component={SettingsModel}
                 options={{
-                    tabBarLabelStyle: { fontSize: 14 },
+                    headerStyle: { backgroundColor: 'teal' },
+                    headerTitle: () => (<Header />),
+                    headerRight: () => (<Help />),
+                    tabBarLabelStyle: { fontSize: 13 },
+                    tabBarLabelPosition: 'below-icon',
+                    headerStatusBarHeight: 10,
                     tabBarIcon: () => {
                         return (
                             <Settings />

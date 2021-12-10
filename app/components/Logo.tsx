@@ -26,4 +26,18 @@ export const Help = () => {
     )
 }
 
+export const LeftArrow = () => {
+    return (
+        <TouchableOpacity>
+            <View style={styles.borderleftlogo}>
+                <Image
+                    style={styles.leftlogo}
+                    source={require('../assets/left_arrow.png')}
+                />
+
+            </View>
+        </TouchableOpacity>
+    )
+}
+
 export default Header;
