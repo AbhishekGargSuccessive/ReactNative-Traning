@@ -27,20 +27,34 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'rgb(176, 174, 171)'
     },
-    leftlogo:{
+    leftlogo: {
         resizeMode: 'contain',
         tintColor: 'black',
-        width: 30,
-        height: 30
+        width: 20,
+        height: 20,
+        marginHorizontal: 50
     },
-    borderleftlogo:{
+    borderleftlogo: {
         borderRadius: 50,
-        height: 50,
-        width: 50,
+        height: 42,
+        width: 42,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'white'
-    }
+    },
+    PadLockLogo: {
+        height: 20,
+        width: 20
+    },
+    HiddenLogo: {
+        height: 20,
+        width: 20,
+        resizeMode: 'contain',
+        position: 'absolute',
+        alignSelf: 'center',
+        marginLeft: -45,
+        tintColor:'black',
+    },
 })
 
 export default styles;

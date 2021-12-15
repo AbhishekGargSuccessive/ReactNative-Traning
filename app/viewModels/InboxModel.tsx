@@ -1,5 +1,5 @@
 import React from "react";
-import InboxScreen from "../views/ExploreScreen/InboxScreen";
+import InboxScreen from "../views/InboxScreen/InboxScreen";
 
 interface ExploreModelProp {
     navigation: any

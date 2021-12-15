@@ -20,7 +20,7 @@ const RenderItem = (props: RenderItemProps) => {
 
                 <Text style={styles(o).text2}>{item.title}</Text>
 
-                <ProgressBar progress={1} color={Colors.green800} style={styles(o).progressbar} />
+                <ProgressBar progress={0.7} color={Colors.green800} style={styles(o).progressbar} />
 
                 <TouchableOpacity style={styles(o).button}>
                     <Text style={styles(o).text3}>Continue Learning</Text>

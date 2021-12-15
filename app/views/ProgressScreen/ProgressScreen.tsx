@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, ScrollView, Touchable, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, } from 'react-native';
 import styles from './style';
 
 interface ProgressProps {
@@ -48,7 +48,7 @@ const ProgressScreen = (props: ProgressProps) => {
                         return (
                             <View style={styles.render}>
                                 <Text style={styles.text3}>{item.title}</Text>
-                                <TouchableOpacity style={styles.opacity}>
+                                <TouchableOpacity style={styles.opacity} onPress={() => navigation.navigate("External")}>
                                     <Text style={styles.button}>View Details</Text>
                                 </TouchableOpacity>
                             </View>

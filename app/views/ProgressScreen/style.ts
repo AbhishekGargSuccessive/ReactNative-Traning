@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     seperator: {
-        height: 1,
+        height: .8,
         width: "100%",
-        backgroundColor: 'black'
+        backgroundColor: 'lightslategrey'
     },
     opacity: {
         borderWidth: 1,

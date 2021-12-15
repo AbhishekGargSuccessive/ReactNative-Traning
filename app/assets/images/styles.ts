@@ -3,8 +3,8 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
     images: {
-        width: 33,
-        height: 31,
+        width: 22,
+        height: 22,
         tintColor: 'red',        
     }
 })

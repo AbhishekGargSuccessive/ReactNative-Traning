@@ -13,13 +13,13 @@ interface CourseProp {
 const CourseScreen = (props: CourseProp) => {
     const { isloading, data } = props;
     const o = useOrientation()
-    console.log(o)
+    // console.log(o)
 
     return (
         <ScrollView>
             <View style={styles(o).container}>
                 {
-                    isloading ? <ActivityIndicator /> :
+                    isloading ? <ActivityIndicator size={'large'} color={'red'} /> :
                         (
                             <FlatList
                                 horizontal

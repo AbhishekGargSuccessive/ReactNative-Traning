@@ -5,13 +5,14 @@ import styles from '../Button/styles'
 
 interface ButtonProps {
     item: any
-    // text: any
+    navigation: any
+    name: any
 }
 const Button = (props: ButtonProps) => {
-    const { item } = props
+    const { item, navigation } = props
     return (
         <View >
-            <TouchableOpacity style={styles.opacity}>
+            <TouchableOpacity style={styles.opacity} onPress={() => navigation.navigate(props.name)}>
                 <Text>{item}</Text>
                 <Image source={require('../../assets/right_arrow.png')} style={styles.arrow} />
             </TouchableOpacity>

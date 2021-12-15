@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../HomeScreen/HomeScreen'
 import DetailsScreen from '../ProgressScreen/ProgressScreen'
-import ExploreScreen from '../ExploreScreen/InboxScreen'
+import ExploreScreen from '../InboxScreen/InboxScreen'
 import ProfileScreen from '../ProfileScreen/ProfileScreen'
 
 // interface TabProps {

@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { BookmarkModel, CourseModel, InboxModel, ProgressModel, SettingsModel } from "../viewModels";
+import { CourseModel, InboxModel, ProgressModel, SettingsModel } from "../viewModels";
 import { Header, Help, LeftArrow } from '../components/Logo';
 import { Home, Inbox, Progress, Settings } from '../assets/images/images';
 
@@ -72,7 +72,7 @@ const MainTab = () => {
             />
             <Tab.Screen
                 name="Settings"
-                component={BookmarkModel}
+                component={SettingsModel}
                 options={{
                     headerStyle: { backgroundColor: 'teal' },
                     headerTitle: () => (<Header />),
