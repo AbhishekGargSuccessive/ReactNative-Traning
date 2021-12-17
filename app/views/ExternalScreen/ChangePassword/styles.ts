@@ -14,23 +14,17 @@ const styles = (o: any) => StyleSheet.create({
         fontSize: 40,
     },
     textInput: {
-        // flex: 1,
         height: 50,
         width: "80%",
         margin: 15,
         padding: 10,
         borderWidth: 1,
         borderColor: 'lightslategrey',
-        backgroundColor:'white',
+        backgroundColor: 'white',
     },
-    textInputImage: {
-        height: 20,
-        width: 20,
-        resizeMode: 'contain',
-        position: 'absolute',
-        alignSelf: 'center',
-        marginLeft: '65%',
-        tintColor:'black',
+    viewStyle: {
+        flexDirection: 'row',
+        alignSelf: 'center'
     },
     button: {
         backgroundColor: 'teal',

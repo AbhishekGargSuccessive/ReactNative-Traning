@@ -8,5 +8,9 @@ import CourseModel from "./Coursemodel";
 import ExternalProgressModel from "./ExternalProgressModel";
 import ProfileScreenModel from "./ProfileScreenModel";
 import CommunicationModel from "./CommPreferencesModel";
+import ChangePasswordModel from "./ChangePasswordModel";
 
-export { BookmarkModel, InboxModel, ProgressModel, HomeModel, CourseModel, SettingsModel, ExternalProgressModel, ProfileScreenModel, CommunicationModel };
+export {
+    BookmarkModel, InboxModel, ProgressModel, HomeModel,
+    CourseModel, SettingsModel, ExternalProgressModel, ProfileScreenModel, CommunicationModel, ChangePasswordModel
+};

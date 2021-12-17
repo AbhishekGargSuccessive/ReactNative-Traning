@@ -21,8 +21,3 @@ const HomeScreen = (props: HomeModelProp) => {
 };
 
 export default HomeScreen;
-
-
-{/* <ImageBackground
-                source={require('./back.png')}
-                style={{backgroundColor: 'red' }}></ImageBackground> */}

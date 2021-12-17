@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Image, FlatList, ScrollView, ActivityIndicator } from 'react-native';
+import React from 'react';
+import { View, FlatList, ScrollView, ActivityIndicator } from 'react-native';
 import styles from './styles';
 import RenderItem from './renderItems';
 import { useOrientation } from '../../config/orientation'
@@ -19,7 +19,7 @@ const CourseScreen = (props: CourseProp) => {
         <ScrollView>
             <View style={styles(o).container}>
                 {
-                    isloading ? <ActivityIndicator size={'large'} color={'red'} /> :
+                    isloading ? <ActivityIndicator size={'small'} color={'red'} /> :
                         (
                             <FlatList
                                 horizontal

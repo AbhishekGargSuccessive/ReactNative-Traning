@@ -12,7 +12,14 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: 'black'
+    },
+    viewStyle: {
+        flexDirection: 'row'
+    },
+    colorText: {
+        color: 'lightslategrey'
     }
+
 });
 
 export default styles;

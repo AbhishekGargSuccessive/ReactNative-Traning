@@ -55,6 +55,14 @@ const styles = StyleSheet.create({
         marginLeft: -45,
         tintColor:'black',
     },
+    leftArrow:{
+        marginHorizontal: 13, 
+        marginTop: 15 
+    },
+    hidden:{
+        flexDirection: 'row', 
+        alignSelf: 'center'
+    }
 })
 
 export default styles;

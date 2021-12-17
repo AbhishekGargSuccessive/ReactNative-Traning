@@ -10,21 +10,21 @@ interface ToogleProps {
 
 const ToogleText = (props: ToogleProps) => {
     return (
-            <View style={styles.container}>
-                <View>
-                    <Text style={styles.text1}>{props.text}</Text>
-                </View>
-                <View style={{flexDirection:'row'}}>
-                    <Text>{!props.toggle ? 'Inactive' : 'Active'}</Text>
-
-                    <Switch
-                        trackColor={{ false: "#767577", true: "#81b0ff" }}
-                        thumbColor="white"
-                        value={props.toggle}
-                        onValueChange={(value) => { props.setToggle(value) }}
-                    />
-                </View>
+        <View style={styles.container}>
+            <View>
+                <Text style={styles.text1}>{props.text}</Text>
             </View>
+            <View style={styles.viewStyle}>
+                <Text style={styles.colorText}>{!props.toggle ? 'Inactive' : 'Active'}</Text>
+
+                <Switch
+                    trackColor={{ false: "#767577", true: "#81b0ff" }}
+                    thumbColor="white"
+                    value={props.toggle}
+                    onValueChange={(value) => { props.setToggle(value) }}
+                />
+            </View>
+        </View>
     )
 }
 

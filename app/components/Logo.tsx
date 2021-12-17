@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, TouchableOpacity, TouchableOpacityBase, View } from "react-native";
+import { Image, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 
 interface LogoProps {
@@ -33,7 +33,7 @@ export const Help = () => {
 export const LeftArrow = (props: LogoProps) => {
     const { navigation } = props
     return (
-        <TouchableOpacity style={{ marginHorizontal: 13, marginTop: 15 }} onPress={() => { navigation.goBack('') }}>
+        <TouchableOpacity style={styles.leftArrow} onPress={() => { navigation.goBack('') }}>
             <View style={styles.borderleftlogo}>
                 <Image
                     style={styles.leftlogo}
@@ -52,7 +52,7 @@ export const PadLock = () => {
 
 export const Hidden = () => {
     return (
-        <TouchableOpacity style={{ flexDirection: 'row', alignSelf: 'center' }}>
+        <TouchableOpacity style={styles.hidden}>
             <Image source={require('../assets/hidden.png')} style={styles.HiddenLogo} />
         </TouchableOpacity>
     )

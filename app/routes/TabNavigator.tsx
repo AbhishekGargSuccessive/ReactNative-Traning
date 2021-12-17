@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { CourseModel, InboxModel, ProgressModel, SettingsModel } from "../viewModels";
-import { Header, Help, LeftArrow } from '../components/Logo';
+import { Header, Help } from '../components/Logo';
 import { Home, Inbox, Progress, Settings } from '../assets/images/images';
 
 
@@ -16,20 +16,23 @@ const Tab = createBottomTabNavigator<Tabprops>()
 
 const MainTab = () => {
     return (
-        <Tab.Navigator screenOptions={{ tabBarStyle: { height: 55 } }}>
+        <Tab.Navigator screenOptions={{
+            tabBarStyle: { height: 55 },
+            tabBarLabelStyle: { fontSize: 13, padding: 3 },
+            tabBarLabelPosition: 'below-icon',
+            tabBarActiveTintColor: 'black',
+            headerStatusBarHeight: 10,
+            headerStyle: { backgroundColor: 'teal' }
+        }}>
             <Tab.Screen
                 name="Home"
                 component={CourseModel}
                 options={{
-                    headerStyle: { backgroundColor: 'teal' },
                     headerTitle: () => (<Header />),
                     headerRight: () => (<Help />),
-                    tabBarLabelStyle: { fontSize: 13 },
-                    tabBarLabelPosition: 'below-icon',
-                    headerStatusBarHeight: 10,
-                    tabBarIcon: () => {
+                    tabBarIcon: ({ focused }) => {
                         return (
-                            <Home />
+                            <Home focused={focused} />
                         );
                     }
                 }}
@@ -39,15 +42,11 @@ const MainTab = () => {
                 name="Progress"
                 component={ProgressModel}
                 options={{
-                    headerStyle: { backgroundColor: 'teal' },
                     headerTitle: () => (<Header />),
                     headerRight: () => (<Help />),
-                    tabBarLabelStyle: { fontSize: 13 },
-                    tabBarLabelPosition: 'below-icon',
-                    headerStatusBarHeight: 10,
-                    tabBarIcon: () => {
+                    tabBarIcon: ({ focused }) => {
                         return (
-                            <Progress />
+                            <Progress focused={focused} />
                         )
                     }
                 }}
@@ -57,15 +56,11 @@ const MainTab = () => {
                 name="Inbox"
                 component={InboxModel}
                 options={{
-                    headerStyle: { backgroundColor: 'teal' },
                     headerTitle: () => (<Header />),
                     headerRight: () => (<Help />),
-                    tabBarLabelStyle: { fontSize: 13 },
-                    tabBarLabelPosition: 'below-icon',
-                    headerStatusBarHeight: 10,
-                    tabBarIcon: () => {
+                    tabBarIcon: ({ focused }) => {
                         return (
-                            <Inbox />
+                            <Inbox focused={focused} />
                         )
                     }
                 }}
@@ -74,15 +69,11 @@ const MainTab = () => {
                 name="Settings"
                 component={SettingsModel}
                 options={{
-                    headerStyle: { backgroundColor: 'teal' },
                     headerTitle: () => (<Header />),
                     headerRight: () => (<Help />),
-                    tabBarLabelStyle: { fontSize: 13 },
-                    tabBarLabelPosition: 'below-icon',
-                    headerStatusBarHeight: 10,
-                    tabBarIcon: () => {
+                    tabBarIcon: ({ focused }) => {
                         return (
-                            <Settings />
+                            <Settings focused={focused} />
                         )
                     }
                 }}

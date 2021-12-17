@@ -1,25 +1,26 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+const styles = (o: any) => StyleSheet.create({
     container: {
         flex: 1,
-        marginVertical: 5,
 
     },
     Upper: {
-        flex: 0.15,
         flexDirection: 'row',
-        margin: 25
+        margin: 20
     },
     Profile: {
-        height: 70,
-        width: 70
+        height: 80,
+        width: 80,
+        borderRadius: 40,
+        overflow: 'hidden'
     },
     camera: {
-        height: 25,
-        width: 25,
-        marginLeft: 22,
-        marginTop: 22
+        height: 30,
+        width: 40,
+        marginLeft: 20,
+        marginTop: 40,
+        tintColor: 'white'
     },
     identity: {
         flexDirection: 'column',
@@ -34,26 +35,25 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     Square: {
+        width: o.isLandscape ? o.width * 0.80 : o.width * 0.88,
         height: 270,
-        width: "80%",
-        marginTop: 30,
-        marginHorizontal: 40,
+        marginTop: 25,
+        alignSelf: 'center',
         borderWidth: 1,
         borderColor: 'lightslategrey'
     },
     text: {
-        marginHorizontal: 20,
         marginVertical: 10,
         color: 'black',
         fontSize: 18,
         fontWeight: 'bold'
     },
     text2: {
-        marginHorizontal: 50,
         marginVertical: 10,
         color: 'black',
         fontSize: 18,
-        borderWidth: 1,
+        // borderWidth: 1,
+        // backgroundColor:'white'
     },
     text3: {
         color: 'black',
@@ -62,19 +62,47 @@ const styles = StyleSheet.create({
     },
     Square2: {
         height: 370,
-        width: "80%",
+        width: o.isLandscape ? o.width * 0.80 : o.width * 0.88,
         marginTop: 30,
-        marginHorizontal: 40,
+        alignSelf: 'center',
         borderWidth: 1,
         borderColor: 'lightslategrey'
     },
     Square3: {
         height: 130,
-        width: "80%",
+        width: o.isLandscape ? o.width * 0.80 : o.width * 0.88,
         marginTop: 30,
-        marginHorizontal: 40,
+        alignSelf: 'center',
         borderWidth: 1,
         borderColor: 'lightslategrey'
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "flex-end",
+    },
+    modalView: {
+        backgroundColor: "teal",
+        paddingVertical: 30,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        borderTopRightRadius: 30,
+        borderTopLeftRadius:30,
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    button:{
+        color: 'white', 
+        alignSelf: 'center', 
+        fontWeight: 'bold'
+    },
+    imagestyle:{
+        tintColor: 'white', 
+        height: 40, 
+        margin: 10, 
+        resizeMode: 'contain',
     }
 })
 

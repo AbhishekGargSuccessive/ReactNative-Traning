@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+const styles = (o: any) => StyleSheet.create({
     container: {
         flex: 1
     },

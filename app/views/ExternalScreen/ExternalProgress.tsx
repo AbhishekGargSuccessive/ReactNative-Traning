@@ -69,7 +69,7 @@ const ExternalProgressScreen = (props: ExternalProps) => {
                                 <Text style={styles.text5}>{item.title}</Text>
                                 <View style={styles.borderHeight}>
                                     <PadLock />
-                                    <Text style={{ marginLeft: 5 }}>Opening Soon</Text>
+                                    <Text style={{ marginLeft: 5, color:'lightslategrey' }}>Opening Soon</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>

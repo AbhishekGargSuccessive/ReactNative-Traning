@@ -18,7 +18,7 @@ const ChangePassword = (props: PasswordModel) => {
 
             <Text style={styles(o).text1}>Welcome!</Text>
 
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            <View style={styles(o).viewStyle}>
                 <TextInput
                     style={styles(o).textInput}
                     placeholder='Current Password'
@@ -27,7 +27,7 @@ const ChangePassword = (props: PasswordModel) => {
                 <Hidden />
             </View>
 
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            <View style={styles(o).viewStyle}>
                 <TextInput
                     style={styles(o).textInput}
                     placeholder='Password'
@@ -36,7 +36,7 @@ const ChangePassword = (props: PasswordModel) => {
                 <Hidden />
             </View>
 
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+            <View style={styles(o).viewStyle}>
                 <TextInput
                     style={styles(o).textInput}
                     placeholder='Confirm Password'
