@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, ScrollView, } from 'react-native';
 import styles from './style';
 
 interface ProgressProps {
@@ -24,15 +24,16 @@ const DATA = [
 const ProgressScreen = (props: ProgressProps) => {
     const { navigation } = props;
     return (
-        <View style={styles.container}>
+        <ScrollView>
 
             <Text style={styles.text1}>Graduation Requirements</Text>
 
             <Text style={styles.text2}>Graduation Requirements</Text>
 
-            <View style={{ margin: 20, }}>
+            <View style={styles.view2}>
 
                 <FlatList
+
                     data={DATA}
                     ItemSeparatorComponent={() => {
                         return (
@@ -57,7 +58,7 @@ const ProgressScreen = (props: ProgressProps) => {
                 />
             </View>
 
-        </View>
+        </ScrollView>
     );
 };
 

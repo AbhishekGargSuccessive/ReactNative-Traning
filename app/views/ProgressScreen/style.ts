@@ -21,6 +21,9 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         color: 'black'
     },
+    view2:{
+        margin: 20,
+    },
     text3: {
         fontSize: 18,
         marginVertical: 20,

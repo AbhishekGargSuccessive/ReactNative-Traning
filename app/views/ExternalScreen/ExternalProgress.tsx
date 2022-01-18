@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import { Help, LeftArrow, PadLock } from "../../components/Logo";
 import styles from '../ExternalScreen/style';
 
@@ -31,7 +31,7 @@ const ExternalProgressScreen = (props: ExternalProps) => {
         <FlatList
             ListHeaderComponent={
                 <View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <View style={styles.main}>
                         <LeftArrow navigation={navigation} />
                         <Help />
                     </View>
@@ -69,7 +69,7 @@ const ExternalProgressScreen = (props: ExternalProps) => {
                                 <Text style={styles.text5}>{item.title}</Text>
                                 <View style={styles.borderHeight}>
                                     <PadLock />
-                                    <Text style={{ marginLeft: 5, color:'lightslategrey' }}>Opening Soon</Text>
+                                    <Text style={styles.text6}>Opening Soon</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>

@@ -82,7 +82,7 @@ const ProfileScreen = (props) => {
 
     return (
         <View style={styles(o).container}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={styles(o).viewStyle}>
                 <LeftArrow navigation={navigation} />
                 <Help />
             </View>
@@ -91,11 +91,11 @@ const ProfileScreen = (props) => {
                 animationType="slide"
                 transparent={true}
                 visible={modalVisible}
-                // onRequestClose={() => {
-                //     // Alert.alert("Modal has been closed.");
-                //     setModalVisible(!modalVisible);
-                // }}
-                >
+                onRequestClose={() => {
+                    // Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                }}
+            >
 
                 <View style={styles(o).centeredView}>
 
@@ -110,14 +110,14 @@ const ProfileScreen = (props) => {
 
                         <TouchableOpacity onPress={() => launchLibrary()}>
                             <Image source={require('../../../assets/gallery.png')}
-                                style={{ height: 40, width: 60, margin: 10, resizeMode: 'contain' }}></Image>
+                                style={styles(o).gallery}></Image>
 
-                            <Text style={{ color: 'white', fontWeight: 'bold', alignSelf: 'center' }}>Gallery</Text>
+                            <Text style={styles(o).galleryText}>Gallery</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => setModalVisible(false)}>
                             <Image source={require('../../../assets/close.png')}
-                                style={{ tintColor: 'white', height: 40, margin: 10, resizeMode: 'contain', borderRadius: 20 }}></Image>
+                                style={styles(o).close}></Image>
 
                             <Text style={styles(o).button}>Close</Text>
                         </TouchableOpacity>
@@ -140,11 +140,11 @@ const ProfileScreen = (props) => {
 
             <ItemSeperatorMain />
 
-            <ScrollView style={{ marginVertical: 10 }}>
+            <ScrollView style={styles(o).scroll}>
 
                 <View style={styles(o).Square}>
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 15 }}>
+                    <View style={styles(o).viewstyle2}>
                         <Text style={styles(o).text}>Personal Information</Text>
                         {!editPI ? <TouchableOpacity onPress={() => setEditPI(true)}>
                             <Text style={styles(o).text2}>Edit</Text>
@@ -154,7 +154,7 @@ const ProfileScreen = (props) => {
                             </TouchableOpacity>}
                     </View>
 
-                    <View style={{ marginVertical: 10 }}>
+                    <View style={styles(o).scroll}>
                         <CommonTextInput
                             placeholder='Abhishek'
                             text='First Name'
@@ -183,7 +183,7 @@ const ProfileScreen = (props) => {
 
                 <View style={styles(o).Square2}>
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 15 }}>
+                    <View style={styles(o).viewstyle2}>
                         <Text style={styles(o).text}>Contact</Text>
                         {!editContact ? <TouchableOpacity onPress={() => setEditContact(true)}>
                             <Text style={styles(o).text2}>Edit</Text>
@@ -193,7 +193,7 @@ const ProfileScreen = (props) => {
                             </TouchableOpacity>}
                     </View>
 
-                    <View style={{ marginVertical: 10 }}>
+                    <View style={styles(o).scroll}>
                         <CommonTextInput
                             placeholder='abhishek.garg@successive.tech'
                             text='Email'
@@ -201,7 +201,7 @@ const ProfileScreen = (props) => {
                         />
                     </View>
 
-                    <View style={{ marginVertical: 10 }}>
+                    <View style={styles(o).scroll}>
                         <CommonTextInput
                             placeholder=''
                             text='Home Phone'
@@ -229,7 +229,7 @@ const ProfileScreen = (props) => {
 
                 <View style={styles(o).Square3}>
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 15 }}>
+                    <View style={styles(o).viewstyle2}>
                         <Text style={styles(o).text}>Mailing Address</Text>
                         {!editAddress ? <TouchableOpacity onPress={() => setEditAddress(true)}>
                             <Text style={styles(o).text2}>Edit</Text>
@@ -239,7 +239,7 @@ const ProfileScreen = (props) => {
                             </TouchableOpacity>}
                     </View>
 
-                    <View style={{ marginVertical: 10 }}>
+                    <View style={styles(o).scroll}>
                         <CommonTextInput
                             placeholder='Greater Noida'
                             text='Mailing Addresss'

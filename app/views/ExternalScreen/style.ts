@@ -3,10 +3,11 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 0.5,
-        // alignSelf: 'center',
-        // justifyContent: 'center'
         marginTop: 20
+    },
+    main:{
+        flexDirection: 'row', 
+        justifyContent: 'space-between'
     },
     text1: {
         alignSelf: 'center',
@@ -67,6 +68,10 @@ const styles = StyleSheet.create({
     borderHeight: {
         flexDirection: 'row',
         marginBottom: 15
+    },
+    text6:{
+        marginLeft: 5, 
+        color:'lightslategrey'
     }
 });
 

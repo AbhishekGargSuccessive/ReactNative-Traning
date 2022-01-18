@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -16,8 +15,6 @@ const styles = StyleSheet.create({
     text2: {
         fontSize: 20,
         fontWeight: 'bold',
-        // marginHorizontal: 20,
-        // marginTop: 20,
         color: 'black'
     }
 });

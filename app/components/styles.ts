@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
         width: 42,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgb(176, 174, 171)'
+        backgroundColor:'white'
+        // backgroundColor: 'rgb(176, 174, 171)'
+        
     },
     leftlogo: {
         resizeMode: 'contain',
@@ -62,6 +64,13 @@ const styles = StyleSheet.create({
     hidden:{
         flexDirection: 'row', 
         alignSelf: 'center'
+    },
+    menu:{
+        height:30,
+        width:30,
+    },
+    menuOpacity:{
+        marginVertical:10
     }
 })
 

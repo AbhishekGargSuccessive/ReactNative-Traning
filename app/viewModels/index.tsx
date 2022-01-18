@@ -1,4 +1,3 @@
-import React from "react";
 import BookmarkModel from "./BookmarkModel";
 import ProgressModel from "./ProgressModel";
 import InboxModel from "./InboxModel";
@@ -9,8 +8,10 @@ import ExternalProgressModel from "./ExternalProgressModel";
 import ProfileScreenModel from "./ProfileScreenModel";
 import CommunicationModel from "./CommPreferencesModel";
 import ChangePasswordModel from "./ChangePasswordModel";
+import ContinueLearningModel from "./ContinueLearningModel";
 
 export {
     BookmarkModel, InboxModel, ProgressModel, HomeModel,
-    CourseModel, SettingsModel, ExternalProgressModel, ProfileScreenModel, CommunicationModel, ChangePasswordModel
+    CourseModel, SettingsModel, ExternalProgressModel, ProfileScreenModel, 
+    CommunicationModel, ChangePasswordModel, ContinueLearningModel
 };

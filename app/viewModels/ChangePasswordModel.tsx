@@ -8,7 +8,7 @@ interface PasswordModel {
 const ChangePasswordModel = (props: PasswordModel) => {
     const { navigation } = props
     return (
-        <ChangePassword navigation={navigation} o={undefined} />
+        <ChangePassword navigation={navigation}  />
     )
 }
 

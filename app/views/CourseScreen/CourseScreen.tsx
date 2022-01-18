@@ -7,13 +7,13 @@ import { useOrientation } from '../../config/orientation'
 interface CourseProp {
     isloading: boolean
     data: any
+    navigation: any
 
 }
 
 const CourseScreen = (props: CourseProp) => {
-    const { isloading, data } = props;
+    const { isloading, data, navigation } = props;
     const o = useOrientation()
-    // console.log(o)
 
     return (
         <ScrollView>
@@ -26,7 +26,7 @@ const CourseScreen = (props: CourseProp) => {
                                 showsHorizontalScrollIndicator={false}
                                 data={data}
                                 // keyExtractor={(index) => index.toString()}
-                                renderItem={({ item }) => <RenderItem item={item} o={o} />}
+                                renderItem={({ item }) => <RenderItem item={item} o={o} navigation={navigation} />}
                             />
                         )}
             </View>

@@ -5,6 +5,10 @@ const styles = (o: any) => StyleSheet.create({
         flex: 1,
 
     },
+    viewStyle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
     Upper: {
         flexDirection: 'row',
         margin: 20
@@ -18,8 +22,8 @@ const styles = (o: any) => StyleSheet.create({
     camera: {
         height: 30,
         width: 40,
-        marginLeft: 20,
-        marginTop: 40,
+        alignSelf:'center',
+        marginTop: 30,
         tintColor: 'white'
     },
     identity: {
@@ -34,6 +38,9 @@ const styles = (o: any) => StyleSheet.create({
     color: {
         color: 'black'
     },
+    scroll:{
+        marginVertical: 10
+    },
     Square: {
         width: o.isLandscape ? o.width * 0.80 : o.width * 0.88,
         height: 270,
@@ -41,6 +48,11 @@ const styles = (o: any) => StyleSheet.create({
         alignSelf: 'center',
         borderWidth: 1,
         borderColor: 'lightslategrey'
+    },
+    viewstyle2:{
+        flexDirection: 'row', 
+        justifyContent: 'space-between', 
+        marginHorizontal: 15
     },
     text: {
         marginVertical: 10,
@@ -86,24 +98,43 @@ const styles = (o: any) => StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         borderTopRightRadius: 30,
-        borderTopLeftRadius:30,
+        borderTopLeftRadius: 30,
     },
     textStyle: {
         color: "white",
         fontWeight: "bold",
         textAlign: "center"
     },
-    button:{
-        color: 'white', 
-        alignSelf: 'center', 
+    button: {
+        color: 'white',
+        alignSelf: 'center',
         fontWeight: 'bold'
     },
-    imagestyle:{
-        tintColor: 'white', 
-        height: 40, 
-        margin: 10, 
+    imagestyle: {
+        tintColor: 'white',
+        height: 40,
+        margin: 10,
         resizeMode: 'contain',
+    },
+    gallery: {
+        height: 40,
+        width: 60,
+        margin: 10,
+        resizeMode: 'contain'
+    },
+    galleryText: {
+        color: 'white',
+        fontWeight: 'bold',
+        alignSelf: 'center'
+    },
+    close: {
+        tintColor: 'white',
+        height: 40,
+        margin: 10,
+        resizeMode: 'contain',
+        borderRadius: 20
     }
+
 })
 
 export default styles;

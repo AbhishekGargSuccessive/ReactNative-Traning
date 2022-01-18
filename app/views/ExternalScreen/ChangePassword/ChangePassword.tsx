@@ -6,7 +6,6 @@ import { Hidden } from '../../../components/Logo'
 
 interface PasswordModel {
     navigation: any
-    o: any
 }
 
 const ChangePassword = (props: PasswordModel) => {

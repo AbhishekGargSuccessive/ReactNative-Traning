@@ -6,11 +6,12 @@ import { ProgressBar, Colors } from 'react-native-paper';
 interface RenderItemProps {
     item: any
     o: any
+    navigation: any
 
 }
 
 const RenderItem = (props: RenderItemProps) => {
-    const { item, o } = props;
+    const { item, o, navigation } = props;
     return (
         <ScrollView>
             <View style={styles(o).mainContainer}>
@@ -22,7 +23,7 @@ const RenderItem = (props: RenderItemProps) => {
 
                 <ProgressBar progress={0.7} color={Colors.green800} style={styles(o).progressbar} />
 
-                <TouchableOpacity style={styles(o).button}>
+                <TouchableOpacity style={styles(o).button} onPress={() => navigation.navigate("ContinueLearning")}>
                     <Text style={styles(o).text3}>Continue Learning</Text>
                 </TouchableOpacity>
             </View>

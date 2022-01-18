@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, TouchableOpacity, View } from "react-native";
+import { Alert, Image, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 
 interface LogoProps {
@@ -19,7 +19,7 @@ export const Header = () => {
 
 export const Help = () => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Alert.alert('Please Contact Developer Team! (Under Maintenance)')}>
             <View style={styles.borderlogo} >
                 <Image
                     style={styles.rightlogo}
@@ -54,6 +54,14 @@ export const Hidden = () => {
     return (
         <TouchableOpacity style={styles.hidden}>
             <Image source={require('../assets/hidden.png')} style={styles.HiddenLogo} />
+        </TouchableOpacity>
+    )
+}
+
+export const ThreeDots = () => {
+    return (
+        <TouchableOpacity style={styles.menuOpacity}>
+            <Image source={require('../assets/menu.png')} style={styles.menu} />
         </TouchableOpacity>
     )
 }

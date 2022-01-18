@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import CourseScreen from "../views/CourseScreen/CourseScreen";
 import { sendGetRequest } from '../network/network'
 
-const CourseModel = () => {
+interface PropsCourseModel{
+    navigation: any
+}
+
+const CourseModel = (props:PropsCourseModel) => {
 
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
@@ -12,7 +16,6 @@ const CourseModel = () => {
             const response = await sendGetRequest('https://jsonplaceholder.typicode.com/photos?_limit=10&_page=1');
             // const json = await response.json();
             setData(response.data);
-            // console.log('Data==>', response)
         } catch (error) {
             console.error(error);
         } finally {
@@ -25,7 +28,7 @@ const CourseModel = () => {
     }, []);
 
     return (
-        <CourseScreen isloading={isLoading} data={data} />
+        <CourseScreen isloading={isLoading} data={data} navigation={props.navigation} />
     )
 }
 
