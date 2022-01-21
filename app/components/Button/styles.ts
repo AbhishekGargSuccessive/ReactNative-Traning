@@ -4,7 +4,9 @@ const styles = StyleSheet.create({
     arrow: {
         height: 20,
         width: 20,
-        // tintColor: 'grey',
+        tintColor: 'grey',
+        marginRight:5,
+        resizeMode:'contain'
     },
     opacity: {
         flexDirection: 'row',

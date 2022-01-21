@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { CourseModel, InboxModel, ProgressModel, SettingsModel } from "../viewModels";
-import { Header, Help } from '../components/Logo';
+import { Header, Help } from '../components/Logo/Logo';
 import { Home, Inbox, Progress, Settings } from '../assets/images/images';
 
 
@@ -22,14 +22,15 @@ const MainTab = () => {
             tabBarLabelPosition: 'below-icon',
             tabBarActiveTintColor: 'black',
             headerStatusBarHeight: 10,
-            headerStyle: { backgroundColor: 'teal' }
+            headerStyle: { backgroundColor: 'teal' },
+            headerTitle: () => (<Header />),
+            headerRight: () => (<Help />),
         }}>
+
             <Tab.Screen
                 name="Home"
                 component={CourseModel}
                 options={{
-                    headerTitle: () => (<Header />),
-                    headerRight: () => (<Help />),
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Home focused={focused} />
@@ -42,8 +43,6 @@ const MainTab = () => {
                 name="Progress"
                 component={ProgressModel}
                 options={{
-                    headerTitle: () => (<Header />),
-                    headerRight: () => (<Help />),
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Progress focused={focused} />
@@ -56,8 +55,6 @@ const MainTab = () => {
                 name="Inbox"
                 component={InboxModel}
                 options={{
-                    headerTitle: () => (<Header />),
-                    headerRight: () => (<Help />),
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Inbox focused={focused} />
@@ -69,8 +66,6 @@ const MainTab = () => {
                 name="Settings"
                 component={SettingsModel}
                 options={{
-                    headerTitle: () => (<Header />),
-                    headerRight: () => (<Help />),
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Settings focused={focused} />

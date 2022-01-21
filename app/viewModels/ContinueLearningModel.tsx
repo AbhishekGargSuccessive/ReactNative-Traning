@@ -1,5 +1,5 @@
 import React from "react";
-import ContinueLearning from '../views/ExternalScreen/ContinueLearning/ContinueLearning';
+import ContinueLearning from '../views/ContinueLearning/ContinueLearning';
 
 interface ContinueProps {
     navigation: any

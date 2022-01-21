@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 
     text: {
-        color: 'lightslategrey',
+        color: 'black',
         fontSize: 15,
         marginHorizontal: 20,
     },
     input:{
-        marginHorizontal: 20
+        marginHorizontal: 20,
     }
 
 })

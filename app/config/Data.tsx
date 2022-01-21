@@ -3,8 +3,8 @@ import Icons from "../config/Icons";
 const DATA = [
     {
         id: "1",
-        image: Icons.food,
-        title: "An Introduction to the Dietry foods apps...",
+        image: Icons.nutrition,
+        title: "An Introduction to Dietry foods apps...",
         bookmark: true,
         submodule: [
             {
@@ -78,7 +78,7 @@ const DATA = [
     },
     {
         id: "4",
-        image: Icons.food,
+        image: Icons.nutrition,
         title: "Food is mostly benefits for health...",
         bookmark: false,
         submodule: [

@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         width: windowWidth * 0.075,
         height: windowHeight * 0.035,
         tintColor: 'red'
-    }
+    },
 })
 
 export default styles;

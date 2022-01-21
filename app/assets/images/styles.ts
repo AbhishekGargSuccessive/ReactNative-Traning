@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     images: {
         width: 22,
         height: 22,
-        // tintColor: 'red',        
     }
 })
 

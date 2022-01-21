@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginHorizontal: 20,
-        marginVertical: 15
+        marginVertical: 15,
     },
     text1: {
         fontSize: 20,
@@ -14,10 +14,17 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     viewStyle: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     colorText: {
-        color: 'lightslategrey'
+        color: 'lightslategrey',
+        marginRight: 10,
+        marginTop: 2
+    },
+    textactive: {
+        color: 'lightslategrey',
+        marginRight: 21.5,
+        marginTop: 2
     }
 
 });

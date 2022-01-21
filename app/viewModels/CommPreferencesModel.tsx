@@ -1,5 +1,5 @@
 import React from "react";
-import Communication from "../views/ExternalScreen/CommunicationPreferences/CommPreferences";
+import Communication from "../views/CommunicationPreferences/CommPreferences";
 
 interface CommunicationProps {
     navigation: any

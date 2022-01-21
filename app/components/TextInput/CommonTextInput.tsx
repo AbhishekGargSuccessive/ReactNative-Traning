@@ -15,7 +15,7 @@ const CommonTextInput = (props: CommonProps) => {
             <TextInput
                 style={styles.input}
                 placeholder={props.placeholder}
-                placeholderTextColor={'black'}
+                placeholderTextColor={'grey'}
                 editable={props.editable}
             />
         </View>

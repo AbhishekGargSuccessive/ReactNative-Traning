@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import CourseScreen from "../views/CourseScreen/CourseScreen";
+import CourseScreen from '../views/HomeScreen/CourseScreen';
 import { sendGetRequest } from '../network/network'
 
-interface PropsCourseModel{
+interface PropsCourseModel {
     navigation: any
 }
 
-const CourseModel = (props:PropsCourseModel) => {
+const CourseModel = (props: PropsCourseModel) => {
 
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-    
+
     const getData = async () => {
         try {
             const response = await sendGetRequest('https://jsonplaceholder.typicode.com/photos?_limit=10&_page=1');

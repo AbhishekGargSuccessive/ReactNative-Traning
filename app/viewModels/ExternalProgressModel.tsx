@@ -1,5 +1,5 @@
 import React from "react";
-import ExternalProgressScreen from "../views/ExternalScreen/ExternalProgress";
+import ExternalProgressScreen from "../views/ExternalPeogressScreen/ExternalProgress";
 
 interface ExternalProps {
     navigation: any

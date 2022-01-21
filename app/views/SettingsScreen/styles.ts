@@ -31,12 +31,12 @@ const styles = (o: any) => StyleSheet.create({
         flex: 0.85
     },
     Block: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     icon: {
-        resizeMode:'contain',
+        resizeMode: 'contain',
         height: 20,
-        width: 20
+        width: 20,
     },
     IconName: {
         marginHorizontal: 20,
@@ -44,8 +44,8 @@ const styles = (o: any) => StyleSheet.create({
         alignSelf: 'flex-start',
         color: 'black'
     },
-    color:{
-        color:'black'
+    color: {
+        color: 'black'
     }
 
 })

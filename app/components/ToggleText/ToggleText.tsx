@@ -11,11 +11,17 @@ interface ToogleProps {
 const ToogleText = (props: ToogleProps) => {
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={styles.text1}>{props.text}</Text>
-            </View>
+
+            <Text style={styles.text1}>{props.text}</Text>
+
             <View style={styles.viewStyle}>
-                <Text style={styles.colorText}>{!props.toggle ? 'Inactive' : 'Active'}</Text>
+
+                {
+                    !props.toggle ?
+                        <Text style={styles.colorText}>Inactive</Text>
+                        :
+                        <Text style={styles.textactive}>Active</Text>
+                }
 
                 <Switch
                     trackColor={{ false: "#767577", true: "#81b0ff" }}

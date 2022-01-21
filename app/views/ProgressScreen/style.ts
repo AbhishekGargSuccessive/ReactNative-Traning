@@ -2,11 +2,6 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container: {
-        // flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center'
-    },
     text1: {
         fontSize: 25,
         fontWeight: 'bold',
@@ -21,7 +16,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         color: 'black'
     },
-    view2:{
+    view2: {
         margin: 20,
     },
     text3: {
@@ -38,8 +33,9 @@ const styles = StyleSheet.create({
     },
     seperator: {
         height: .8,
-        width: "100%",
-        backgroundColor: 'lightslategrey'
+        width: "90%",
+        backgroundColor: 'lightslategrey',
+        marginHorizontal: 20
     },
     opacity: {
         borderWidth: 1,
@@ -51,6 +47,7 @@ const styles = StyleSheet.create({
     render: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginHorizontal: 20
     }
 });
 
