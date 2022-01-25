@@ -361,6 +361,7 @@ const ContinueLearning = (props: ContinueProps) => {
                         </TouchableOpacity>
                     </View>
                 </View>
+
             </View>
 
             <View style={{ marginVertical: 8, flex: 1 }}>
