@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     image: {
-        height: 180,
+        height: 200,
         width: "100%",
     },
     logo: {
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
     },
     text2: {
         color: 'white',
-        fontSize: 15,
+        fontSize: 16,
         paddingLeft: 20,
-        marginVertical: 5
+        marginVertical: 10
     },
     progressbar: {
         height: 4.5,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     LastText: {
         fontSize: 16,
         marginVertical: 10,
-        color:'lightslategrey'
+        color: 'lightslategrey'
     },
     ResumeText: {
         fontSize: 19,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         marginBottom: 20,
         fontSize: 15,
-        color:'lightslategrey'
+        color: 'lightslategrey'
     },
     text8: {
         fontSize: 15,
@@ -152,10 +152,12 @@ const styles = StyleSheet.create({
     },
     dropdwonbutton: {
         width: "100%",
-        marginVertical: 5
+        marginVertical: 5,
     },
     marginRight: {
-        marginRight: 178
+        // marginRight: 178,
+        textAlign:'left',
+        // color:'grey'
     },
     crossModal: {
         height: 20,
@@ -182,11 +184,15 @@ const styles = StyleSheet.create({
     },
     upperView: {
         marginHorizontal: 25,
-        marginVertical: 15
+        marginTop: 15
     },
     filterView: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+    },
+    bookmarktoggle: {
+        // marginLeft: 20
+        marginRight:15
     },
     marginVertical: {
         marginVertical: 15
@@ -210,11 +216,14 @@ const styles = StyleSheet.create({
     },
     marginLeft: {
         marginLeft: 10,
-        width:260
+        width: 260
     },
     flex: {
         flexDirection: 'row',
-        justifyContent:'space-between'
+        justifyContent: 'space-between'
+    },
+    moduletext: {
+        color: 'lightslategrey'
     },
     icon: {
         height: 15,
@@ -222,7 +231,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         alignSelf: 'center',
         tintColor: 'black',
-        marginTop:2
+        marginTop: 2
     },
     position: {
         position: "absolute"

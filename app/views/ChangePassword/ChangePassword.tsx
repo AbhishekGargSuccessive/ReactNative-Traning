@@ -58,7 +58,7 @@ const ChangePasword = (props: ConfirmPassword) => {
                     placeHolder='Current Password'
                     o={o}
                     commonText={password}
-                    Switch={invalidPassword}
+                    Switch={false}
                     setSwitch={setInvalidPassword}
                     setCommonText={(password) => setPassword(password)}
                 />

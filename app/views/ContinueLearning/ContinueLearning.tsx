@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList, Image, ImageBackground, Text, TouchableOpacity, View, Modal, ScrollView, TouchableWithoutFeedback } from "react-native";
 import { ProgressBar } from "react-native-paper";
 import ItemSeperatorMain, { ItemSeperator } from "../../components/ItemSeperator/ItemSeperator";
@@ -11,14 +11,13 @@ import styles from '../ContinueLearning/styles';
 
 interface ContinueProps {
     navigation: any
+    item: any
 }
 
 const ContinueLearning = (props: ContinueProps) => {
     const [modal, setModal] = useState(false);
 
     const [Data, setData] = useState(DATA)
-
-    const [isData, setisData] = useState(false)
 
     //Metarial Menu
 
@@ -29,47 +28,80 @@ const ContinueLearning = (props: ContinueProps) => {
     const [subVisible, setSubVisible] = useState(false);
     const subHideMenu = () => setSubVisible(false);
     const subShowMenu = () => setSubVisible(true);
+
     const [subMenuData, setSubMenuData] = useState([])
 
-    //Bookmark
+    //Filter Functionality
 
-    const Bookmark = ["Bookmarked", "Not Bookmarked"]
-    const [BookmarkData, setBookmarkData] = useState("")
+    const [filterBookmark, setFilterBookmark] = useState(false)
+    const [filtertitle, setFilterTitle] = useState(false)
+    const [firstfilterValue, setFirstfilterValue] = useState(-1)
+    const [secondfilterValue, setSecondfilterValue] = useState('')
 
-    const [toggleBookmark, setTogglBookmark] = useState(false)
-    const [toggleTitle, setToggleTitle] = useState(false)
+    useEffect(() => {
+        const output = []
 
-    const [filter, setFilter] = useState(false)
-    const [title, settitle] = useState("")
-
-    //Check Bookmark
-
-    const CheckBookmark = (bookdata: any) => {
-        if (bookdata == 'Bookmarked') {
-            return true
+        if (firstfilterValue == -1 || secondfilterValue == "") {
+            setData(DATA)
         }
-        else {
-            return false
+
+        if (firstfilterValue == 0 && secondfilterValue == '') {
+            output.length = 0
+            for (var i = 0; i < DATA.length; i++) {
+                if (DATA[i].bookmark)
+                    output.push(DATA[i])
+            }
+            setData(output)
         }
+
+        if (firstfilterValue == 1 && secondfilterValue == '') {
+            output.length = 0
+            for (var i = 0; i < DATA.length; i++) {
+                if (!DATA[i].bookmark)
+                    output.push(DATA[i])
+            }
+            setData(output)
+        }
+
+        if (secondfilterValue != '') {
+            if (firstfilterValue == -1) {
+                output.length = 0
+                for (var i = 0; i < DATA.length; i++) {
+                    if (DATA[i].title == secondfilterValue)
+                        output.push(DATA[i])
+                }
+                setData(output)
+            }
+
+            if (firstfilterValue == 0) {
+                output.length = 0
+                for (var i = 0; i < DATA.length; i++) {
+                    if (DATA[i].bookmark && DATA[i].title == secondfilterValue)
+                        output.push(DATA[i])
+                }
+                setData(output)
+            }
+
+            if (firstfilterValue == 1) {
+                output.length = 0
+                for (var i = 0; i < DATA.length; i++) {
+                    if (!DATA[i].bookmark && DATA[i].title == secondfilterValue)
+                        output.push(DATA[i])
+                }
+                setData(output)
+            }
+        }
+
+    }, [firstfilterValue, filterBookmark, secondfilterValue, filtertitle]);
+
+    const titleData = () => {
+
+        const output = []
+        for (var i = 0; i < DATA.length; i++) {
+            output.push(DATA[i].title)
+        }
+        return output
     }
-
-    const titleData = (input: any) => {
-        return Data.map(any => any.title)
-    }
-
-    const listData = (input: any) => {
-        return Data.filter((item) => item.bookmark == input).map(any => any)
-    }
-
-    const flatListData = listData(CheckBookmark(BookmarkData))
-
-    const titleListData = titleData(CheckBookmark(BookmarkData))
-
-    const listtitledata = (input: any) => {
-        return flatListData.filter((item) => item.title == input).map(any => any)
-    }
-
-    const finalFlatListData = listtitledata(title)
 
     return (
         <View style={styles.container}>
@@ -110,9 +142,9 @@ const ContinueLearning = (props: ContinueProps) => {
                         <Text style={styles.modalText}>{Constant.Bookmarks}</Text>
 
                         <SelectDropdown
-                            data={Bookmark}
+                            data={["Bookmarked", 'Not Bookmarked']}
                             buttonStyle={styles.dropdwonbutton}
-                            defaultButtonText={'Select an option'}
+                            defaultButtonText={(firstfilterValue == -1) ? "Select an option." : (firstfilterValue == 0) ? 'Bookmarked' : 'Not Bookmarked'}
                             buttonTextStyle={styles.marginRight}
                             renderDropdownIcon={(unSet) => {
                                 return (
@@ -123,9 +155,10 @@ const ContinueLearning = (props: ContinueProps) => {
                                 );
                             }}
                             onSelect={(selectedItem, index) => {
-                                setBookmarkData(selectedItem);
                             }}
                             buttonTextAfterSelection={(selectedItem, index) => {
+                                setFilterBookmark(true)
+                                setFirstfilterValue(index)
                                 return selectedItem;
                             }}
                             rowTextForSelection={(item, index) => {
@@ -139,10 +172,13 @@ const ContinueLearning = (props: ContinueProps) => {
                         <Text style={styles.modalText}>{Constant.Titles}</Text>
 
                         <SelectDropdown
-                            data={titleListData}
-                            defaultButtonText={'Select an option'}
+                            data={titleData()}
+                            defaultButtonText={secondfilterValue}
                             buttonTextStyle={styles.marginRight}
                             buttonStyle={styles.dropdwonbutton}
+                            dropdownStyle={{ height: 250 }}
+                            rowTextStyle={{ textAlign: 'left' }}
+                            // dropdownIconPosition={'right'}
                             renderDropdownIcon={(unSet) => {
                                 return (
                                     !unSet ?
@@ -152,9 +188,10 @@ const ContinueLearning = (props: ContinueProps) => {
                                 );
                             }}
                             onSelect={(selectedItem, index) => {
-                                settitle(selectedItem);
                             }}
                             buttonTextAfterSelection={(selectedItem, index) => {
+                                setFilterTitle(true)
+                                setSecondfilterValue(selectedItem)
                                 return selectedItem;
                             }}
                             rowTextForSelection={(item, index) => {
@@ -166,7 +203,7 @@ const ContinueLearning = (props: ContinueProps) => {
 
 
                     <TouchableOpacity
-                        onPress={() => { setFilter(true), setModal(false), setTogglBookmark(true), setToggleTitle(true), setisData(true); }}
+                        onPress={() => setModal(false)}
                         style={styles.modalFilterButton}>
                         <Text style={styles.modalFilterText}>{Constant.Apply_filters}</Text>
                     </TouchableOpacity>
@@ -263,51 +300,61 @@ const ContinueLearning = (props: ContinueProps) => {
 
                     <View style={styles.textView}>
 
-                        <View style={styles.filterView}>
-                            {
-                                (toggleBookmark == true || toggleTitle == true) ?
-                                    <Text style={styles.text8}>{Constant.Filters_}</Text>
-                                    :
-                                    null
-                            }
+                        <View style={{ flexDirection: 'row' }}>
+
+                            <View style={styles.filterView}>
+                                {/* {
+                                    (filterBookmark == true || filtertitle == true) ? */}
+                                <Text style={styles.text8}>{Constant.Filters_}</Text>
+                                {/*          :
+                                         null
+                                 } */}
+                            </View>
+
+
+                            <View style={{ flexDirection: 'row', marginLeft: 10 }}>
+
+                                <View>
+
+                                    {filterBookmark &&
+
+                                        <View style={styles.bookmarktoggle}>
+
+                                            <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setFilterBookmark(false), setData(DATA), setFirstfilterValue(-1) }}>
+
+                                                <View style={styles.logo}>
+
+                                                    <Text style={styles.bookmarkText}>{(firstfilterValue == 0) ? 'Bookmarked' : 'Not Bookmarked'}</Text>
+                                                    <Image source={Icons.close} style={styles.cross} />
+
+                                                </View>
+
+                                            </TouchableOpacity>
+
+                                        </View>
+                                    }
+                                </View>
+
+
+                                <View>
+
+                                    {filtertitle &&
+
+                                        <View style={styles.filterView}>
+
+                                            <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setFilterTitle(false), setData(DATA), setSecondfilterValue('') }}>
+
+                                                <View style={styles.logo}>
+                                                    <Text style={styles.titleText}>{Constant.Title}</Text>
+                                                    <Image source={Icons.close} style={styles.cross} />
+                                                </View>
+
+                                            </TouchableOpacity>
+                                        </View>
+                                    }
+                                </View>
+                            </View>
                         </View>
-
-                        {toggleBookmark ?
-
-                            <View style={styles.filterView}>
-
-                                <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setTogglBookmark(false), setFilter(false), setData(finalFlatListData), setBookmarkData("Select"); }}>
-
-                                    <View style={styles.logo}>
-
-                                        <Text style={styles.bookmarkText}>{BookmarkData}</Text>
-                                        <Image source={Icons.close} style={styles.cross} />
-
-                                    </View>
-
-                                </TouchableOpacity>
-
-                            </View>
-                            :
-                            null
-                        }
-
-                        {toggleTitle ?
-
-                            <View style={styles.filterView}>
-
-                                <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setToggleTitle(false), setFilter(false), setData(flatListData), settitle("Select"); }}>
-
-                                    <View style={styles.logo}>
-                                        <Text style={styles.titleText}>{Constant.Title}</Text>
-                                        <Image source={Icons.close} style={styles.cross} />
-                                    </View>
-
-                                </TouchableOpacity>
-                            </View>
-                            :
-                            null
-                        }
 
                         <TouchableOpacity style={styles.filterOpacity} onPress={() => setModal(true)}>
                             <Text style={styles.filterbuttonText}>{Constant.Filters}</Text>
@@ -316,16 +363,19 @@ const ContinueLearning = (props: ContinueProps) => {
                 </View>
             </View>
 
-            <FlatList
+            <View style={{ marginVertical: 8, flex: 1 }}>
 
-                data={filter ? finalFlatListData : Data}
-                extraData={Data}
-                showsVerticalScrollIndicator={false}
-                keyExtractor={(_, index) => index.toString()}
-                renderItem={({ item, index }) =>
-                    <RenderItems item={item} setData={setData} />
-                }
-            />
+                <FlatList
+
+                    data={Data}
+                    extraData={Data}
+                    showsVerticalScrollIndicator={false}
+                    keyExtractor={(_, index) => index.toString()}
+                    renderItem={({ item, index }) =>
+                        <RenderItems item={item} setData={setData} />
+                    }
+                />
+            </View>
         </View>
     )
 }

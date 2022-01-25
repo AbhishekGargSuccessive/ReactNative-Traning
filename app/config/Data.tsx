@@ -44,16 +44,12 @@ const DATA = [
                 id: "3",
                 title: "SubModule 3",
             },
-            {
-                id: "4",
-                title: "SubModule 4",
-            }
         ]
 
     },
     {
         id: "3",
-        image: Icons.nutrition,
+        image: Icons.food,
         title: "Nutririon is most powerful for health...",
         bookmark: true,
         submodule: [
@@ -79,7 +75,7 @@ const DATA = [
     {
         id: "4",
         image: Icons.nutrition,
-        title: "Food is mostly benefits for health...",
+        title: "Nutrition is mostly benefits for...",
         bookmark: false,
         submodule: [
             {
@@ -96,8 +92,42 @@ const DATA = [
     {
         id: "5",
         image: Icons.garlic,
-        title: "Garlic is best for immunity system...",
+        title: "The Garlic is best for immunity...",
+        bookmark: true,
+        submodule: [
+            {
+                id: "1",
+                title: "SubModule 1",
+            },
+            {
+                id: "2",
+                title: "SubModule 2",
+            }
+        ]
+
+    },
+    {
+        id: "6",
+        image: Icons.food,
+        title: "The dietry Food is best for immunity...",
         bookmark: false,
+        submodule: [
+            {
+                id: "1",
+                title: "SubModule 1",
+            },
+            {
+                id: "2",
+                title: "SubModule 2",
+            }
+        ]
+
+    },
+    {
+        id: "7",
+        image: Icons.nutrition,
+        title: "The Nutrition dietry is best for all...",
+        bookmark: true,
         submodule: [
             {
                 id: "1",
