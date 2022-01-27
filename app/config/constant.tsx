@@ -44,7 +44,7 @@ const Constant = {
     Continue: 'Continue',
     Back: 'Back',
 
-    //Continue Learnign
+    //Continue Learning
     Filters: 'Filters',
     Bookmarks: 'Bookmarks',
     Titles: 'Titles',

@@ -1,5 +1,8 @@
 import React from "react";
-import { ScrollView, View, Image, Text, ImageBackground, Alert, Modal, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
+import {
+    ScrollView, View, Image, Text, ImageBackground,
+    Modal, TouchableOpacity, TouchableWithoutFeedback
+} from "react-native";
 import ItemSeperatorMain from '../../components/ItemSeperator/ItemSeperator'
 import CommonTextInput from "../../components/TextInput/CommonTextInput";
 import { useOrientation } from '../../config/orientation'
@@ -10,7 +13,6 @@ import { Constant, Icons } from "../../config";
 
 interface Profileprops {
     navigation: any;
-
     image: string
     setimage: (value: string) => void
     launchLibrary: () => void
@@ -24,8 +26,6 @@ interface Profileprops {
     editPI: boolean
     setEditPI: (value: boolean) => void
 }
-
-
 
 const ProfileScreen = (props: Profileprops) => {
     const o = useOrientation()
@@ -63,7 +63,6 @@ const ProfileScreen = (props: Profileprops) => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-                    // Alert.alert("Modal has been closed.");
                     setModalVisible(!modalVisible);
                 }}
             >

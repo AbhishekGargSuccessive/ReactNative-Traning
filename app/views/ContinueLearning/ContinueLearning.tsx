@@ -35,17 +35,17 @@ const ContinueLearning = (props: ContinueProps) => {
 
     const [filterBookmark, setFilterBookmark] = useState(false)
     const [filtertitle, setFilterTitle] = useState(false)
-    const [firstfilterValue, setFirstfilterValue] = useState(-1)
-    const [secondfilterValue, setSecondfilterValue] = useState('')
+    const [firstfilter, setFirstfilter] = useState(-1)
+    const [secondfilter, setSecondfilter] = useState('')
 
     useEffect(() => {
         const output = []
 
-        if (firstfilterValue == -1 || secondfilterValue == "") {
+        if (firstfilter == -1 || secondfilter == "") {
             setData(DATA)
         }
 
-        if (firstfilterValue == 0 && secondfilterValue == '') {
+        if (firstfilter == 0 && secondfilter == '') {
             output.length = 0
             for (var i = 0; i < DATA.length; i++) {
                 if (DATA[i].bookmark)
@@ -54,7 +54,7 @@ const ContinueLearning = (props: ContinueProps) => {
             setData(output)
         }
 
-        if (firstfilterValue == 1 && secondfilterValue == '') {
+        if (firstfilter == 1 && secondfilter == '') {
             output.length = 0
             for (var i = 0; i < DATA.length; i++) {
                 if (!DATA[i].bookmark)
@@ -63,36 +63,36 @@ const ContinueLearning = (props: ContinueProps) => {
             setData(output)
         }
 
-        if (secondfilterValue != '') {
-            if (firstfilterValue == -1) {
+        if (secondfilter != '') {
+            if (firstfilter == -1) {
                 output.length = 0
                 for (var i = 0; i < DATA.length; i++) {
-                    if (DATA[i].title == secondfilterValue)
+                    if (DATA[i].title == secondfilter)
                         output.push(DATA[i])
                 }
                 setData(output)
             }
 
-            if (firstfilterValue == 0) {
+            if (firstfilter == 0) {
                 output.length = 0
                 for (var i = 0; i < DATA.length; i++) {
-                    if (DATA[i].bookmark && DATA[i].title == secondfilterValue)
+                    if (DATA[i].bookmark && DATA[i].title == secondfilter)
                         output.push(DATA[i])
                 }
                 setData(output)
             }
 
-            if (firstfilterValue == 1) {
+            if (firstfilter == 1) {
                 output.length = 0
                 for (var i = 0; i < DATA.length; i++) {
-                    if (!DATA[i].bookmark && DATA[i].title == secondfilterValue)
+                    if (!DATA[i].bookmark && DATA[i].title == secondfilter)
                         output.push(DATA[i])
                 }
                 setData(output)
             }
         }
 
-    }, [firstfilterValue, filterBookmark, secondfilterValue, filtertitle]);
+    }, [firstfilter, filterBookmark, secondfilter, filtertitle]);
 
     const titleData = () => {
 
@@ -144,7 +144,7 @@ const ContinueLearning = (props: ContinueProps) => {
                         <SelectDropdown
                             data={["Bookmarked", 'Not Bookmarked']}
                             buttonStyle={styles.dropdwonbutton}
-                            defaultButtonText={(firstfilterValue == -1) ? "Select an option." : (firstfilterValue == 0) ? 'Bookmarked' : 'Not Bookmarked'}
+                            defaultButtonText={(firstfilter == -1) ? "Select an option." : (firstfilter == 0) ? 'Bookmarked' : 'Not Bookmarked'}
                             buttonTextStyle={styles.marginRight}
                             renderDropdownIcon={(unSet) => {
                                 return (
@@ -158,7 +158,7 @@ const ContinueLearning = (props: ContinueProps) => {
                             }}
                             buttonTextAfterSelection={(selectedItem, index) => {
                                 setFilterBookmark(true)
-                                setFirstfilterValue(index)
+                                setFirstfilter(index)
                                 return selectedItem;
                             }}
                             rowTextForSelection={(item, index) => {
@@ -173,7 +173,7 @@ const ContinueLearning = (props: ContinueProps) => {
 
                         <SelectDropdown
                             data={titleData()}
-                            defaultButtonText={secondfilterValue}
+                            defaultButtonText={secondfilter}
                             buttonTextStyle={styles.marginRight}
                             buttonStyle={styles.dropdwonbutton}
                             dropdownStyle={{ height: 250 }}
@@ -191,7 +191,7 @@ const ContinueLearning = (props: ContinueProps) => {
                             }}
                             buttonTextAfterSelection={(selectedItem, index) => {
                                 setFilterTitle(true)
-                                setSecondfilterValue(selectedItem)
+                                setSecondfilter(selectedItem)
                                 return selectedItem;
                             }}
                             rowTextForSelection={(item, index) => {
@@ -320,11 +320,11 @@ const ContinueLearning = (props: ContinueProps) => {
 
                                         <View style={styles.bookmarktoggle}>
 
-                                            <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setFilterBookmark(false), setData(DATA), setFirstfilterValue(-1) }}>
+                                            <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setFilterBookmark(false), setData(DATA), setFirstfilter(-1) }}>
 
                                                 <View style={styles.logo}>
 
-                                                    <Text style={styles.bookmarkText}>{(firstfilterValue == 0) ? 'Bookmarked' : 'Not Bookmarked'}</Text>
+                                                    <Text style={styles.bookmarkText}>{(firstfilter == 0) ? 'Bookmarked' : 'Not Bookmarked'}</Text>
                                                     <Image source={Icons.close} style={styles.cross} />
 
                                                 </View>
@@ -342,7 +342,7 @@ const ContinueLearning = (props: ContinueProps) => {
 
                                         <View style={styles.filterView}>
 
-                                            <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setFilterTitle(false), setData(DATA), setSecondfilterValue('') }}>
+                                            <TouchableOpacity style={styles.bookmarkButton} onPress={() => { setFilterTitle(false), setData(DATA), setSecondfilter('') }}>
 
                                                 <View style={styles.logo}>
                                                     <Text style={styles.titleText}>{Constant.Title}</Text>
