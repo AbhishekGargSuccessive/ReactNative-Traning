@@ -11,6 +11,7 @@ interface OnboardingProps {
 }
 
 const OnboardingScreen = (props: OnboardingProps) => {
+    const { navigation } = props;
 
     return (
 
@@ -25,7 +26,10 @@ const OnboardingScreen = (props: OnboardingProps) => {
                 keyExtractor={(_, index) => index.toString()}
                 renderItem={({ item, index }) => <RenderItem data={item}
                     maxIndex={constants.onboarding_screens.length - 1}
-                    index={index} scrollTo={(item: number) => props.scrollTo(item)} />}
+                    scrollTo={(item: number) => props.scrollTo(item)}
+                    index={index}
+                    navigation={navigation}
+                />}
                 ref={props.flatRef}
 
             />

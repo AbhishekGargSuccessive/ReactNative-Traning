@@ -63,10 +63,10 @@ const styles = StyleSheet.create({
     nextButton: {
         backgroundColor: COLORS.primary,
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         paddingVertical: 10,
         paddingHorizontal: 60,
-        borderRadius: 10,
+        borderRadius: 12,
     },
     nextButtonText: {
         color: COLORS.white,

@@ -1,5 +1,7 @@
 import OnboardingModel from "./OnboardingModel";
+import SignInModel from "./SignInModel";
 
 export {
-    OnboardingModel,    
+    OnboardingModel,
+    SignInModel
 };

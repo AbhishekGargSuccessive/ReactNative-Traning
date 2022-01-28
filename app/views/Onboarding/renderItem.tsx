@@ -15,10 +15,11 @@ interface Render {
     maxIndex: number
     index: number
     scrollTo: (item: number) => void
+    navigation: any
 }
 
 const RenderItem = (props: Render) => {
-    const { data, index, maxIndex, scrollTo } = props;
+    const { data, index, maxIndex, scrollTo, navigation } = props;
 
     return (
         <View style={styles.renderContainer}>
@@ -47,16 +48,18 @@ const RenderItem = (props: Render) => {
                     <TouchableOpacity style={styles.nextButton} onPress={() => props.scrollTo(index + 1)}>
                         <Text style={styles.nextButtonText}>{constants.keywords.next}</Text>
                     </TouchableOpacity>
-                </View>}
+                </View>
+            }
 
             {index == maxIndex &&
                 <View style={styles.buttonContainer2}>
 
-                    <TouchableOpacity style={styles.nextButton}>
+                    <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('SignIn')}>
                         <Text style={styles.nextButtonText}>{constants.keywords.started}</Text>
                     </TouchableOpacity>
 
-                </View>}
+                </View>
+            }
 
         </View >
 
