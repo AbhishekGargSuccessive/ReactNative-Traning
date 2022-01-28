@@ -6,8 +6,6 @@ import TestModel from './app/viewModels/testModel';
 const App = () => {
   return (
     <MainStack />
-    // <ReduxApp />/
-    // <TestModel />
   )
 }
 export default App;

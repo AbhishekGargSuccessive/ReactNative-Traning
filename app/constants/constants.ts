@@ -34,7 +34,8 @@ const screens = {
 
 const keywords = {
     next: 'Next',
-    skip: 'Skip'
+    skip: 'Skip',
+    started: 'Let’s Get Started'
 }
 
 const bottom_tabs = [
