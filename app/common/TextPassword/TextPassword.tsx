@@ -4,7 +4,7 @@ import styles from './styles';
 
 const TextPasswords = (props: any) => {
     return (
-        <View style={styles.container}>
+        <View>
             <Text style={styles.PasswordText}>{props.name}</Text>
 
             <View style={styles.InputContainer}>

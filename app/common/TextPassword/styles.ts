@@ -2,13 +2,10 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../constants";
 
 const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 5
-    },
     PasswordText: {
         color: COLORS.gray,
         fontSize: 15,
-        paddingVertical: 12,
+        marginVertical: 5,
         fontFamily: 'Poppins-Regular'
     },
 
@@ -18,7 +15,7 @@ const styles = StyleSheet.create({
         paddingRight: 10
     },
     InputText: {
-        width: '95%',
+        // width: '95%',
         paddingHorizontal: 10,
         paddingVertical: 12,
         color: COLORS.black,

@@ -5,7 +5,7 @@ import styles from './styles';
 const TextInputs = (props: any) => {
     return (
         <View>
-            <View style={styles.container}>
+            <View>
                 <Text style={styles.emailText}>{props.name}</Text>
             </View>
 

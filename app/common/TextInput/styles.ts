@@ -2,9 +2,6 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../constants";
 
 const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 5,
-    },
     emailText: {
         color: COLORS.gray,
         fontSize: 15,
@@ -14,14 +11,14 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.lightGray1,
         borderRadius: 12,
         paddingRight: 10,
+        marginVertical: 5
     },
     InputText: {
-        width: '95%',
         paddingHorizontal: 10,
         paddingVertical: 12,
         color: COLORS.black,
         fontSize: 16,
-        fontFamily: 'Poppins-Regular'
+        fontFamily: 'Poppins-Regular',
     },
 })
 

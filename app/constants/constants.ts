@@ -44,7 +44,8 @@ const keywords = {
     Account: 'Don’t have an account?',
     SignUp: 'Sign Up',
     Getting_Started: 'Getting Started',
-    Continue: 'Create an account to continue!'
+    Continue: 'Create an account to continue!',
+    Already_Account: 'Already have an account?'
 }
 
 const bottom_tabs = [
