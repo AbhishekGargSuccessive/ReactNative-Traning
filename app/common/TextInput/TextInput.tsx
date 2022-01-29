@@ -13,7 +13,7 @@ const TextInputs = (props: any) => {
                 <TextInput
                     style={styles.InputText}
                     numberOfLines={1}
-                    keyboardType={props.type} >
+                    keyboardType={'email-address'} >
                 </TextInput>
 
             </View>

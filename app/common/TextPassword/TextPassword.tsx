@@ -12,6 +12,7 @@ const TextPasswords = (props: any) => {
                 <TextInput
                     style={styles.InputText}
                     numberOfLines={1}
+                    secureTextEntry
                 />
             </View>
         </View>

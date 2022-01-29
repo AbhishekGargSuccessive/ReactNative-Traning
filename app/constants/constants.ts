@@ -53,6 +53,9 @@ const keywords = {
     Continue: 'Continue',
     By_Signing_up: 'By signing up, you agree to our.',
     Term: 'Terms and Conditions',
+    Password_Recovery: 'Password Recovery',
+    Please: 'Please enter your email address to recover your password',
+    Send_Email: 'Send Email'
 }
 
 const bottom_tabs = [
