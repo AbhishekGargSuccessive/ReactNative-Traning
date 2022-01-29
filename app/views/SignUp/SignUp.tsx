@@ -15,7 +15,7 @@ const SignUpScreen = (props: SignUp) => {
         <View style={styles.container}>
             <HeaderLogo />
             <Text style={styles.startedText}>{constants.keywords.Getting_Started}</Text>
-            <Text style={styles.createText}>{constants.keywords.Continue}</Text>
+            <Text style={styles.createText}>{constants.keywords.Create}</Text>
 
             <View style={styles.ScrollContainer}>
 

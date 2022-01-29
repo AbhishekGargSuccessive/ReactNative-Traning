@@ -44,8 +44,15 @@ const keywords = {
     Account: 'Don’t have an account?',
     SignUp: 'Sign Up',
     Getting_Started: 'Getting Started',
-    Continue: 'Create an account to continue!',
-    Already_Account: 'Already have an account?'
+    Create: 'Create an account to continue!',
+    Already_Account: 'Already have an account?',
+    OTP: 'OTP Authentication',
+    Authentication: 'An authentication code has been sent to abhishek.garg@successive.tech',
+    Code: 'Didn’t receive code?',
+    Resend: 'Resend (59s)',
+    Continue: 'Continue',
+    By_Signing_up: 'By signing up, you agree to our.',
+    Term: 'Terms and Conditions',
 }
 
 const bottom_tabs = [

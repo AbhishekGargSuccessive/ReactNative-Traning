@@ -40,7 +40,7 @@ const SignIn = (props: SignIn) => {
                         </View>
 
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('OTP')}>
                             <Text style={styles.ForgotText}>{constants.keywords.Password}</Text>
                         </TouchableOpacity>
 
