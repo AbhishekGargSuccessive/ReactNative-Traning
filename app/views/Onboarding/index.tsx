@@ -19,6 +19,7 @@ const OnboardingScreen = (props: OnboardingProps) => {
 
             <FlatList
                 horizontal
+                pagingEnabled
                 decelerationRate={0}
                 showsHorizontalScrollIndicator={false}
                 data={constants.onboarding_screens}

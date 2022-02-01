@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     bannerImage: {
         resizeMode: 'contain',
         alignSelf: 'center',
-        width: "65%",
-        height: "86%",
+        width: "68%",
+        height: "92%",
     },
     renderfooterContainer: {
         flex: 0.3,
@@ -63,9 +63,15 @@ const styles = StyleSheet.create({
     nextButton: {
         backgroundColor: COLORS.primary,
         alignItems: 'center',
-        // justifyContent: 'center',
         paddingVertical: 10,
         paddingHorizontal: 60,
+        borderRadius: 12,
+    },
+    startedButton: {
+        backgroundColor: COLORS.primary,
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: '26%',
         borderRadius: 12,
     },
     nextButtonText: {

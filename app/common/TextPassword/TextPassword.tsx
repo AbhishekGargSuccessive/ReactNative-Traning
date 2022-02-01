@@ -13,15 +13,20 @@ interface PasswordProps {
 const TextPasswords = (props: PasswordProps) => {
     const [eye, seteye] = useState(true)
     return (
-        <View>
-            <Text style={styles.PasswordText}>{props.name}</Text>
-
+        <View style={styles.container}>
+            <View style={styles.textcontainer}>
+                <Text style={styles.PasswordText}>{props.name}</Text>
+                {
+                    props.Switch && <Text style={styles.invalidText}>{props.name} {constants.keywords.error_msg}</Text>
+                }
+            </View>
             <View style={styles.InputContainer}>
 
                 <TextInput
                     style={styles.InputText}
                     numberOfLines={1}
-                    secureTextEntry
+                    secureTextEntry={eye}
+                    onChangeText={(text) => { props.onchangeText(text), props.setSwitch(false) }}
                 />
                 {eye ?
                     <TouchableOpacity onPress={() => seteye(!eye)}>

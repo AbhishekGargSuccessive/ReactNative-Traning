@@ -54,7 +54,7 @@ const RenderItem = (props: Render) => {
             {index == maxIndex &&
                 <View style={styles.buttonContainer2}>
 
-                    <TouchableOpacity style={styles.nextButton} onPress={() => navigation.navigate('SignIn')}>
+                    <TouchableOpacity style={styles.startedButton} onPress={() => navigation.navigate('SignIn')}>
                         <Text style={styles.nextButtonText}>{constants.keywords.started}</Text>
                     </TouchableOpacity>
 

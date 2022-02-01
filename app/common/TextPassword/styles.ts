@@ -2,10 +2,23 @@ import { StyleSheet } from "react-native";
 import { COLORS, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
+    container: {
+        marginVertical: 14
+    },
+    textcontainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
     PasswordText: {
         color: COLORS.gray,
-        fontSize: 15,
-        marginVertical: 5,
+        fontSize: SIZES.body4,
+        paddingVertical: 6,
+        fontFamily: 'Poppins-Regular'
+    },
+    invalidText: {
+        color: 'red',
+        fontSize: SIZES.body4,
         fontFamily: 'Poppins-Regular'
     },
     InputContainer: {
@@ -17,7 +30,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     InputText: {
-        // width: '95%',
+        width: '92%',
         paddingHorizontal: 10,
         paddingVertical: 12,
         color: COLORS.black,

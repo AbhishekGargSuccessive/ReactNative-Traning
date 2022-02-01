@@ -14,16 +14,23 @@ const TextInputs = (props: TextProps) => {
     const { name, Switch, onchangeText, setSwitch, } = props;
     return (
         <View>
-            <View>
+            <View style={styles.container}>
                 <Text style={styles.emailText}>{props.name}</Text>
+                {
+                    Switch && <Text style={styles.invalidText}>{constants.keywords.invalid} {name}</Text>
+                }
             </View>
 
             <View style={styles.InputContainer}>
                 <TextInput
                     style={styles.InputText}
                     numberOfLines={1}
-                    keyboardType={'email-address'} >
-                </TextInput>
+                    keyboardType={'email-address'}
+                    onChangeText={(text) => { onchangeText(text), setSwitch(false) }}
+                />
+                {
+                    Switch && <Image source={!Switch ? icons.check_circle : icons.cancel} style={styles.icon} />
+                }
 
             </View>
 
