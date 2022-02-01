@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { constants, icons } from "../../constants";
 import styles from './styles';
 
-const TextPasswords = (props: any) => {
+interface PasswordProps {
+    onchangeText: (t: string) => void
+    name: string
+    setSwitch: (t: boolean) => void
+    Switch: boolean
+}
+
+const TextPasswords = (props: PasswordProps) => {
+    const [eye, seteye] = useState(true)
     return (
         <View>
             <Text style={styles.PasswordText}>{props.name}</Text>
@@ -14,6 +23,15 @@ const TextPasswords = (props: any) => {
                     numberOfLines={1}
                     secureTextEntry
                 />
+                {eye ?
+                    <TouchableOpacity onPress={() => seteye(!eye)}>
+                        <Image source={icons.eye_close} style={styles.icon} />
+                    </TouchableOpacity>
+                    :
+                    <TouchableOpacity onPress={() => seteye(!eye)}>
+                        <Image source={icons.eye} style={styles.icon} />
+                    </TouchableOpacity>
+                }
             </View>
         </View>
     );

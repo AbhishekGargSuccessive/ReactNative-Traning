@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import { constants, icons } from "../../constants";
 import styles from './styles';
 
-const TextInputs = (props: any) => {
+interface TextProps {
+    name: string
+    Switch: boolean
+    onchangeText: (t: string) => void
+    setSwitch: (t: boolean) => void
+}
+
+const TextInputs = (props: TextProps) => {
+    const { name, Switch, onchangeText, setSwitch, } = props;
     return (
         <View>
             <View>
@@ -17,6 +26,7 @@ const TextInputs = (props: any) => {
                 </TextInput>
 
             </View>
+
         </View>
     );
 

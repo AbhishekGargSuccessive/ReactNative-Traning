@@ -1,11 +1,23 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../constants";
+import { COLORS, SIZES } from "../../constants";
 
 const styles = StyleSheet.create({
     emailText: {
         color: COLORS.gray,
-        fontSize: 15,
-        fontFamily: 'Poppins-Regular'
+        fontSize: SIZES.body4,
+        fontFamily: 'Poppins-Regular',
+    },
+    invalidText: {
+        color: 'red',
+        fontSize: SIZES.body4,
+        fontFamily: 'Poppins-Regular',
+    },
+    icon: {
+        resizeMode: 'contain',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        height: 20,
+        width: 20
     },
     InputContainer: {
         backgroundColor: COLORS.lightGray1,
