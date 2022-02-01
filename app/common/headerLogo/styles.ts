@@ -7,10 +7,8 @@ const styles = StyleSheet.create({
     },
     logo: {
         resizeMode: 'contain',
-        height: 150,
+        height: 120,
         width: "55%",
-        // justifyContent: 'center',
-        // alignSelf: 'center',
     }
 })
 
