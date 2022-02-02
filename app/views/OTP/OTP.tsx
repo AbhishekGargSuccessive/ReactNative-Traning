@@ -36,7 +36,7 @@ const OTPScreen = (props: OTPScreen) => {
 
                 <View style={styles.ButtonContainer}>
 
-                    <TouchableOpacity style={styles.ContinueButton}>
+                    <TouchableOpacity style={styles.ContinueButton} onPress={() => navigation.navigate('Home')}>
                         <Text style={styles.ContinueButtonText}>{constants.keywords.Continue}</Text>
                     </TouchableOpacity>
 
