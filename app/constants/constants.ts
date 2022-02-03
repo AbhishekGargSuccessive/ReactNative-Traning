@@ -77,7 +77,16 @@ const keywords = {
   Pricing_Range: 'Pricing Range',
   Ratings: 'Ratings',
   Tags: 'Tags',
-  Apply_Filters:'Apply Filters'
+  Apply_Filters: 'Apply Filters',
+  Details: 'DETAILS',
+  Hamburger: 'Hamburger',
+  rating: '4.5',
+  min: '30 Mins',
+  Free_Shipping: 'Free shipping',
+  Sizes: 'Sizes:',
+  name: 'ByProgrammers',
+  KM: '1.2 KM away from you',
+  Buy_Now: 'Buy Now',
 };
 
 const bottom_tabs = [

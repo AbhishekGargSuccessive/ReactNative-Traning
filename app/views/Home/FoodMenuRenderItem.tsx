@@ -14,13 +14,16 @@ interface FoodMenu {
     isFavourite: boolean;
     image: any;
   };
+  navigation: any;
 }
 
 const FoodMennuRenderItem = (props: FoodMenu) => {
-  const {item} = props;
+  const {item, navigation} = props;
   return (
     <View>
-      <TouchableOpacity style={styles.FoodContainer}>
+      <TouchableOpacity
+        style={styles.FoodContainer}
+        onPress={() => navigation.navigate('Detail')}>
         <View style={styles.LoveContainer}>
           <View style={styles.caloriesContainer}>
             <Image source={icons.calories} style={styles.caloriesIcon} />

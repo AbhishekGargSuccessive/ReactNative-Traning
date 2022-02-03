@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   homeText: {
     fontFamily: 'Poppins-SemiBold',
-    fontSize: 22,
+    fontSize: 20,
     color: COLORS.black,
   },
   profileIconRadius: {

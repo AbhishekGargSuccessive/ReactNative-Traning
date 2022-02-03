@@ -228,7 +228,7 @@ const HomeScreen = (props: HomeScreen) => {
               extraData={dummyData.menu}
               keyExtractor={(_, index) => index.toString()}
               renderItem={({item, index}) => (
-                <FoodMennuRenderItem item={item} />
+                <FoodMennuRenderItem item={item} navigation={navigation} />
               )}
             />
 
