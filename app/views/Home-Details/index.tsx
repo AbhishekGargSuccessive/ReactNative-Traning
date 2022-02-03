@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {constants, dummyData, icons, images} from '../../constants';
+import {BackHeader, HeaderComponents} from '../../common';
+import {COLORS, constants, dummyData, icons, images} from '../../constants';
 import SizeRenderItem from './SizesRenderItem';
 import styles from './styles';
 
@@ -21,17 +22,11 @@ const DetailScreen = (props: DetailProps) => {
   const {navigation, counter, setCounter} = props;
   return (
     <View style={styles.backcontainer}>
-      <View style={styles.Container}>
-        <TouchableOpacity
-          style={styles.backButtonContainer}
-          onPress={() => navigation.goBack()}>
-          <Image source={icons.back} style={styles.backIcon} />
-        </TouchableOpacity>
-        <Text style={styles.detailText}>{constants.keywords.Details}</Text>
-        <TouchableOpacity style={styles.cartButtonContainer}>
-          <Image source={icons.cart} style={styles.cartIcon} />
-        </TouchableOpacity>
-      </View>
+      <BackHeader
+        navigation={navigation}
+        HeaderText={constants.keywords.Details}
+        SecondImage={icons.cart}
+      />
       <ScrollView
         style={{marginHorizontal: 20}}
         showsVerticalScrollIndicator={false}>
@@ -94,7 +89,10 @@ const DetailScreen = (props: DetailProps) => {
       <View style={styles.buynowContainer}>
         <View style={styles.counterContainer}>
           <TouchableOpacity onPress={() => setCounter(counter - 1)}>
-            <Image source={icons.minus} style={styles.CounterIcons} />
+            <Image
+              source={icons.minus}
+              style={[styles.CounterIcons, {tintColor: COLORS.gray}]}
+            />
           </TouchableOpacity>
           <Text style={styles.counterText}>{counter}</Text>
           <TouchableOpacity onPress={() => setCounter(counter + 1)}>

@@ -6,54 +6,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.white,
   },
-  Container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginVertical: 10,
-    paddingHorizontal: 20,
-  },
-  backButtonContainer: {
-    borderRadius: SIZES.radius,
-    borderWidth: 1,
-    height: 40,
-    width: 40,
-    borderColor: COLORS.gray2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  backIcon: {
-    tintColor: COLORS.gray2,
-    width: 25,
-    height: 25,
-  },
-  detailText: {
-    fontSize: 20,
-    color: COLORS.black,
-    fontFamily: 'Poppins-SemiBold',
-  },
-  cartButtonContainer: {
-    backgroundColor: COLORS.pink,
-    borderRadius: SIZES.radius,
-    padding: 8,
-  },
-  cartIcon: {
-    resizeMode: 'contain',
-    height: 25,
-    width: 25,
-    tintColor: COLORS.black,
-  },
   FoodContainer: {
     borderRadius: SIZES.radius,
     backgroundColor: COLORS.lightGray2,
     paddingHorizontal: 10,
     marginVertical: 20,
-    height: '36%',
+    height: '32%',
   },
   iconContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 8,
   },
   caloriesContainer: {
     flexDirection: 'row',
@@ -74,7 +36,7 @@ const styles = StyleSheet.create({
     height: 22,
     alignSelf: 'center',
     tintColor: COLORS.red,
-    // marginRight:5
+    marginRight: 8,
   },
   burgerIcon: {
     width: 180,
@@ -155,8 +117,8 @@ const styles = StyleSheet.create({
     ...FONTS.body2,
   },
   profileContainer: {
-    borderTopWidth: 0.7,
-    borderBottomWidth: 2,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
     borderColor: COLORS.lightGray1,
     flexDirection: 'row',
     alignItems: 'center',

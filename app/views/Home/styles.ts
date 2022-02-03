@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
     height: 25,
     width: 25,
     tintColor: COLORS.red2,
+    marginRight: 5,
   },
   foodImageContainer: {
     height: 150,
@@ -294,7 +295,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     borderRadius: SIZES.radius,
-    marginTop:10
+    marginTop: 10,
     // marginHorizontal: 10,
     // flex: 1,
   },
