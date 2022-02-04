@@ -87,6 +87,11 @@ const keywords = {
   name: 'ByProgrammers',
   KM: '1.2 KM away from you',
   Buy_Now: 'Buy Now',
+  My_Cart: 'MY CART',
+  Place: 'Place your Order',
+  SubTotal: 'Subotal',
+  Shipping_fee: 'Shipping fee',
+  total: 'Total',
 };
 
 const bottom_tabs = [

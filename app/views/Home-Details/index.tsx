@@ -99,7 +99,9 @@ const DetailScreen = (props: DetailProps) => {
             <Image source={icons.plus} style={styles.CounterIcons} />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.buyButton}>
+        <TouchableOpacity
+          style={styles.buyButton}
+          onPress={() => navigation.navigate('MyCart')}>
           <Text style={styles.buyNowText}>{constants.keywords.Buy_Now}</Text>
           <Text style={styles.buyNowText}>{dummyData.hamburger.price}</Text>
         </TouchableOpacity>

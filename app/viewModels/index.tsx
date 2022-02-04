@@ -5,6 +5,7 @@ import OTPModel from './OTPModel';
 import PasswordModel from './PasswordModel';
 import HomeModel from './HomeModel';
 import DetailModel from './Home-DetailModel';
+import MyCartModel from './MyCartModel';
 
 export {
   OnboardingModel,
@@ -14,4 +15,5 @@ export {
   PasswordModel,
   HomeModel,
   DetailModel,
+  MyCartModel,
 };
