@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   Container: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     marginVertical: 10,
     paddingHorizontal: 20,
   },
@@ -27,17 +26,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: COLORS.black,
     fontFamily: 'Poppins-SemiBold',
-  },
-  cartButtonContainer: {
-    backgroundColor: COLORS.pink,
-    borderRadius: SIZES.radius,
-    padding: 8,
-  },
-  cartIcon: {
-    resizeMode: 'contain',
-    height: 25,
-    width: 25,
-    tintColor: COLORS.black,
+    alignItems: 'center',
+    marginLeft: '25%',
   },
 });
 export default styles;

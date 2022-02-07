@@ -6,6 +6,7 @@ import PasswordModel from './PasswordModel';
 import HomeModel from './HomeModel';
 import DetailModel from './Home-DetailModel';
 import MyCartModel from './MyCartModel';
+import MyCardsModel from './MyCardsModel';
 
 export {
   OnboardingModel,
@@ -16,4 +17,5 @@ export {
   HomeModel,
   DetailModel,
   MyCartModel,
+  MyCardsModel,
 };

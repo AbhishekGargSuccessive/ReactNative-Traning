@@ -92,6 +92,9 @@ const keywords = {
   SubTotal: 'Subotal',
   Shipping_fee: 'Shipping fee',
   total: 'Total',
+  My_Cards: 'MY CARDS',
+  Add_new_card: 'Add new card',
+  Add: 'Add',
 };
 
 const bottom_tabs = [
