@@ -107,6 +107,9 @@ const keywords = {
   Checkout: 'CHECKOUT',
   Delivery_Address: 'Delivery Address',
   Add_Coupon: 'Add Coupon',
+  Congratulations: 'Congratulations!',
+  Payment_was: 'Payment was successfully made!',
+  Done: 'Done',
 };
 
 const bottom_tabs = [

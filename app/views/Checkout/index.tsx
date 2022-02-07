@@ -72,7 +72,9 @@ const CheckoutScreen = (props: CheckoutProps) => {
             <Text style={styles.totalValueText}>$37.97</Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.OrderButton}>
+        <TouchableOpacity
+          style={styles.OrderButton}
+          onPress={() => navigation.navigate('Success')}>
           <Text style={styles.OrderButtonText}>{constants.keywords.Place}</Text>
         </TouchableOpacity>
       </View>
