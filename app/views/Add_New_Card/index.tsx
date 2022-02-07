@@ -90,7 +90,9 @@ const AddNewCardScreen = (props: NewCardProps) => {
               {constants.keywords.Remember}
             </Text>
           </View>
-          <TouchableOpacity style={styles.AddButton}>
+          <TouchableOpacity
+            style={styles.AddButton}
+            onPress={() => navigation.navigate('Checkout')}>
             <Text style={styles.AddButtonText}>
               {constants.keywords.Add_Card}
             </Text>

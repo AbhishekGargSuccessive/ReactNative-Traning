@@ -104,6 +104,9 @@ const keywords = {
   CVV: 'CVV',
   Remember: 'Remember this card details',
   Add_Card: 'Add Card',
+  Checkout: 'CHECKOUT',
+  Delivery_Address: 'Delivery Address',
+  Add_Coupon: 'Add Coupon',
 };
 
 const bottom_tabs = [

@@ -35,34 +35,31 @@ const MyCartScreen = (props: CartProps) => {
           leftOpenValue={0}
           rightOpenValue={-70}
         />
-
-        <View style={styles.modalContainer}>
-          <View style={styles.modalInnerContainer}>
-            <Text style={styles.totalpriceText}>
-              {constants.keywords.SubTotal}
-            </Text>
-            <Text style={styles.priceValueText}>$37.97</Text>
-          </View>
-          <View style={styles.modalInnerContainer}>
-            <Text style={styles.totalpriceText}>
-              {constants.keywords.Shipping_fee}
-            </Text>
-            <Text style={styles.priceValueText}>$0.00</Text>
-          </View>
-          <View style={styles.lineView}>
-            <View style={styles.modalSecondInnerContainer}>
-              <Text style={styles.totalText}>{constants.keywords.total}</Text>
-              <Text style={styles.totalValueText}>$37.97</Text>
-            </View>
-          </View>
-          <TouchableOpacity
-            style={styles.OrderButton}
-            onPress={() => navigation.navigate('MyCards')}>
-            <Text style={styles.OrderButtonText}>
-              {constants.keywords.Place}
-            </Text>
-          </TouchableOpacity>
+      </View>
+      <View style={styles.modalContainer}>
+        <View style={styles.modalInnerContainer}>
+          <Text style={styles.totalpriceText}>
+            {constants.keywords.SubTotal}
+          </Text>
+          <Text style={styles.priceValueText}>$37.97</Text>
         </View>
+        <View style={styles.modalInnerContainer}>
+          <Text style={styles.totalpriceText}>
+            {constants.keywords.Shipping_fee}
+          </Text>
+          <Text style={styles.priceValueText}>$0.00</Text>
+        </View>
+        <View style={styles.lineView}>
+          <View style={styles.modalSecondInnerContainer}>
+            <Text style={styles.totalText}>{constants.keywords.total}</Text>
+            <Text style={styles.totalValueText}>$37.97</Text>
+          </View>
+        </View>
+        <TouchableOpacity
+          style={styles.OrderButton}
+          onPress={() => navigation.navigate('MyCards')}>
+          <Text style={styles.OrderButtonText}>{constants.keywords.Place}</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
