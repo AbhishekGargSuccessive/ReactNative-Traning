@@ -95,6 +95,15 @@ const keywords = {
   My_Cards: 'MY CARDS',
   Add_new_card: 'Add new card',
   Add: 'Add',
+  Add_New_Card: 'ADD NEW CARD',
+  card_No: '1234123412341234',
+  Date: '10/25',
+  Card_Number: 'Card Number',
+  CardHolder_Name: 'CardHolder Name',
+  Expiry_Date: 'Expiry Date',
+  CVV: 'CVV',
+  Remember: 'Remember this card details',
+  Add_Card: 'Add Card',
 };
 
 const bottom_tabs = [

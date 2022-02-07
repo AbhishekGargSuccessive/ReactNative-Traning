@@ -7,6 +7,7 @@ import HomeModel from './HomeModel';
 import DetailModel from './Home-DetailModel';
 import MyCartModel from './MyCartModel';
 import MyCardsModel from './MyCardsModel';
+import AddNewCardModel from './AddNewCardModel';
 
 export {
   OnboardingModel,
@@ -18,4 +19,5 @@ export {
   DetailModel,
   MyCartModel,
   MyCardsModel,
+  AddNewCardModel,
 };

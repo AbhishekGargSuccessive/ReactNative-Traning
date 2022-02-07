@@ -11,6 +11,7 @@ import {
   DetailModel,
   MyCartModel,
   MyCardsModel,
+  AddNewCardModel,
 } from '../viewModels';
 
 type Abc = {
@@ -23,6 +24,7 @@ type Abc = {
   Detail: Function;
   MyCart: Function;
   MyCards: Function;
+  AddNewCard: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -40,6 +42,7 @@ const MainStack = () => {
         <Stack.Screen name="Detail" component={DetailModel} />
         <Stack.Screen name="MyCart" component={MyCartModel} />
         <Stack.Screen name="MyCards" component={MyCardsModel} />
+        <Stack.Screen name="AddNewCard" component={AddNewCardModel} />
       </Stack.Navigator>
     </NavigationContainer>
   );

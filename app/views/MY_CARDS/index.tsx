@@ -35,7 +35,9 @@ const MyCardScreen = (props: CardProps) => {
           renderItem={({item, index}) => <AllCardRenderItems item={item} />}
         />
 
-        <TouchableOpacity style={styles.AddButton}>
+        <TouchableOpacity
+          style={styles.AddButton}
+          onPress={() => navigation.navigate('AddNewCard')}>
           <Text style={styles.AddButtonText}>{constants.keywords.Add}</Text>
         </TouchableOpacity>
       </View>
