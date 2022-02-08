@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import MainTab from './Tab_Navigator/TabNavigator';
 import {
   OnboardingModel,
   SignInModel,
@@ -29,6 +30,7 @@ type Abc = {
   AddNewCard: Function;
   Checkout: Function;
   Success: Function;
+  MainTab: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -49,6 +51,7 @@ const MainStack = () => {
         <Stack.Screen name="AddNewCard" component={AddNewCardModel} />
         <Stack.Screen name="Checkout" component={CheckoutModel} />
         <Stack.Screen name="Success" component={SuccessModel} />
+        <Stack.Screen name="MainTab" component={MainTab} />
       </Stack.Navigator>
     </NavigationContainer>
   );

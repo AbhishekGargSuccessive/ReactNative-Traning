@@ -25,16 +25,6 @@ const onboarding_screens = [
   },
 ];
 
-const screens = {
-  main_layout: 'MainLayout',
-  home: 'Home',
-  search: 'Search',
-  cart: 'Cart',
-  favourite: 'Favourite',
-  notification: 'Notification',
-  my_wallet: 'My Wallet',
-};
-
 const keywords = {
   next: 'Next',
   skip: 'Skip',
@@ -110,6 +100,16 @@ const keywords = {
   Congratulations: 'Congratulations!',
   Payment_was: 'Payment was successfully made!',
   Done: 'Done',
+};
+
+const screens = {
+  main_layout: 'MainLayout',
+  home: 'Home',
+  search: 'Search',
+  cart: 'Cart',
+  favourite: 'Favourite',
+  notification: 'Notification',
+  my_wallet: 'My Wallet',
 };
 
 const bottom_tabs = [
