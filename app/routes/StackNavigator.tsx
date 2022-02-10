@@ -9,10 +9,12 @@ import {
   OTPModel,
   PasswordModel,
   DetailModel,
+  MyCartModel,
   MyCardsModel,
   AddNewCardModel,
   CheckoutModel,
   SuccessModel,
+  DeliveryStatusModel,
 } from '../viewModels';
 
 type Abc = {
@@ -29,7 +31,7 @@ type Abc = {
   Checkout: Function;
   Success: Function;
   Drawer: Function;
-  Tab: Function;
+  Delivery: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -44,11 +46,13 @@ const MainStack = () => {
         <Stack.Screen name="OTP" component={OTPModel} />
         <Stack.Screen name="Password" component={PasswordModel} />
         <Stack.Screen name="Detail" component={DetailModel} />
+        <Stack.Screen name="MyCart" component={MyCartModel} />
         <Stack.Screen name="MyCards" component={MyCardsModel} />
         <Stack.Screen name="AddNewCard" component={AddNewCardModel} />
         <Stack.Screen name="Checkout" component={CheckoutModel} />
         <Stack.Screen name="Success" component={SuccessModel} />
         <Stack.Screen name="Drawer" component={MainDrawer} />
+        <Stack.Screen name="Delivery" component={DeliveryStatusModel} />
       </Stack.Navigator>
     </NavigationContainer>
   );

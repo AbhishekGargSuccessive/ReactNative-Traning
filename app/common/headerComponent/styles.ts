@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  backIcon: {
+    tintColor: COLORS.gray2,
+    width: 25,
+    height: 25,
+  },
   homeText: {
     fontFamily: 'Poppins-SemiBold',
     fontSize: 20,

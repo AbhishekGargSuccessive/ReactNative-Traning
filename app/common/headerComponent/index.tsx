@@ -27,7 +27,7 @@ const HeaderComponents = (props: HeaderProps) => {
         style={[styles.menuIcon, {borderWidth: LeftImage != '' ? 1 : 0}]}
         disabled={LeftImageNavigate != '' ? false : true}
         onPress={() => LeftImageNavigate()}>
-        <Image source={LeftImage} />
+        <Image source={LeftImage} style={styles.backIcon} />
       </TouchableOpacity>
       <Text style={styles.homeText}>{HeadingText}</Text>
       <TouchableOpacity

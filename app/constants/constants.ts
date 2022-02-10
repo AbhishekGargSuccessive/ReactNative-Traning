@@ -101,6 +101,11 @@ const keywords = {
   Payment_was: 'Payment was successfully made!',
   Done: 'Done',
   View_your_profile: 'View your profile',
+  Delivery_Status: 'DELIVERY STATUS',
+  Estimated: 'Estimated Delivery',
+  Delivery_Date: '12 Sept 2020 / 12:30PM',
+  Track_Order: 'Track Order',
+  ID: 'NY021SNI',
 };
 
 const screens = {
@@ -214,26 +219,31 @@ const track_order_status = [
     id: 1,
     title: 'Order Confirmed',
     sub_title: 'Your order has been received',
+    tick: true,
   },
   {
     id: 2,
     title: 'Order Prepared',
     sub_title: 'Your order has been prepared',
+    tick: false,
   },
   {
     id: 3,
     title: 'Delivery in Progress',
     sub_title: 'Hang on! Your food is on the way',
+    tick: false,
   },
   {
     id: 4,
     title: 'Delivered',
     sub_title: 'Enjoy your meal!',
+    tick: false,
   },
   {
     id: 5,
     title: 'Rate Us',
     sub_title: 'Help us improve our service',
+    tick: false,
   },
 ];
 

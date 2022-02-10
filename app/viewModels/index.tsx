@@ -10,6 +10,7 @@ import MyCardsModel from './MyCardsModel';
 import AddNewCardModel from './AddNewCardModel';
 import CheckoutModel from './CheckoutModel';
 import SuccessModel from './SuccessModel';
+import DeliveryStatusModel from './DeliveryStatusModel';
 
 export {
   OnboardingModel,
@@ -24,4 +25,5 @@ export {
   AddNewCardModel,
   CheckoutModel,
   SuccessModel,
+  DeliveryStatusModel,
 };

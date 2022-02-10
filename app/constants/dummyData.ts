@@ -215,7 +215,7 @@ const drawer = [
   },
   {
     name: 'Track Your Order',
-    navigation: '',
+    navigation: 'Delivery',
     icon: icons.location,
   },
   {
