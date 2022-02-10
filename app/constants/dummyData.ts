@@ -1,3 +1,5 @@
+import icons from './icons';
+
 const myProfile = {
   name: 'ByProgrammers',
   profile_image: require('../assets/images/profile.png'),
@@ -113,52 +115,6 @@ const wrapSandwich = {
   image: require('../assets/images/wrap_sandwich.png'),
 };
 
-// const menu = [
-//     {
-//         id: 1,
-//         name: "Featured",
-//         list: [
-//             hamburger, hotTacos, vegBiryani,
-//         ]
-//     },
-//     {
-//         id: 2,
-//         name: "Nearby you",
-//         list: [
-//             hamburger, vegBiryani, wrapSandwich,
-//         ]
-//     },
-//     {
-//         id: 3,
-//         name: "Popular",
-//         list: [
-//             hamburger, hotTacos, wrapSandwich,
-//         ]
-//     },
-//     {
-//         id: 4,
-//         name: "Newest",
-//         list: [
-//             hamburger, hotTacos, vegBiryani,
-//         ]
-//     },
-//     {
-//         id: 5,
-//         name: "Trending",
-//         list: [
-//             hamburger, vegBiryani, wrapSandwich,
-//         ]
-//     },
-//     {
-//         id: 6,
-//         name: "Recommended",
-//         list: [
-//             hamburger, hotTacos, wrapSandwich,
-//         ]
-//     },
-
-// ]
-
 const sizes = [
   {
     id: 1,
@@ -236,6 +192,59 @@ const allCards = [
   },
 ];
 
+const drawer = [
+  {
+    name: 'Home',
+    navigation: 'Home',
+    icon: icons.home,
+  },
+  {
+    name: 'My Wallet',
+    navigation: '',
+    icon: icons.wallet,
+  },
+  {
+    name: 'Notification',
+    navigation: '',
+    icon: icons.notification,
+  },
+  {
+    name: 'Favourite',
+    navigation: '',
+    icon: icons.favourite,
+  },
+  {
+    name: 'Track Your Order',
+    navigation: '',
+    icon: icons.location,
+  },
+  {
+    name: 'Coupons',
+    navigation: '',
+    icon: icons.coupon,
+  },
+  {
+    name: 'Settings',
+    navigation: '',
+    icon: icons.setting,
+  },
+  {
+    name: 'Invite a Friend',
+    navigation: '',
+    icon: icons.profile,
+  },
+  {
+    name: 'Help Center',
+    navigation: '',
+    icon: icons.help,
+  },
+  {
+    name: 'Logout',
+    navigation: '',
+    icon: icons.logout,
+  },
+];
+
 const fromLocs = [
   {
     latitude: 1.5347282806345879,
@@ -273,5 +282,6 @@ export default {
   myCart,
   myCards,
   allCards,
+  drawer,
   fromLocs,
 };

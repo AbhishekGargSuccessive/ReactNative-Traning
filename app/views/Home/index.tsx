@@ -174,7 +174,14 @@ const HomeScreen = (props: HomeScreen) => {
         </View>
       </Modal>
       <View style={styles.colorcontainer}>
-        <HeaderComponents />
+        <HeaderComponents
+          LeftImage={icons.menu}
+          LeftImageNavigate={navigation.openDrawer}
+          HeadingText={constants.keywords.Home}
+          RightImage={images.profile}
+          RightImageNavigate={false}
+          navigation={navigation}
+        />
         <View style={styles.Container}>
           <View style={styles.searchContainer}>
             <Image source={icons.search} style={styles.searchIcons} />

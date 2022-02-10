@@ -100,6 +100,7 @@ const keywords = {
   Congratulations: 'Congratulations!',
   Payment_was: 'Payment was successfully made!',
   Done: 'Done',
+  View_your_profile: 'View your profile',
 };
 
 const screens = {

@@ -1,16 +1,14 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import MainTab from './Tab_Navigator/TabNavigator';
+import MainDrawer from './DrawerNavigator';
 import {
   OnboardingModel,
   SignInModel,
   SignUpModel,
   OTPModel,
   PasswordModel,
-  HomeModel,
   DetailModel,
-  MyCartModel,
   MyCardsModel,
   AddNewCardModel,
   CheckoutModel,
@@ -30,7 +28,8 @@ type Abc = {
   AddNewCard: Function;
   Checkout: Function;
   Success: Function;
-  MainTab: Function;
+  Drawer: Function;
+  Tab: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -44,14 +43,12 @@ const MainStack = () => {
         <Stack.Screen name="SignUp" component={SignUpModel} />
         <Stack.Screen name="OTP" component={OTPModel} />
         <Stack.Screen name="Password" component={PasswordModel} />
-        <Stack.Screen name="Home" component={HomeModel} />
         <Stack.Screen name="Detail" component={DetailModel} />
-        <Stack.Screen name="MyCart" component={MyCartModel} />
         <Stack.Screen name="MyCards" component={MyCardsModel} />
         <Stack.Screen name="AddNewCard" component={AddNewCardModel} />
         <Stack.Screen name="Checkout" component={CheckoutModel} />
         <Stack.Screen name="Success" component={SuccessModel} />
-        <Stack.Screen name="MainTab" component={MainTab} />
+        <Stack.Screen name="Drawer" component={MainDrawer} />
       </Stack.Navigator>
     </NavigationContainer>
   );

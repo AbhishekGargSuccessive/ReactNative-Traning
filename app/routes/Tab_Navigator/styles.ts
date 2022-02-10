@@ -3,26 +3,27 @@ import {FONTS, SIZES} from '../../constants';
 
 const styles = StyleSheet.create({
   tabBarstyle: {
-    paddingHorizontal: 30,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingHorizontal: 22,
+    height: 72,
+    borderTopRightRadius: 22,
+    borderTopLeftRadius: 22,
   },
   tabBarContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 2,
-    height: '100%',
-    borderRadius: SIZES.radius,
+    height: '70%',
+    borderRadius: 24,
   },
   tabBarIcon: {
-    height: 24,
-    width: 24,
+    height: 20,
+    width: 20,
     resizeMode: 'contain',
   },
   tabBarIconText: {
-    paddingLeft: 4,
-    ...FONTS.h3,
+    paddingLeft: 2,
+    ...FONTS.h4,
   },
 });
 
