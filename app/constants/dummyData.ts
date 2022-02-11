@@ -205,7 +205,7 @@ const drawer = [
   },
   {
     name: 'Notification',
-    navigation: '',
+    navigation: 'Notification',
     icon: icons.notification,
   },
   {
@@ -242,6 +242,19 @@ const drawer = [
     name: 'Logout',
     navigation: '',
     icon: icons.logout,
+  },
+];
+
+const Notification = [
+  {
+    icon: icons.notification,
+    name: 'Notifications',
+    description: 'You will receive daily updates',
+  },
+  {
+    icon: icons.notification,
+    name: 'Promotional Notifications',
+    description: 'You will receive daily updates',
   },
 ];
 
@@ -331,6 +344,7 @@ export default {
   myCards,
   allCards,
   drawer,
+  Notification,
   available_coupon,
   used_coupon,
   fromLocs,

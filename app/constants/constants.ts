@@ -109,6 +109,7 @@ const keywords = {
   MyCoupon: 'MY COUPON',
   Available: 'Available',
   Used: 'Used',
+  Notification: 'NOTIFICATION',
 };
 
 const screens = {

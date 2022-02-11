@@ -12,6 +12,7 @@ import CheckoutModel from './CheckoutModel';
 import SuccessModel from './SuccessModel';
 import DeliveryStatusModel from './DeliveryStatusModel';
 import MyCouponModel from './MyCouponModel';
+import NotificationModel from './NotificationModel';
 
 export {
   OnboardingModel,
@@ -28,4 +29,5 @@ export {
   SuccessModel,
   DeliveryStatusModel,
   MyCouponModel,
+  NotificationModel,
 };
