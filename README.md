@@ -56,7 +56,7 @@ npm notice 28B  index.js
 npm notice 235B package.json
 npm notice 42B  hellonpm.txt
 npm notice === Tarball Details ===
-npm notice name:          99code-pradeep
+npm notice name:          demo_login-abhishekgarg
 npm notice version:       1.0.0
 npm notice package size:  357 B
 npm notice unpacked size: 305 B
@@ -64,7 +64,7 @@ npm notice shasum:        **************************
 npm notice integrity:     *********************************
 npm notice total files:   3
 npm notice
-+ 99code-pradeep@1.0.0
++ demo_login-abhishekgarg@1.0.0
 This mean package is Publish
 
 After that you can Install your package with
