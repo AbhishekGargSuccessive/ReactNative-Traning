@@ -23,7 +23,7 @@ Username: abhishekgarg
 Password:**********
 Email: (this IS public)
 Email: (this IS public) abhishek.garg@successive.tech
-Logged in as codepradeep on https://registry.npmjs.org/.
+Logged in as abhishekgarg on https://registry.npmjs.org/.
 Third, you need to create a package. for that create a folder somewhere on your computer and navigate to it. The command line version is:
 # Creating a folder 
 mkdir npm-package
