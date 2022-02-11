@@ -220,7 +220,7 @@ const drawer = [
   },
   {
     name: 'Coupons',
-    navigation: '',
+    navigation: 'Coupon',
     icon: icons.coupon,
   },
   {
@@ -242,6 +242,54 @@ const drawer = [
     name: 'Logout',
     navigation: '',
     icon: icons.logout,
+  },
+];
+
+const available_coupon = [
+  {
+    name: 'Burgur King',
+    discount: '20%',
+    valid: 'Valid until 01 Jan 2022',
+    icon: icons.burgur_king,
+  },
+  {
+    name: 'KFC',
+    discount: '10%',
+    valid: 'Valid until 01 Jan 2022',
+    icon: icons.kfc,
+  },
+  {
+    name: 'Pizza Hut',
+    discount: '35%',
+    valid: 'Valid until 01 Feb 2022',
+    icon: icons.pizza_hut,
+  },
+  {
+    name: 'Starbucks',
+    discount: '15%',
+    valid: 'Valid until 01 Feb 2022',
+    icon: icons.starbucks,
+  },
+  {
+    name: 'Domino’s Pizza',
+    discount: '30%',
+    valid: 'Valid until 01 Feb 2022',
+    icon: icons.dominos,
+  },
+];
+
+const used_coupon = [
+  {
+    name: 'Burgur King',
+    discount: '20%',
+    valid: 'Valid until 01 Jan 2022',
+    icon: icons.burgur_king,
+  },
+  {
+    name: 'Starbucks',
+    discount: '15%',
+    valid: 'Valid until 01 Feb 2022',
+    icon: icons.starbucks,
   },
 ];
 
@@ -283,5 +331,7 @@ export default {
   myCards,
   allCards,
   drawer,
+  available_coupon,
+  used_coupon,
   fromLocs,
 };

@@ -106,6 +106,9 @@ const keywords = {
   Delivery_Date: '12 Sept 2020 / 12:30PM',
   Track_Order: 'Track Order',
   ID: 'NY021SNI',
+  MyCoupon: 'MY COUPON',
+  Available: 'Available',
+  Used: 'Used',
 };
 
 const screens = {

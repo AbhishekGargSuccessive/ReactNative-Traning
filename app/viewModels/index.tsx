@@ -11,6 +11,7 @@ import AddNewCardModel from './AddNewCardModel';
 import CheckoutModel from './CheckoutModel';
 import SuccessModel from './SuccessModel';
 import DeliveryStatusModel from './DeliveryStatusModel';
+import MyCouponModel from './MyCouponModel';
 
 export {
   OnboardingModel,
@@ -26,4 +27,5 @@ export {
   CheckoutModel,
   SuccessModel,
   DeliveryStatusModel,
+  MyCouponModel,
 };
