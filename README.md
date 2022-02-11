@@ -35,14 +35,14 @@ begin the project with the npm init command.
 npm init
 This command creating a package.json file and ask for these info..
 
-package name: (npm-packege) 99codepradeep //it should be unique and package should not already exists on npm
+package name: (npm-packege) demo_login //it should be unique and package should not already exists on npm
 version: (1.0.0)
 description:
 entry point: (index.js)
 test command:
 git repository:
 keywords:
-author: Pradeep
+author: Abhishek Garg
 license: (ISC)
 The final step is to publish your package with this command.
 npm publish
@@ -50,7 +50,7 @@ And then
 
 publish
 npm notice
-npm notice package: 99code-pradeep@1.0.0
+npm notice package: demo_login@1.0.0
 npm notice === Tarball Contents ===
 npm notice 28B  index.js
 npm notice 235B package.json
