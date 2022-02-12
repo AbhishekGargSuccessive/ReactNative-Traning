@@ -16,13 +16,11 @@ const RenderItems = (props: RenderProps) => {
   const {item} = props;
   return (
     <TouchableOpacity style={styles.renderContainer}>
-      <View>
+      <View style={styles.LogoContainer}>
         <Image source={item.icon} style={styles.logo} />
-      </View>
-      <View>
         <Image
           source={icons.dotted_line}
-          style={[styles.logo, {tintColor: COLORS.white}]}
+          style={[styles.logo2, {tintColor: COLORS.white}]}
         />
       </View>
       <View>

@@ -13,6 +13,7 @@ import SuccessModel from './SuccessModel';
 import DeliveryStatusModel from './DeliveryStatusModel';
 import MyCouponModel from './MyCouponModel';
 import NotificationModel from './NotificationModel';
+import NotificationTabModel from './NotificationTabModel';
 
 export {
   OnboardingModel,
@@ -30,4 +31,5 @@ export {
   DeliveryStatusModel,
   MyCouponModel,
   NotificationModel,
+  NotificationTabModel,
 };

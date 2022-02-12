@@ -9,6 +9,7 @@ const logo_02 = require('../assets/images/logo_02.png');
 const profile = require('../assets/images/profile.png');
 const success = require('../assets/images/success.png');
 const hamburger = require('../assets/images/hamburger.png');
+const veg_biryani = require('../assets/images/veg_biryani.png');
 
 export default {
   background_01,
@@ -22,4 +23,5 @@ export default {
   profile,
   success,
   hamburger,
+  veg_biryani,
 };

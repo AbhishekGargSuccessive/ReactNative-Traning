@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeModel, MyCartModel} from '../../viewModels';
+import {HomeModel, MyCartModel, NotificationTabModel} from '../../viewModels';
 import {Image, Text, View} from 'react-native';
 import {COLORS, constants, icons} from '../../constants';
 import styles from './styles';
@@ -160,7 +160,7 @@ const MainTab = ({navigation}: any) => {
       />
       <Tab.Screen
         name="Notification"
-        component={HomeModel}
+        component={NotificationTabModel}
         options={{
           tabBarIcon: ({focused}) => {
             return (

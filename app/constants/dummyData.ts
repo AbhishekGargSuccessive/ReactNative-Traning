@@ -1,3 +1,4 @@
+import {images} from '.';
 import icons from './icons';
 
 const myProfile = {
@@ -192,6 +193,47 @@ const allCards = [
   },
 ];
 
+const Notification_Tab = [
+  {
+    title: 'Today',
+    data: [
+      {
+        icon: icons.dominos,
+        name: "Domino's - Buy 1 get 1 free",
+        description: 'Buy 1 get 1 free for small sizes',
+        untilText: 'until Nov 30, 2021',
+        time: 'a few seconds ago',
+      },
+      {
+        icon: images.veg_biryani,
+        name: 'Veg Biryani - 35% sale today',
+        description: 'Buy 1 get 1 free for small sizes',
+        untilText: 'until Nov 30, 2021',
+        time: '5 mins ago',
+      },
+    ],
+  },
+  {
+    title: 'Yesterday',
+    data: [
+      {
+        icon: icons.dominos,
+        name: "Domino's - Buy 1 get 1 free",
+        description: 'Buy 1 get 1 free for small sizes',
+        untilText: 'until Nov 30, 2021',
+        time: '1 day ago',
+      },
+      {
+        icon: images.veg_biryani,
+        name: 'Veg Biryani - 35% sale today',
+        description: 'Buy 1 get 1 free for small sizes',
+        untilText: 'until Nov 30, 2021',
+        time: '1 day ago',
+      },
+    ],
+  },
+];
+
 const drawer = [
   {
     name: 'Home',
@@ -343,6 +385,7 @@ export default {
   myCart,
   myCards,
   allCards,
+  Notification_Tab,
   drawer,
   Notification,
   available_coupon,

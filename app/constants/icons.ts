@@ -54,6 +54,7 @@ const kfc = require('../assets/icons/kfc.png');
 const pizza_hut = require('../assets/icons/pizza_hut.png');
 const starbucks = require('../assets/icons/starbucks.png');
 const dominos = require('../assets/icons/dominos.png');
+const three_dots = require('../assets/icons/three_dots.png');
 
 export default {
   apple,
@@ -112,4 +113,5 @@ export default {
   pizza_hut,
   starbucks,
   dominos,
+  three_dots,
 };

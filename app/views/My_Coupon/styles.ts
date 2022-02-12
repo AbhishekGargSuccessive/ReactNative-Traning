@@ -30,17 +30,27 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.radius,
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 5,
     padding: 10,
+  },
+  LogoContainer: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-evenly',
   },
   logo: {
     height: 80,
     width: 80,
     resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  logo2: {
+    height: 80,
+    resizeMode: 'contain',
   },
   nameText: {
     color: COLORS.gray,
-    ...FONTS.body3,
+    ...FONTS.h3,
   },
   discountText: {
     color: COLORS.black,
@@ -48,7 +58,7 @@ const styles = StyleSheet.create({
   },
   validText: {
     color: COLORS.gray,
-    ...FONTS.body4,
+    ...FONTS.h4,
   },
 });
 export default styles;
