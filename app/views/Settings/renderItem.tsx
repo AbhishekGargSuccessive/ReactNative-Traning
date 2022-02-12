@@ -10,13 +10,17 @@ interface RenderProps {
     icon: any;
   };
   index: number;
+  navigation: any;
 }
 
 const RenderItems = (props: RenderProps) => {
-  const {item, index} = props;
+  const {item, index, navigation} = props;
   return (
     <View>
-      <TouchableOpacity style={styles.renderContainer}>
+      <TouchableOpacity
+        style={styles.renderContainer}
+        disabled={item.navigate != '' ? false : true}
+        onPress={() => navigation.navigate(item.navigate)}>
         <Image source={item.icon} style={styles.Icon} />
         <Text style={styles.NameText}>{item.name}</Text>
       </TouchableOpacity>

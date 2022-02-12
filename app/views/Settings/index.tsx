@@ -26,7 +26,7 @@ const SettingScreen = (props: SettingProps) => {
           data={dummyData.settings}
           extraData={dummyData.settings}
           renderItem={({item, index}) => (
-            <RenderItems item={item} index={index} />
+            <RenderItems item={item} index={index} navigation={navigation} />
           )}
         />
       </View>
