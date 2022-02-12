@@ -17,6 +17,7 @@ import {
   DeliveryStatusModel,
   MyCouponModel,
   NotificationModel,
+  SettingsModel,
 } from '../viewModels';
 
 type Abc = {
@@ -36,6 +37,7 @@ type Abc = {
   Delivery: Function;
   Coupon: Function;
   Notification: Function;
+  Settings: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -59,6 +61,7 @@ const MainStack = () => {
         <Stack.Screen name="Delivery" component={DeliveryStatusModel} />
         <Stack.Screen name="Coupon" component={MyCouponModel} />
         <Stack.Screen name="Notification" component={NotificationModel} />
+        <Stack.Screen name="Settings" component={SettingsModel} />
       </Stack.Navigator>
     </NavigationContainer>
   );

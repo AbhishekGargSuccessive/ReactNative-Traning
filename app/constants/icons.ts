@@ -55,6 +55,11 @@ const pizza_hut = require('../assets/icons/pizza_hut.png');
 const starbucks = require('../assets/icons/starbucks.png');
 const dominos = require('../assets/icons/dominos.png');
 const three_dots = require('../assets/icons/three_dots.png');
+const terms = require('../assets/icons/terms.png');
+const privacy = require('../assets/icons/privacy.png');
+const lock = require('../assets/icons/lock.png');
+const check_update = require('../assets/icons/check_update.png');
+const data_use = require('../assets/icons/data_use.png');
 
 export default {
   apple,
@@ -114,4 +119,9 @@ export default {
   starbucks,
   dominos,
   three_dots,
+  terms,
+  privacy,
+  lock,
+  data_use,
+  check_update,
 };

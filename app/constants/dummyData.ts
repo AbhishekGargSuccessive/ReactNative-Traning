@@ -267,7 +267,7 @@ const drawer = [
   },
   {
     name: 'Settings',
-    navigation: '',
+    navigation: 'Settings',
     icon: icons.setting,
   },
   {
@@ -348,6 +348,69 @@ const used_coupon = [
   },
 ];
 
+const settings = [
+  {
+    id: 1,
+    name: 'Change Password',
+    navigate: '',
+    icon: icons.lock,
+  },
+  {
+    id: 2,
+    name: 'Preferences',
+    navigate: '',
+    icon: icons.filter,
+  },
+  {
+    id: 3,
+    name: 'Notifications',
+    navigate: 'Notification',
+    icon: icons.notification,
+  },
+  {
+    id: 4,
+    name: 'Data use',
+    navigate: '',
+    icon: icons.data_use,
+  },
+  {
+    id: 5,
+    name: 'Language',
+    navigate: '',
+    icon: icons.globe,
+  },
+  {
+    id: 6,
+    name: 'Check Update',
+    navigate: '',
+    icon: icons.check_update,
+  },
+  {
+    id: 7,
+    name: 'Contact Us',
+    navigate: '',
+    icon: icons.call,
+  },
+  {
+    id: 8,
+    name: 'Privacy Policy',
+    navigate: '',
+    icon: icons.privacy,
+  },
+  {
+    id: 9,
+    name: 'Terms & Conditions',
+    navigate: '',
+    icon: icons.terms,
+  },
+  {
+    id: 10,
+    name: 'Logout',
+    navigate: '',
+    icon: icons.logout,
+  },
+];
+
 const fromLocs = [
   {
     latitude: 1.5347282806345879,
@@ -390,5 +453,6 @@ export default {
   Notification,
   available_coupon,
   used_coupon,
+  settings,
   fromLocs,
 };

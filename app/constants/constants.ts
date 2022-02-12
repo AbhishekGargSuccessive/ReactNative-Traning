@@ -110,6 +110,7 @@ const keywords = {
   Available: 'Available',
   Used: 'Used',
   Notification: 'NOTIFICATION',
+  Settings: 'SETTINGS',
 };
 
 const screens = {
