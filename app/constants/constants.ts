@@ -111,6 +111,8 @@ const keywords = {
   Used: 'Used',
   Notification: 'NOTIFICATION',
   Settings: 'SETTINGS',
+  CHNAGE_PASSWORD: 'CHANGE PASSWORD',
+  Change_Password: 'Change Password',
 };
 
 const screens = {

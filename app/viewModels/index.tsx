@@ -15,6 +15,7 @@ import MyCouponModel from './MyCouponModel';
 import NotificationModel from './NotificationModel';
 import NotificationTabModel from './NotificationTabModel';
 import SettingsModel from './SettingsModel';
+import ChangePasswordModel from './ChangePasswordModel';
 
 export {
   OnboardingModel,
@@ -34,4 +35,5 @@ export {
   NotificationModel,
   NotificationTabModel,
   SettingsModel,
+  ChangePasswordModel,
 };
