@@ -23,8 +23,8 @@ const RenderItems = (props: RenderProps) => {
         <Image source={item.icon} style={styles.icon} />
         <Text style={styles.iconText}>{item.name}</Text>
       </TouchableOpacity>
-      {index == 3 && <View style={styles.lineContainer} />}
-      {index == 8 && <View style={{marginVertical: '18%'}} />}
+      {index == 4 && <View style={styles.lineContainer} />}
+      {index == 9 && <View style={{marginVertical: '8%'}} />}
     </View>
   );
 };

@@ -241,8 +241,13 @@ const drawer = [
     icon: icons.home,
   },
   {
+    name: 'My Order',
+    navigation: 'MyOrders',
+    icon: icons.orders,
+  },
+  {
     name: 'My Wallet',
-    navigation: '',
+    navigation: 'MyOrders',
     icon: icons.wallet,
   },
   {
@@ -411,6 +416,112 @@ const settings = [
   },
 ];
 
+const My_Order_History = [
+  {
+    title: '19 Sep 2021',
+    data: [
+      {
+        icon: icons.pizza_hut,
+        name: 'Pizza Hut',
+        date_time: '19 Sep, 14:30',
+        items: '3 Items',
+        order_delivered: true,
+        price: '$35.30',
+      },
+      {
+        icon: icons.kfc,
+        name: 'KFC',
+        date_time: '19 Sep, 12:30',
+        items: '4 Items',
+        order_delivered: true,
+        price: '$55.00',
+      },
+      {
+        icon: icons.dominos,
+        name: 'Domino’s Pizza',
+        date_time: '19 Sep, 10:30',
+        items: '1 Items',
+        order_delivered: false,
+        price: '$15.50',
+      },
+    ],
+  },
+  {
+    title: '15 Sept 2021',
+    data: [
+      {
+        icon: icons.starbucks,
+        name: 'Starbucks',
+        date_time: '15 Sep, 10:00',
+        items: '4 Items',
+        order_delivered: true,
+        price: '$40.00',
+      },
+      {
+        icon: icons.burgur_king,
+        name: 'Burking King',
+        date_time: '19 Sep, 14:30',
+        items: '3 Items',
+        order_delivered: true,
+        price: '$55.00',
+      },
+      {
+        icon: icons.McDonald,
+        name: 'McDonald',
+        date_time: '19 Sep, 12:30',
+        items: '1 Items',
+        order_delivered: false,
+        price: '$15.50',
+      },
+    ],
+  },
+];
+
+const My_Order_Upcoming = [
+  {
+    title: '',
+    data: [
+      {
+        icon: icons.starbucks,
+        name: 'Starbucks',
+        date_time: '27 Sep, 10:00',
+        items: '4 Items',
+        order_delivered: true,
+        price: '#88888',
+      },
+      {
+        icon: icons.McDonald,
+        name: 'McDonald',
+        date_time: '27 Sep, 10:00',
+        items: '4 Items',
+        order_delivered: false,
+        price: '#98888',
+      },
+    ],
+  },
+  {
+    title: 'Latest Orders',
+    data: [
+      {
+        icon: icons.starbucks,
+        name: 'Starbucks',
+        date_time: '27 Sep, 10:00',
+        items: '4 Items',
+        order_delivered: true,
+        price: '$10.00',
+      },
+      {
+        icon: icons.burgur_king,
+        name: 'Burking King',
+        date_time: '27 Sep, 8:00',
+        items: '4 Items',
+        order_delivered: true,
+        price: '$12.00',
+      },
+    ],
+  },
+];
+
 export default {
   vegBiryani,
   hamburger,
@@ -427,4 +538,6 @@ export default {
   available_coupon,
   used_coupon,
   settings,
+  My_Order_History,
+  My_Order_Upcoming,
 };

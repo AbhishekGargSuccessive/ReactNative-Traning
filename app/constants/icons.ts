@@ -60,6 +60,9 @@ const privacy = require('../assets/icons/privacy.png');
 const lock = require('../assets/icons/lock.png');
 const check_update = require('../assets/icons/check_update.png');
 const data_use = require('../assets/icons/data_use.png');
+const orders = require('../assets/icons/orders.png');
+const McDonald = require('../assets/icons/McDonalds.png');
+const dot = require('../assets/icons/dot.png');
 
 export default {
   apple,
@@ -124,4 +127,7 @@ export default {
   lock,
   data_use,
   check_update,
+  orders,
+  McDonald,
+  dot,
 };

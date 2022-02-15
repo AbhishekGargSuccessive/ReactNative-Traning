@@ -113,6 +113,14 @@ const keywords = {
   Settings: 'SETTINGS',
   CHNAGE_PASSWORD: 'CHANGE PASSWORD',
   Change_Password: 'Change Password',
+  MY_ORDERS: 'MY ORDERS',
+  History: 'History',
+  Upcoming: 'Upcoming',
+  Order_Delivered: 'Order Delivered',
+  Order_Cancelled: 'Order Cancelled',
+  Re_Order: 'Re-Order',
+  Rate: 'Rate',
+  Cancel: 'Cancel',
 };
 
 const screens = {

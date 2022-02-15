@@ -19,6 +19,7 @@ import {
   NotificationModel,
   SettingsModel,
   ChangePasswordModel,
+  MyOrdersModel,
 } from '../viewModels';
 
 type Abc = {
@@ -40,6 +41,7 @@ type Abc = {
   Notification: Function;
   Settings: Function;
   ChangePassword: Function;
+  MyOrders: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -65,6 +67,7 @@ const MainStack = () => {
         <Stack.Screen name="Notification" component={NotificationModel} />
         <Stack.Screen name="Settings" component={SettingsModel} />
         <Stack.Screen name="ChangePassword" component={ChangePasswordModel} />
+        <Stack.Screen name="MyOrders" component={MyOrdersModel} />
       </Stack.Navigator>
     </NavigationContainer>
   );
