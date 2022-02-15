@@ -18,7 +18,7 @@ interface RiderProps {
 
 const RiderReviewScreen = (props: RiderProps) => {
   const {navigation} = props;
-  const [select, setSelect] = useState(1);
+  const [select, setSelect] = useState(0);
   return (
     <View style={styles.container}>
       <HeaderComponents
@@ -84,12 +84,11 @@ const RiderReviewScreen = (props: RiderProps) => {
             }}
           />
         </View>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Add a comment"
-        />
+        <TextInput style={styles.textInput} placeholder="Add a comment" />
         <View style={styles.ButtonContainer}>
-          <TouchableOpacity style={styles.SubmitButton}>
+          <TouchableOpacity
+            style={styles.SubmitButton}
+            onPress={() => navigation.navigate('Home')}>
             <Text style={styles.SubmitButtonText}>
               {constants.keywords.Submit_Review}
             </Text>
