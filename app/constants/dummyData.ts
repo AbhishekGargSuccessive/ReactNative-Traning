@@ -522,6 +522,10 @@ const My_Order_Upcoming = [
   },
 ];
 
+const RiderReview = {
+  tips: ['No Tips', '$5', '$10', '$15', '$20'],
+};
+
 export default {
   vegBiryani,
   hamburger,
@@ -540,4 +544,5 @@ export default {
   settings,
   My_Order_History,
   My_Order_Upcoming,
+  RiderReview,
 };

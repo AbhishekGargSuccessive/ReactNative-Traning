@@ -121,6 +121,11 @@ const keywords = {
   Re_Order: 'Re-Order',
   Rate: 'Rate',
   Cancel: 'Cancel',
+  RIDER_REVIEW: 'RIDER REVIEW',
+  Delivery_Man: 'Delivery Man',
+  Please_rate: 'Please Rate Delivery Service',
+  Add_Tips: 'Add Tips',
+  Submit_Review: 'Submit Review',
 };
 
 const screens = {

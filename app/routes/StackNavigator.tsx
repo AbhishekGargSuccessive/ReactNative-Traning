@@ -20,6 +20,7 @@ import {
   SettingsModel,
   ChangePasswordModel,
   MyOrdersModel,
+  RiderReviewModel,
 } from '../viewModels';
 
 type Abc = {
@@ -42,6 +43,7 @@ type Abc = {
   Settings: Function;
   ChangePassword: Function;
   MyOrders: Function;
+  RiderReview: Function;
 };
 
 const Stack = createNativeStackNavigator<Abc>();
@@ -68,6 +70,7 @@ const MainStack = () => {
         <Stack.Screen name="Settings" component={SettingsModel} />
         <Stack.Screen name="ChangePassword" component={ChangePasswordModel} />
         <Stack.Screen name="MyOrders" component={MyOrdersModel} />
+        <Stack.Screen name="RiderReview" component={RiderReviewModel} />
       </Stack.Navigator>
     </NavigationContainer>
   );

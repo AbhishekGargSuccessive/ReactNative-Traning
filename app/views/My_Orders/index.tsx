@@ -59,7 +59,13 @@ const MyOrderScreen = (props: OrderProps) => {
               showsVerticalScrollIndicator={false}
               sections={dummyData.My_Order_History}
               extraData={dummyData.My_Order_History}
-              renderItem={({item, index}) => <RenderItems item={item} select={true}/>}
+              renderItem={({item, index}) => (
+                <RenderItems
+                  item={item}
+                  select={true}
+                  navigation={navigation}
+                />
+              )}
               renderSectionHeader={({section: {title}}) => (
                 <Text style={styles.TitleText}>{title}</Text>
               )}
@@ -72,7 +78,13 @@ const MyOrderScreen = (props: OrderProps) => {
               showsVerticalScrollIndicator={false}
               sections={dummyData.My_Order_Upcoming}
               extraData={dummyData.My_Order_Upcoming}
-              renderItem={({item, index}) => <RenderItems item={item} select={true} />}
+              renderItem={({item, index}) => (
+                <RenderItems
+                  item={item}
+                  select={true}
+                  navigation={navigation}
+                />
+              )}
               renderSectionHeader={({section: {title}}) => (
                 <Text
                   style={[styles.TitleText, {color: COLORS.transparentBlack7}]}>

@@ -1,6 +1,5 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Image, Text, View, TouchableOpacity} from 'react-native';
 import {COLORS, constants, icons} from '../../constants';
 import styles from './styles';
 
@@ -14,10 +13,11 @@ interface RenderProps {
     price: string;
   };
   select: boolean;
+  navigation: any;
 }
 
 const RenderItems = (props: RenderProps) => {
-  const {item, select} = props;
+  const {item, select, navigation} = props;
   return (
     <View style={styles.renderContainer}>
       <View style={styles.directionContainer}>
@@ -30,7 +30,7 @@ const RenderItems = (props: RenderProps) => {
             <View style={styles.datetimeContainer}>
               <Text style={styles.datetimeText}>{item.date_time}</Text>
               <Image source={icons.dot} style={styles.DotIcon} />
-              <Text style={styles.datetimeText}>  {item.items}</Text>
+              <Text style={styles.datetimeText}> {item.items}</Text>
             </View>
             <View style={styles.orderContainer}>
               <Image
@@ -60,7 +60,9 @@ const RenderItems = (props: RenderProps) => {
             {constants.keywords.Re_Order}
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.RateButton}>
+        <TouchableOpacity
+          style={styles.RateButton}
+          onPress={() => navigation.navigate('RiderReview')}>
           <Text style={styles.RateButtonText}>{constants.keywords.Rate}</Text>
         </TouchableOpacity>
       </View>
