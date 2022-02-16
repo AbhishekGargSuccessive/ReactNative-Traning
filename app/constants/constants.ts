@@ -126,6 +126,8 @@ const keywords = {
   Please_rate: 'Please Rate Delivery Service',
   Add_Tips: 'Add Tips',
   Submit_Review: 'Submit Review',
+  MY_ACCOUNT: 'MY ACCOUNT',
+  Edit: 'Edit',
 };
 
 const screens = {

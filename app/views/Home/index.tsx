@@ -179,7 +179,7 @@ const HomeScreen = (props: HomeScreen) => {
           LeftImageNavigate={navigation.openDrawer}
           HeadingText={constants.keywords.Home}
           RightImage={images.profile}
-          RightImageNavigate={false}
+          RightImageNavigate={'MyAccount'}
           navigation={navigation}
         />
         <View style={styles.Container}>

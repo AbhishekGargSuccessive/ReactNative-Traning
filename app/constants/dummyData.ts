@@ -526,6 +526,39 @@ const RiderReview = {
   tips: ['No Tips', '$5', '$10', '$15', '$20'],
 };
 
+const My_Account = [
+  {
+    'Full Name': 'Abhishek Garg',
+  },
+  {
+    'Phone Number': '8923735637',
+  },
+  {
+    'User ID': 'ST/SD/21/820',
+  },
+];
+
+const My_Account_Details = [
+  {
+    'ID Card': 'Not updated',
+  },
+  {
+    'Date of Birth': '26/02/1999',
+  },
+  {
+    Gender: 'Male',
+  },
+  {
+    Joined: 'October 2021',
+  },
+  {
+    Email: 'byprogrammers@gmail.com',
+  },
+  {
+    Address: 'E-29, Budh Vihar, Noida',
+  },
+];
+
 export default {
   vegBiryani,
   hamburger,
@@ -545,4 +578,6 @@ export default {
   My_Order_History,
   My_Order_Upcoming,
   RiderReview,
+  My_Account,
+  My_Account_Details,
 };
