@@ -20,7 +20,7 @@ const MyAccountScreen = (props: AcccountProps) => {
             <Image source={icons.back} style={styles.backIcon} />
           </TouchableOpacity>
           <Text style={styles.HeaderText}>{constants.keywords.MY_ACCOUNT}</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('EditAccount')}>
             <Text style={styles.editButtonText}>{constants.keywords.Edit}</Text>
           </TouchableOpacity>
         </View>

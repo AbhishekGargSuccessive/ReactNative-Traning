@@ -19,6 +19,7 @@ import ChangePasswordModel from './ChangePasswordModel';
 import MyOrdersModel from './MyOrdersModel';
 import RiderReviewModel from './RiderReviewModel';
 import MyAccountModel from './MyAccountModel';
+import EditAccountModel from './EditAccountModel';
 
 export {
   OnboardingModel,
@@ -42,4 +43,5 @@ export {
   MyOrdersModel,
   RiderReviewModel,
   MyAccountModel,
+  EditAccountModel,
 };
