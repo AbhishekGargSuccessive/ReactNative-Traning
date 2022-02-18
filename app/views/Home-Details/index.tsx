@@ -14,12 +14,14 @@ import styles from './styles';
 
 interface DetailProps {
   navigation: any;
+  size: number;
+  setSize: React.Dispatch<React.SetStateAction<number>>;
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const DetailScreen = (props: DetailProps) => {
-  const {navigation, counter, setCounter} = props;
+  const {navigation, counter, setCounter, size, setSize} = props;
   return (
     <View style={styles.backcontainer}>
       <BackHeader
@@ -69,7 +71,12 @@ const DetailScreen = (props: DetailProps) => {
             extraData={dummyData.sizes}
             keyExtractor={(_, index) => index.toString()}
             renderItem={({item, index}) => (
-              <SizeRenderItem item={item} index={index} />
+              <SizeRenderItem
+                item={item}
+                index={index}
+                size={size}
+                setSize={setSize}
+              />
             )}
           />
         </View>

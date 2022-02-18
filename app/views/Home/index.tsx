@@ -27,11 +27,14 @@ import {HeaderComponents} from '../../common';
 
 interface HomeScreen {
   navigation: any;
+  filter: boolean;
+  setFilter: React.Dispatch<React.SetStateAction<boolean>>;
+  select: number;
+  setSelect: (value: number) => void;
 }
 
 const HomeScreen = (props: HomeScreen) => {
-  const {navigation} = props;
-  const [filter, setFilter] = useState(false);
+  const {navigation, filter, setFilter, select, setSelect} = props;
   return (
     <View style={{flex: 1}}>
       <Modal
@@ -216,7 +219,14 @@ const HomeScreen = (props: HomeScreen) => {
               data={dummyData.categories}
               extraData={dummyData.categories}
               keyExtractor={(_, index) => index.toString()}
-              renderItem={({item, index}) => <CategoryRenderItem item={item} />}
+              renderItem={({item, index}) => (
+                <CategoryRenderItem
+                  item={item}
+                  select={select}
+                  setSelect={setSelect}
+                  index={index}
+                />
+              )}
             />
 
             <View style={styles.textContainer}>

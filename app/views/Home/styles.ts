@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   FoodContainer: {
-    width: 200,
+    width: 210,
     padding: SIZES.radius,
     alignItems: 'center',
     borderRadius: SIZES.radius,
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.transparentBlack7,
   },
   UpperModal: {
-    flex: 0.25,
+    flex: 0.24,
   },
   modalView: {
     flex: 0.9,
@@ -292,12 +292,9 @@ const styles = StyleSheet.create({
   NextButtonContainer: {
     backgroundColor: COLORS.primary,
     alignItems: 'center',
-    justifyContent: 'center',
     paddingVertical: 10,
     borderRadius: SIZES.radius,
-    marginTop: 10,
-    // marginHorizontal: 10,
-    // flex: 1,
+    marginTop: 12,
   },
   NextButtonText: {
     color: COLORS.white,

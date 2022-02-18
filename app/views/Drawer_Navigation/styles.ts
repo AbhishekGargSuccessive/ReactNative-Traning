@@ -55,5 +55,36 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.transparentWhite1,
     marginVertical: 10,
   },
+
+  //MODAL STYLE
+
+  modalContainer: {
+    flex: 1,
+  },
+  touchableModel: {
+    backgroundColor: COLORS.transparentBlack7,
+    flex: 0.9,
+  },
+  modalView: {
+    alignItems: 'center',
+    flex: 0.16,
+    flexDirection: 'row',
+    backgroundColor: COLORS.white2,
+    justifyContent: 'space-around',
+  },
+  modalIconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalIcon: {
+    height: 50,
+    width: 40,
+    resizeMode: 'contain',
+    tintColor: COLORS.primary,
+  },
+  modalIconText: {
+    color: COLORS.darkGray,
+    ...FONTS.h3,
+  },
 });
 export default styles;

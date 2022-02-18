@@ -6,15 +6,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.white,
   },
-  RadiusContainer: {
-    flex: 1,
-    borderRadius: SIZES.radius,
-    backgroundColor: COLORS.lightGray2,
-  },
   marginContainer: {
     flex: 1,
     marginHorizontal: 20,
     marginTop: 10,
+  },
+  RadiusContainer: {
+    flex: 1,
+    borderRadius: SIZES.radius,
+    backgroundColor: COLORS.lightGray1,
+  },
+  textInputContainer: {
+    marginHorizontal: 10,
+    paddingTop: 10,
+    paddingBottom: 20,
   },
   SaveButton: {
     backgroundColor: COLORS.primary,

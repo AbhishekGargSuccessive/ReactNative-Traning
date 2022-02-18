@@ -9,11 +9,12 @@ interface SizesProps {
     label: string;
   };
   index: number;
+  size: number;
+  setSize: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const SizeRenderItem = (props: SizesProps) => {
-  const [size, setSize] = useState(0);
-  const {item, index} = props;
+  const {item, index, size, setSize} = props;
   return (
     <View>
       <TouchableOpacity

@@ -63,6 +63,8 @@ const data_use = require('../assets/icons/data_use.png');
 const orders = require('../assets/icons/orders.png');
 const McDonald = require('../assets/icons/McDonalds.png');
 const dot = require('../assets/icons/dot.png');
+const camera = require('../assets/icons/camera.png');
+const gallery = require('../assets/icons/gallery.png');
 
 export default {
   apple,
@@ -130,4 +132,6 @@ export default {
   orders,
   McDonald,
   dot,
+  camera,
+  gallery,
 };

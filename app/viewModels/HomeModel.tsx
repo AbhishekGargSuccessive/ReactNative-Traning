@@ -1,15 +1,23 @@
-import React from "react";
-import HomeScreen from "../views/Home";
+import React, {useState} from 'react';
+import HomeScreen from '../views/Home';
 
 interface HomeModelProps {
-    navigation: any
+  navigation: any;
 }
 
 const HomeModel = (props: HomeModelProps) => {
-    const { navigation } = props;
-    return (
-        <HomeScreen navigation={navigation} />
-    )
-}
+  const {navigation} = props;
+  const [filter, setFilter] = useState(false);
+  const [select, setSelect] = useState(0);
+  return (
+    <HomeScreen
+      navigation={navigation}
+      filter={filter}
+      setFilter={setFilter}
+      select={select}
+      setSelect={(value: number) => setSelect(value)}
+    />
+  );
+};
 
 export default HomeModel;

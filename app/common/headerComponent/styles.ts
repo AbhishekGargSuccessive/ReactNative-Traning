@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   homeText: {
     fontFamily: 'Poppins-SemiBold',
-    fontSize: 20,
+    fontSize: 19,
     color: COLORS.black,
   },
   profileIconRadius: {

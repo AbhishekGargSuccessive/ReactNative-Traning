@@ -17,12 +17,23 @@ const SignInModel = (props: SignInModel) => {
     const [password, setPassword] = useState("");
     const [invalidPassword, setInvalidPassword] = useState(false)
 
-    const Submit = () => {
-        let validate = EmailValidation(email)
-        setInvalidEmail(validate)
+    useEffect(()=>{
+        if(invalidEmail && invalidPassword)
+        navigation.navigate('Drawer')
+    },[invalidEmail,invalidPassword])
 
-        validate = PasswordValidation(password)
-        setInvalidPassword(validate)
+    // invalidEmail == true && invalidPassword ==true ? navigation.navigate('Drawer'): null
+    // },[invalidEmail, invalidPassword])
+
+    const Submit = async() => {
+        // let validate = EmailValidation(email)
+        // setInvalidEmail(validate)
+
+        // validate = PasswordValidation(password)
+        // setInvalidPassword(validate)
+
+       await setInvalidEmail(EmailValidation(email))
+        setInvalidPassword(PasswordValidation(password))
     }
     return (
         <SignIn

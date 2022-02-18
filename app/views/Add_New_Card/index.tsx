@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {NewHeader, TextInputs} from '../../common';
+import {HeaderComponents, NewHeader, TextInputs} from '../../common';
 import {constants, icons, images} from '../../constants';
 import styles from './styles';
 
@@ -21,14 +21,19 @@ const AddNewCardScreen = (props: NewCardProps) => {
   const {navigation} = props;
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <NewHeader
+      <HeaderComponents
+        LeftImage={icons.back}
+        LeftImageNavigate={navigation.goBack}
+        HeadingText={constants.keywords.Add_new_card}
+        RightImage={undefined}
+        RightImageNavigate={false}
         navigation={navigation}
-        HeaderText={constants.keywords.Add_New_Card}
       />
-      <ScrollView
-        style={styles.marginContainer}
-        showsVerticalScrollIndicator={false}>
-        <ImageBackground source={images.card} style={styles.cardImage}>
+      <View style={styles.marginContainer}>
+        <ImageBackground
+          source={images.card}
+          style={styles.cardImage}
+          imageStyle={{borderRadius: 12}}>
           <Image source={icons.apple} style={styles.appleIcon} />
           <View style={styles.cardTextContainer}>
             <Text style={styles.cardNameText}>{constants.keywords.name}</Text>
@@ -39,7 +44,7 @@ const AddNewCardScreen = (props: NewCardProps) => {
           </View>
         </ImageBackground>
 
-        <View style={{marginVertical: '14%'}}>
+        <View style={{paddingTop: 30}}>
           <Text style={styles.text}>{constants.keywords.Card_Number}</Text>
           <View style={styles.InputContainer}>
             <TextInput
@@ -90,6 +95,8 @@ const AddNewCardScreen = (props: NewCardProps) => {
               {constants.keywords.Remember}
             </Text>
           </View>
+        </View>
+        <View style={styles.ButtonContainer}>
           <TouchableOpacity
             style={styles.AddButton}
             onPress={() => navigation.navigate('Checkout')}>
@@ -98,7 +105,7 @@ const AddNewCardScreen = (props: NewCardProps) => {
             </Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
+      </View>
     </KeyboardAvoidingView>
   );
 };

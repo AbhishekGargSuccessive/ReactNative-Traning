@@ -19,7 +19,7 @@ const MyCouponScreen = (props: RiderProps) => {
         LeftImageNavigate={navigation.goBack}
         HeadingText={constants.keywords.MyCoupon}
         RightImage={images.profile}
-        RightImageNavigate={false}
+        RightImageNavigate={'MyAccount'}
         navigation={navigation}
       />
       <View style={styles.marginContainer}>

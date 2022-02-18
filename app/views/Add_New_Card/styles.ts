@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   },
 
   marginContainer: {
+    flex: 1,
     marginHorizontal: 20,
     marginVertical: 10,
   },
@@ -114,13 +115,16 @@ const styles = StyleSheet.create({
     ...FONTS.body3,
   },
 
+  ButtonContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+
   AddButton: {
     backgroundColor: COLORS.primary,
     alignItems: 'center',
-    justifyContent: 'center',
     paddingVertical: 10,
     borderRadius: SIZES.radius,
-    marginVertical: '9%',
   },
   AddButtonText: {
     color: COLORS.white,

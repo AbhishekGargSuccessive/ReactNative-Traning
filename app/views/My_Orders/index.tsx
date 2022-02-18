@@ -19,7 +19,7 @@ const MyOrderScreen = (props: OrderProps) => {
         LeftImageNavigate={navigation.goBack}
         HeadingText={constants.keywords.MY_ORDERS}
         RightImage={images.profile}
-        RightImageNavigate={false}
+        RightImageNavigate={'MyAccount'}
         navigation={navigation}
       />
       <View style={styles.marginContainer}>

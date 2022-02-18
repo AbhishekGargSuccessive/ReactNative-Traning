@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   marginContainer: {
-    marginHorizontal: 20,
-    marginVertical: '5%',
     flex: 1,
+    marginHorizontal: 20,
+    marginBottom: 10,
   },
   renderContainer: {
     flexDirection: 'row',
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     width: 55,
   },
   CardIcon: {
-    // height: 22,
+    height: 22,
     width: 22,
     resizeMode: 'contain',
   },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   FlatList,
   Image,
@@ -7,22 +7,28 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {NewHeader} from '../../common';
+import {HeaderComponents, NewHeader} from '../../common';
 import {COLORS, constants, dummyData, icons} from '../../constants';
 import RenderItems from './renderItem';
 import styles from './styles';
 
 interface CheckoutProps {
   navigation: any;
+  select: number
+  setSelect: (value: number) => void
 }
 
 const CheckoutScreen = (props: CheckoutProps) => {
-  const {navigation} = props;
+  const {navigation, select, setSelect} = props;
   return (
     <View style={styles.container}>
-      <NewHeader
+      <HeaderComponents
+        LeftImage={icons.back}
+        LeftImageNavigate={navigation.goBack}
+        HeadingText={constants.keywords.Checkout}
+        RightImage={undefined}
+        RightImageNavigate={undefined}
         navigation={navigation}
-        HeaderText={constants.keywords.Checkout}
       />
       <View style={styles.marginContainer}>
         <FlatList
@@ -30,16 +36,27 @@ const CheckoutScreen = (props: CheckoutProps) => {
           data={dummyData.myCards}
           extraData={dummyData.myCards}
           keyExtractor={(_, index) => index.toString()}
-          renderItem={({item, index}) => <RenderItems item={item} />}
+          renderItem={({item, index}) => (
+            <RenderItems
+              item={item}
+              index={index}
+              select={select}
+              setSelect={setSelect}
+            />
+          )}
         />
         <View>
           <Text style={styles.titleText}>
             {constants.keywords.Delivery_Address}
           </Text>
-          <View style={styles.deliveryAddressContainer}>
-            <Image source={icons.focus} style={styles.focusIcon} />
-            <Text style={styles.addressText}>{constants.keywords.Address}</Text>
-          </View>
+          <TouchableOpacity>
+            <View style={styles.deliveryAddressContainer}>
+              <Image source={icons.focus} style={styles.focusIcon} />
+              <Text style={styles.addressText}>
+                {constants.keywords.Address}
+              </Text>
+            </View>
+          </TouchableOpacity>
           <Text style={styles.titleText}>{constants.keywords.Add_Coupon}</Text>
           <View style={styles.couponContainer}>
             <TextInput

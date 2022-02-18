@@ -128,6 +128,9 @@ const keywords = {
   Submit_Review: 'Submit Review',
   MY_ACCOUNT: 'MY ACCOUNT',
   Edit: 'Edit',
+  Camera: 'Camera',
+  Gallery: 'Gallery',
+  Abhishek_Garg: 'Abhishek Garg',
 };
 
 const screens = {

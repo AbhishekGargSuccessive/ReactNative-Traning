@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CheckoutScreen from '../views/Checkout';
 
 interface CheckoutProps {
@@ -7,7 +7,14 @@ interface CheckoutProps {
 
 const CheckoutModel = (props: CheckoutProps) => {
   const {navigation} = props;
-  return <CheckoutScreen navigation={navigation} />;
+  const [select, setSelect] = useState(0);
+  return (
+    <CheckoutScreen
+      navigation={navigation}
+      select={select}
+      setSelect={(value: number) => setSelect(value)}
+    />
+  );
 };
 
 export default CheckoutModel;
