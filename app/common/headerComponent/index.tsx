@@ -38,7 +38,7 @@ const HeaderComponents = (props: HeaderProps) => {
             ? navigation.navigate(RightImageNavigate)
             : ''
         }>
-        <Image source={RightImage} style={styles.profileIcon} />
+        <Image source={{uri: RightImage}} style={styles.profileIcon} />
       </TouchableOpacity>
     </View>
   );

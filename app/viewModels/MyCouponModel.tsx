@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MyCouponScreen from '../views/My_Coupon';
 
 interface CouponModel {
@@ -7,7 +7,14 @@ interface CouponModel {
 
 const MyCouponModel = (props: CouponModel) => {
   const {navigation} = props;
-  return <MyCouponScreen navigation={navigation} />;
+  const [select, setSelect] = useState(true);
+  return (
+    <MyCouponScreen
+      navigation={navigation}
+      select={select}
+      setSelect={setSelect}
+    />
+  );
 };
 
 export default MyCouponModel;

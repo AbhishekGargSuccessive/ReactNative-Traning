@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, Text, TouchableOpacity, View} from 'react-native';
+import {useSelector} from 'react-redux';
 import {HeaderComponents} from '../../common';
 import {COLORS, constants, dummyData, icons, images} from '../../constants';
 import Renderitems from './renderItem';
@@ -7,18 +8,23 @@ import styles from './styles';
 
 interface RiderProps {
   navigation: any;
+  select: boolean;
+  setSelect: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const MyCouponScreen = (props: RiderProps) => {
-  const {navigation} = props;
-  const [select, setSelect] = useState(true);
+  const {navigation, select, setSelect} = props;
+  type state = {
+    Profile: string;
+  };
+  const ProfileImage = useSelector<state>(state => state.Profile);
   return (
     <View style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
         HeadingText={constants.keywords.MyCoupon}
-        RightImage={images.profile}
+        RightImage={ProfileImage}
         RightImageNavigate={'MyAccount'}
         navigation={navigation}
       />

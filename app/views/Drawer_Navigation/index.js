@@ -8,6 +8,7 @@ import {
   Modal,
   TouchableWithoutFeedback,
 } from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
 import {constants, dummyData, icons} from '../../constants';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import RenderItems from './renderItem';
@@ -15,9 +16,12 @@ import styles from './styles';
 
 const CustomDrawer = props => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [image, setImage] = useState(
-    'https://shop.byprogrammers.com/img/logo/logo.png',
-  );
+  const dispatch = useDispatch();
+  const ProfileData = useSelector(state => state.Profile);
+  // const UserData = useSelector(state => state.DATA);
+  // const [image, setImage] = useState(
+  //   'https://shop.byprogrammers.com/img/logo/logo.png',
+  // );
   const openCamara = () => {
     const options = {
       storageOptions: {
@@ -33,8 +37,9 @@ const CustomDrawer = props => {
       } else if (response.customButton) {
       } else {
         const source = {uri: response.assets[0].uri};
-        setImage(source.uri);
+        // setImage(source.uri);
         setModalVisible(false);
+        dispatch({type: 'PROFILE', payload: source.uri});
       }
     });
   };
@@ -57,8 +62,9 @@ const CustomDrawer = props => {
         Alert.alert(response.customButton);
       } else {
         const source = {uri: response.assets[0].uri};
-        setImage(source.uri);
+        // setImage(source.uri);
         setModalVisible(false);
+        dispatch({type: 'PROFILE', payload: source.uri});
       }
     });
   };
@@ -103,11 +109,12 @@ const CustomDrawer = props => {
       </TouchableOpacity>
       <View style={styles.upperContainer}>
         <TouchableOpacity onPress={() => setModalVisible(true)}>
-          <Image source={{uri: image}} style={styles.profileIcon} />
+          <Image source={{uri: ProfileData}} style={styles.profileIcon} />
         </TouchableOpacity>
         <View>
           <Text style={styles.nameText}>
             {constants.keywords.Abhishek_Garg}
+            {/* {UserData} */}
           </Text>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('MyAccount')}>

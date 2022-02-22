@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {SectionList, Text, TouchableOpacity, View} from 'react-native';
+import {useSelector} from 'react-redux';
 import {HeaderComponents} from '../../common';
 import {COLORS, constants, dummyData, icons, images} from '../../constants';
 import RenderItems from './renderItem';
@@ -7,18 +8,23 @@ import styles from './styles';
 
 interface OrderProps {
   navigation: any;
+  select: boolean;
+  setSelect: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const MyOrderScreen = (props: OrderProps) => {
-  const {navigation} = props;
-  const [select, setSelect] = useState(true);
+  const {navigation, select, setSelect} = props;
+  type state = {
+    Profile: string;
+  };
+  const ProfileImage = useSelector<state>(state => state.Profile);
   return (
     <View style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
         HeadingText={constants.keywords.MY_ORDERS}
-        RightImage={images.profile}
+        RightImage={ProfileImage}
         RightImageNavigate={'MyAccount'}
         navigation={navigation}
       />

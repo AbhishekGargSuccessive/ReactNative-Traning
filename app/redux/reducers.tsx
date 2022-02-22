@@ -1,18 +1,15 @@
-import { DECREASE_COUNTER, INCREASE_COUNTER } from '../redux/action';
+import {PROFILE} from '../redux/action';
 
 const initialState = {
-    counter: 0
-}
+  Profile: 'https://shop.byprogrammers.com/img/logo/logo.png',
+};
 
 const rootReducer = (state = initialState, action: any) => {
-    console.log(action, "action")
-    switch (action.type) {
-        case INCREASE_COUNTER:
-            return { counter: state.counter + action.payload }
-        case DECREASE_COUNTER:
-            return { counter: state.counter - 1 }
-    }
-    return state
-}
+  switch (action.type) {
+    case PROFILE:
+      return {...state, Profile: action.payload};
+  }
+  return state;
+};
 
 export default rootReducer;

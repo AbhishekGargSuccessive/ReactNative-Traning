@@ -1,2 +1,1 @@
-export const INCREASE_COUNTER = 'INCREAMENT';
-export const DECREASE_COUNTER = 'DECREAMENT';
+export const PROFILE = 'PROFILE';

@@ -15,15 +15,15 @@ import {
   constants,
   dummyData,
   icons,
-  images,
   SIZES,
 } from '../../constants';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import CategoryRenderItem from './categoryRenderItem';
 import FoodMennuRenderItem from './FoodMenuRenderItem';
 import FooterFoodMenu from './FooterRenderItem';
-import styles from './styles';
 import {HeaderComponents} from '../../common';
+import {useSelector} from 'react-redux';
+import styles from './styles';
 
 interface HomeScreen {
   navigation: any;
@@ -80,6 +80,10 @@ const HomeScreen = (props: HomeScreen) => {
   }
 
   const selectData = dummyData.menu.filter(data => data.categories == select);
+  type state = {
+    Profile: string;
+  };
+  const ProfileImage = useSelector<state>(state => state.Profile);
   return (
     <View style={{flex: 1}}>
       <Modal
@@ -281,7 +285,7 @@ const HomeScreen = (props: HomeScreen) => {
           LeftImage={icons.menu}
           LeftImageNavigate={navigation.openDrawer}
           HeadingText={constants.keywords.Home}
-          RightImage={images.profile}
+          RightImage={ProfileImage}
           RightImageNavigate={'MyAccount'}
           navigation={navigation}
         />
