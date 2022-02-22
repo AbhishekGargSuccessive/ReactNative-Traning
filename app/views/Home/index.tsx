@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   FlatList,
@@ -31,10 +31,55 @@ interface HomeScreen {
   setFilter: React.Dispatch<React.SetStateAction<boolean>>;
   select: number;
   setSelect: (value: number) => void;
+  applyFilter: boolean;
+  setApplyFilter: React.Dispatch<React.SetStateAction<boolean>>;
+  distance: never[];
+  setDistance: React.Dispatch<React.SetStateAction<never[]>>;
+  deliveryTime: string;
+  setDeliveryTime: React.Dispatch<React.SetStateAction<string>>;
+  price: never[];
+  setPrice: React.Dispatch<React.SetStateAction<never[]>>;
+  rating: number;
+  setRating: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const HomeScreen = (props: HomeScreen) => {
-  const {navigation, filter, setFilter, select, setSelect} = props;
+  const {
+    navigation,
+    filter,
+    setFilter,
+    select,
+    setSelect,
+    applyFilter,
+    setApplyFilter,
+    deliveryTime,
+    setDeliveryTime,
+    distance,
+    setDistance,
+    price,
+    setPrice,
+    rating,
+    setRating,
+  } = props;
+  let filterData = dummyData.menu;
+  if (distance.length != 0) {
+    filterData = filterData.filter(
+      key => key.distance > distance[0] && key.distance < distance[1],
+    );
+  }
+  if (deliveryTime != '') {
+    filterData = filterData.filter(key => key.delivery_time == deliveryTime);
+  }
+  if (price.length != 0) {
+    filterData = filterData.filter(
+      key => key.pricing > price[0] && key.pricing < price[1],
+    );
+  }
+  if (rating != 0) {
+    filterData = filterData.filter(key => key.rating == rating);
+  }
+
+  const selectData = dummyData.menu.filter(data => data.categories == select);
   return (
     <View style={{flex: 1}}>
       <Modal
@@ -74,6 +119,7 @@ const HomeScreen = (props: HomeScreen) => {
                   borderRadius: 10,
                   backgroundColor: COLORS.lightGray2,
                 }}
+                onValuesChange={(item: any) => setDistance(item)}
                 minMarkerOverlapDistance={50}
                 customMarker={e => {
                   return (
@@ -95,8 +141,29 @@ const HomeScreen = (props: HomeScreen) => {
                   keyExtractor={(_, index) => index.toString()}
                   renderItem={({item, index}) => {
                     return (
-                      <TouchableOpacity style={styles.deliverytimeText}>
-                        <Text style={styles.labelText}>{item.label}</Text>
+                      <TouchableOpacity
+                        style={[
+                          styles.deliverytimeText,
+                          {
+                            backgroundColor:
+                              deliveryTime == item.label
+                                ? COLORS.primary
+                                : COLORS.lightGray2,
+                          },
+                        ]}
+                        onPress={() => setDeliveryTime(item.label)}>
+                        <Text
+                          style={[
+                            styles.labelText,
+                            {
+                              color:
+                                deliveryTime == item.label
+                                  ? COLORS.white
+                                  : COLORS.gray,
+                            },
+                          ]}>
+                          {item.label}
+                        </Text>
                       </TouchableOpacity>
                     );
                   }}
@@ -118,6 +185,7 @@ const HomeScreen = (props: HomeScreen) => {
                   borderRadius: 10,
                   backgroundColor: COLORS.lightGray2,
                 }}
+                onValuesChange={(item: any) => setPrice(item)}
                 minMarkerOverlapDistance={50}
                 customMarker={e => {
                   return (
@@ -142,15 +210,43 @@ const HomeScreen = (props: HomeScreen) => {
                   keyExtractor={(_, index) => index.toString()}
                   renderItem={({item, index}) => {
                     return (
-                      <TouchableOpacity style={styles.ratingContainer}>
-                        <Text style={styles.labelText}>{item.label}</Text>
-                        <Image source={icons.star} style={styles.starIcon} />
+                      <TouchableOpacity
+                        style={[
+                          styles.ratingContainer,
+                          {
+                            backgroundColor:
+                              rating > index
+                                ? COLORS.primary
+                                : COLORS.lightGray2,
+                          },
+                        ]}
+                        onPress={() => setRating(index + 1)}>
+                        <Text
+                          style={[
+                            styles.labelText,
+                            {
+                              color:
+                                rating > index ? COLORS.white : COLORS.gray,
+                            },
+                          ]}>
+                          {item.label}
+                        </Text>
+                        <Image
+                          source={icons.star}
+                          style={[
+                            styles.starIcon,
+                            {
+                              tintColor:
+                                rating > index ? COLORS.golden : COLORS.gray2,
+                            },
+                          ]}
+                        />
                       </TouchableOpacity>
                     );
                   }}
                 />
               </View>
-              <Text style={styles.distanceText}>{constants.keywords.Tags}</Text>
+              {/* <Text style={styles.distanceText}>{constants.keywords.Tags}</Text>
               <View>
                 <FlatList
                   horizontal
@@ -166,8 +262,12 @@ const HomeScreen = (props: HomeScreen) => {
                     );
                   }}
                 />
-              </View>
-              <TouchableOpacity style={styles.NextButtonContainer}>
+              </View> */}
+              <TouchableOpacity
+                style={styles.NextButtonContainer}
+                onPress={() => {
+                  setApplyFilter(true), setFilter(false);
+                }}>
                 <Text style={styles.NextButtonText}>
                   {constants.keywords.Apply_Filters}
                 </Text>
@@ -212,57 +312,69 @@ const HomeScreen = (props: HomeScreen) => {
             </TouchableOpacity>
           </View>
 
-          <View style={{marginLeft: 20}}>
+          <View style={styles.flatListContainer}>
+            {!applyFilter && (
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                data={dummyData.categories}
+                extraData={dummyData.categories}
+                keyExtractor={(_, index) => index.toString()}
+                renderItem={({item, index}) => (
+                  <CategoryRenderItem
+                    item={item}
+                    select={select}
+                    setSelect={setSelect}
+                    index={index}
+                  />
+                )}
+              />
+            )}
+
+            {!applyFilter && (
+              <View style={styles.textContainer}>
+                <Text style={styles.addressText}>
+                  {constants.keywords.Popular}
+                </Text>
+                <TouchableOpacity>
+                  <Text style={styles.deliveryText}>
+                    {constants.keywords.Show_All}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            )}
+
+            {!applyFilter && (
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                data={selectData}
+                extraData={selectData}
+                keyExtractor={(_, index) => index.toString()}
+                renderItem={({item, index}) => (
+                  <FoodMennuRenderItem item={item} navigation={navigation} />
+                )}
+              />
+            )}
+
+            {!applyFilter && (
+              <View style={styles.textContainer}>
+                <Text style={styles.addressText}>
+                  {constants.keywords.Recommended}
+                </Text>
+                <TouchableOpacity>
+                  <Text style={styles.deliveryText}>
+                    {constants.keywords.Show_All}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            )}
+
             <FlatList
               horizontal
               showsHorizontalScrollIndicator={false}
-              data={dummyData.categories}
-              extraData={dummyData.categories}
-              keyExtractor={(_, index) => index.toString()}
-              renderItem={({item, index}) => (
-                <CategoryRenderItem
-                  item={item}
-                  select={select}
-                  setSelect={setSelect}
-                  index={index}
-                />
-              )}
-            />
-
-            <View style={styles.textContainer}>
-              <Text style={styles.addressText}>
-                {constants.keywords.Popular}
-              </Text>
-              <Text style={styles.deliveryText}>
-                {constants.keywords.Show_All}
-              </Text>
-            </View>
-
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={dummyData.menu}
-              extraData={dummyData.menu}
-              keyExtractor={(_, index) => index.toString()}
-              renderItem={({item, index}) => (
-                <FoodMennuRenderItem item={item} navigation={navigation} />
-              )}
-            />
-
-            <View style={styles.textContainer}>
-              <Text style={styles.addressText}>
-                {constants.keywords.Recommended}
-              </Text>
-              <Text style={styles.deliveryText}>
-                {constants.keywords.Show_All}
-              </Text>
-            </View>
-
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={dummyData.menu}
-              extraData={dummyData.menu}
+              data={filterData}
+              extraData={filterData}
               keyExtractor={(_, index) => index.toString()}
               renderItem={({item, index}) => <FooterFoodMenu item={item} />}
               ListFooterComponent={<View style={{height: 175}} />}

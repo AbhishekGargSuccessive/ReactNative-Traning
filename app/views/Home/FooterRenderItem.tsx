@@ -12,6 +12,10 @@ interface FooterProps {
     price: string;
     calories: number;
     isFavourite: boolean;
+    rating: number;
+    delivery_time: string;
+    distance: number;
+    pricing: number;
     image: any;
   };
 }

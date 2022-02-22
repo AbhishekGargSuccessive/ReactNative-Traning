@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import {
-  FlatList,
-  SectionList,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 import {HeaderComponents} from '../../common';
 import {constants, dummyData, icons} from '../../constants';
-import AllCardRenderItems from './AllCardRenderItem';
 import RenderItems from './renderItem';
 import styles from './styles';
 
@@ -30,39 +24,38 @@ const MyCardScreen = (props: CardProps) => {
         RightImageNavigate={false}
         navigation={navigation}
       />
-      <View style={styles.marginContainer}>
-        {/* <FlatList
-          showsVerticalScrollIndicator={false}
-          data={dummyData.myCards}
-          extraData={dummyData.myCards}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({item, index}) => <RenderItems item={item} />}
-        />
-        <Text style={styles.AddText}>{constants.keywords.Add_new_card}</Text> */}
-        <SectionList
-          showsVerticalScrollIndicator={false}
-          sections={dummyData.allCards}
-          extraData={dummyData.allCards}
-          keyExtractor={(_, index) => index.toString()}
-          renderSectionHeader={({section: {title}}) => (
-            <Text style={styles.AddText}>{title}</Text>
-          )}
-          renderItem={({item, index}) => (
-            <AllCardRenderItems
-              item={item}
-              index={index}
-              select={select}
-              setSelect={setSelect}
-            />
-          )}
-        />
-
-        <TouchableOpacity
-          style={styles.AddButton}
-          onPress={() => navigation.navigate('AddNewCard')}>
-          <Text style={styles.AddButtonText}>{constants.keywords.Add}</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.marginContainer}>
+          {dummyData.myCards.map((item, index) => {
+            return (
+              <RenderItems
+                item={item}
+                index={index}
+                select={select}
+                setSelect={setSelect}
+                key={index}
+              />
+            );
+          })}
+          <Text style={styles.AddText}>{constants.keywords.Add_new_card}</Text>
+          {dummyData.allCards.map((item, index) => {
+            return (
+              <RenderItems
+                item={item}
+                index={index}
+                select={select}
+                setSelect={setSelect}
+                key={index}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
+      <TouchableOpacity
+        style={styles.AddButton}
+        onPress={() => navigation.navigate('AddNewCard')}>
+        <Text style={styles.AddButtonText}>{constants.keywords.Add}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

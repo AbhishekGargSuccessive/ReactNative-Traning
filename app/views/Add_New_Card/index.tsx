@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {HeaderComponents, NewHeader, TextInputs} from '../../common';
+import {HeaderComponents} from '../../common';
 import {constants, icons, images} from '../../constants';
 import styles from './styles';
 
@@ -20,11 +20,11 @@ interface NewCardProps {
 const AddNewCardScreen = (props: NewCardProps) => {
   const {navigation} = props;
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
-        HeadingText={constants.keywords.Add_new_card}
+        HeadingText={constants.keywords.Add_New_Card}
         RightImage={undefined}
         RightImageNavigate={false}
         navigation={navigation}
@@ -106,7 +106,7 @@ const AddNewCardScreen = (props: NewCardProps) => {
           </TouchableOpacity>
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 

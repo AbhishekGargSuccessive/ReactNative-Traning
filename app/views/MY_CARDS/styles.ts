@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     height: 24,
     width: 24,
     resizeMode: 'contain',
-    // tintColor: COLORS.primary,
   },
   AddButton: {
     backgroundColor: COLORS.primary,
@@ -70,6 +69,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     borderRadius: SIZES.radius,
+    marginBottom: 10,
+    marginHorizontal: 20,
   },
   AddButtonText: {
     color: COLORS.white,

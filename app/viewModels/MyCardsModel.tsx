@@ -7,7 +7,7 @@ interface CardsModel {
 
 const MyCardsModel = (props: CardsModel) => {
   const {navigation} = props;
-  const [select, setSelect] = useState(0);
+  const [select, setSelect] = useState(1);
   return (
     <MyCardScreen
       navigation={navigation}

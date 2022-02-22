@@ -7,15 +7,15 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {HeaderComponents, NewHeader} from '../../common';
+import {HeaderComponents} from '../../common';
 import {COLORS, constants, dummyData, icons} from '../../constants';
 import RenderItems from './renderItem';
 import styles from './styles';
 
 interface CheckoutProps {
   navigation: any;
-  select: number
-  setSelect: (value: number) => void
+  select: number;
+  setSelect: (value: number) => void;
 }
 
 const CheckoutScreen = (props: CheckoutProps) => {

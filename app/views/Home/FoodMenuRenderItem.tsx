@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {constants, icons} from '../../constants';
+import {COLORS, constants, icons} from '../../constants';
 import styles from './styles';
 
 interface FoodMenu {
@@ -12,6 +12,10 @@ interface FoodMenu {
     price: string;
     calories: number;
     isFavourite: boolean;
+    rating: number;
+    delivery_time: string;
+    distance: number;
+    pricing: number;
     image: any;
   };
   navigation: any;
@@ -31,7 +35,13 @@ const FoodMennuRenderItem = (props: FoodMenu) => {
               {item.calories} {constants.keywords.Calories}
             </Text>
           </View>
-          <Image source={icons.love} style={styles.LoveIcon} />
+          <Image
+            source={icons.love}
+            style={[
+              styles.LoveIcon,
+              {tintColor: item.isFavourite ? COLORS.red : COLORS.gray},
+            ]}
+          />
         </View>
         <View style={styles.foodImageContainer}>
           <Image source={item.image} style={styles.foodsImages} />

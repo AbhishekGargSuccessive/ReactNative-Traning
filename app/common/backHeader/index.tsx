@@ -6,7 +6,7 @@ import styles from './styles';
 interface BackProps {
   navigation: any;
   HeaderText: string;
-  SecondImage: any
+  SecondImage: any;
 }
 
 const BackHeader = (props: BackProps) => {
@@ -19,7 +19,9 @@ const BackHeader = (props: BackProps) => {
         <Image source={icons.back} style={styles.backIcon} />
       </TouchableOpacity>
       <Text style={styles.HeaderText}>{HeaderText}</Text>
-      <TouchableOpacity style={styles.cartButtonContainer}>
+      <TouchableOpacity
+        style={styles.cartButtonContainer}
+        onPress={() => navigation.navigate('MyCart')}>
         <Image source={SecondImage} style={styles.cartIcon} />
       </TouchableOpacity>
     </View>

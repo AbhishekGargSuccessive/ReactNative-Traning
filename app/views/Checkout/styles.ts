@@ -182,7 +182,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     borderRadius: SIZES.radius,
-    marginVertical: -10,
   },
   OrderButtonText: {
     color: COLORS.white,

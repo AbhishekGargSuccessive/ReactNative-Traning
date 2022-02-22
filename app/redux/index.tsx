@@ -1,10 +1,10 @@
 import React from "react";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from './reducers';
+import rootReducer from './reducers';
 import Counterdemo from './store';
 
-const store = createStore(reducers)
+const store = createStore(rootReducer)
 
 const ReduxApp = () => {
 

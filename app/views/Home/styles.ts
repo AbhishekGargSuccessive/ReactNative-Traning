@@ -79,6 +79,9 @@ const styles = StyleSheet.create({
     width: 20,
     marginLeft: SIZES.base,
   },
+  flatListContainer: {
+    marginLeft: 20,
+  },
   foodContainer: {
     flexDirection: 'row',
     height: 55,
@@ -133,7 +136,6 @@ const styles = StyleSheet.create({
   LoveIcon: {
     height: 25,
     width: 25,
-    tintColor: COLORS.red2,
     marginRight: 5,
   },
   foodImageContainer: {

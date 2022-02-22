@@ -10,18 +10,20 @@ interface renderProps {
     icon: any;
     card_no: string;
   };
+  index: number;
+  select: number;
+  setSelect: (item: number) => void;
 }
 
 const RenderItems = (props: renderProps) => {
-  const {item} = props;
-  const [click, setclick] = useState(0);
+  const {item, index, setSelect, select} = props;
   return (
     <TouchableOpacity
       style={[
         styles.renderContainer,
-        {borderColor: item.id == click ? COLORS.primary : COLORS.lightGray2},
+        {borderColor: item.id == select ? COLORS.primary : COLORS.lightGray2},
       ]}
-      onPress={() => setclick(item.id)}>
+      onPress={() => setSelect(item.id)}>
       <View style={styles.innerRenderContainer}>
         <View style={styles.cardIconContainer}>
           <Image source={item.icon} style={styles.CardIcon} />
@@ -29,7 +31,7 @@ const RenderItems = (props: renderProps) => {
         <Text style={styles.cardText}>{item.name}</Text>
       </View>
       <View style={{}}>
-        {item.id == click ? (
+        {item.id == select ? (
           <Image source={icons.check_on} style={styles.checkCircle} />
         ) : (
           <Image source={icons.check_off} style={styles.checkCircle} />
