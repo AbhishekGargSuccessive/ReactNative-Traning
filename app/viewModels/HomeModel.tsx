@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {useSelector} from 'react-redux';
+import {dummyData} from '../constants';
 import HomeScreen from '../views/Home';
 
 interface HomeModelProps {
@@ -15,6 +17,41 @@ const HomeModel = (props: HomeModelProps) => {
   const [price, setPrice] = useState([]);
   const [rating, setRating] = useState(0);
 
+  let filterData = dummyData.menu;
+
+  if (distance.length != 0) {
+    filterData = filterData.filter(
+      key => key.distance > distance[0] && key.distance < distance[1],
+    );
+  }
+
+  if (deliveryTime != '') {
+    filterData = filterData.filter(key => key.delivery_time == deliveryTime);
+  }
+
+  if (price.length != 0) {
+    filterData = filterData.filter(
+      key => key.pricing > price[0] && key.pricing < price[1],
+    );
+  }
+
+  if (rating != 0) {
+    filterData = filterData.filter(key => key.rating == rating);
+  }
+
+  const selectData = dummyData.menu.filter(data => data.categories == select);
+  type state = {
+    Profile: string;
+  };
+  const ProfileImage = useSelector<state>(state => state.Profile);
+
+  const ResetFilter = () => {
+    setApplyFilter(false),
+      setDeliveryTime(''),
+      setDistance([]),
+      setPrice([]),
+      setRating(0);
+  };
   return (
     <HomeScreen
       navigation={navigation}
@@ -32,6 +69,10 @@ const HomeModel = (props: HomeModelProps) => {
       setPrice={setPrice}
       rating={rating}
       setRating={setRating}
+      filterData={filterData}
+      selectData={selectData}
+      ProfileImage={ProfileImage}
+      ResetFilter={ResetFilter}
     />
   );
 };

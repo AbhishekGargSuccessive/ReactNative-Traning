@@ -10,19 +10,12 @@ import {
   Modal,
   TouchableWithoutFeedback,
 } from 'react-native';
-import {
-  COLORS,
-  constants,
-  dummyData,
-  icons,
-  SIZES,
-} from '../../constants';
+import {COLORS, constants, dummyData, icons, SIZES} from '../../constants';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import CategoryRenderItem from './categoryRenderItem';
 import FoodMennuRenderItem from './FoodMenuRenderItem';
 import FooterFoodMenu from './FooterRenderItem';
 import {HeaderComponents} from '../../common';
-import {useSelector} from 'react-redux';
 import styles from './styles';
 
 interface HomeScreen {
@@ -41,6 +34,36 @@ interface HomeScreen {
   setPrice: React.Dispatch<React.SetStateAction<never[]>>;
   rating: number;
   setRating: React.Dispatch<React.SetStateAction<number>>;
+  filterData: {
+    id: number;
+    name: string;
+    description: string;
+    price: string;
+    calories: number;
+    isFavourite: boolean;
+    categories: number;
+    rating: number;
+    delivery_time: string;
+    distance: number;
+    pricing: number;
+    image: any;
+  }[];
+  selectData: {
+    id: number;
+    name: string;
+    description: string;
+    price: string;
+    calories: number;
+    isFavourite: boolean;
+    categories: number;
+    rating: number;
+    delivery_time: string;
+    distance: number;
+    pricing: number;
+    image: any;
+  }[];
+  ProfileImage: unknown;
+  ResetFilter: () => void;
 }
 
 const HomeScreen = (props: HomeScreen) => {
@@ -60,30 +83,12 @@ const HomeScreen = (props: HomeScreen) => {
     setPrice,
     rating,
     setRating,
+    filterData,
+    selectData,
+    ProfileImage,
+    ResetFilter,
   } = props;
-  let filterData = dummyData.menu;
-  if (distance.length != 0) {
-    filterData = filterData.filter(
-      key => key.distance > distance[0] && key.distance < distance[1],
-    );
-  }
-  if (deliveryTime != '') {
-    filterData = filterData.filter(key => key.delivery_time == deliveryTime);
-  }
-  if (price.length != 0) {
-    filterData = filterData.filter(
-      key => key.pricing > price[0] && key.pricing < price[1],
-    );
-  }
-  if (rating != 0) {
-    filterData = filterData.filter(key => key.rating == rating);
-  }
 
-  const selectData = dummyData.menu.filter(data => data.categories == select);
-  type state = {
-    Profile: string;
-  };
-  const ProfileImage = useSelector<state>(state => state.Profile);
   return (
     <View style={{flex: 1}}>
       <Modal
@@ -111,7 +116,7 @@ const HomeScreen = (props: HomeScreen) => {
                 {constants.keywords.Distance}
               </Text>
               <MultiSlider
-                values={[3, 10]}
+                values={[4, 10]}
                 min={1}
                 max={20}
                 step={1}
@@ -250,23 +255,6 @@ const HomeScreen = (props: HomeScreen) => {
                   }}
                 />
               </View>
-              {/* <Text style={styles.distanceText}>{constants.keywords.Tags}</Text>
-              <View>
-                <FlatList
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  data={constants.tags}
-                  extraData={constants.tags}
-                  keyExtractor={(_, index) => index.toString()}
-                  renderItem={({item, index}) => {
-                    return (
-                      <TouchableOpacity style={styles.ratingContainer}>
-                        <Text style={styles.labelText}>{item.label}</Text>
-                      </TouchableOpacity>
-                    );
-                  }}
-                />
-              </View> */}
               <TouchableOpacity
                 style={styles.NextButtonContainer}
                 onPress={() => {
@@ -369,6 +357,23 @@ const HomeScreen = (props: HomeScreen) => {
                 <TouchableOpacity>
                   <Text style={styles.deliveryText}>
                     {constants.keywords.Show_All}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            )}
+
+            {applyFilter && (
+              <View style={styles.textContainer}>
+                <Text style={styles.addressText}>
+                  {constants.keywords.Filter_List}
+                </Text>
+                <TouchableOpacity
+                  style={styles.ResetFilter}
+                  onPress={() => {
+                    ResetFilter();
+                  }}>
+                  <Text style={styles.ResetFilterText}>
+                    {constants.keywords.Reset_Filter}
                   </Text>
                 </TouchableOpacity>
               </View>

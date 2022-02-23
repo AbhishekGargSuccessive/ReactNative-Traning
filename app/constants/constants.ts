@@ -131,6 +131,8 @@ const keywords = {
   Camera: 'Camera',
   Gallery: 'Gallery',
   Abhishek_Garg: 'Abhishek Garg',
+  Filter_List: 'Filtered List :',
+  Reset_Filter: 'Reset Filter',
 };
 
 const screens = {
