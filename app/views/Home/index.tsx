@@ -64,6 +64,30 @@ interface HomeScreen {
   }[];
   ProfileImage: unknown;
   ResetFilter: () => void;
+  search: {
+    text: string;
+    state: boolean;
+  };
+  setSearch: React.Dispatch<
+    React.SetStateAction<{
+      text: string;
+      state: boolean;
+    }>
+  >;
+  SearchData: {
+    id: number;
+    name: string;
+    description: string;
+    price: string;
+    calories: number;
+    isFavourite: boolean;
+    categories: number;
+    rating: number;
+    delivery_time: string;
+    distance: number;
+    pricing: number;
+    image: any;
+  }[];
 }
 
 const HomeScreen = (props: HomeScreen) => {
@@ -87,6 +111,9 @@ const HomeScreen = (props: HomeScreen) => {
     selectData,
     ProfileImage,
     ResetFilter,
+    search,
+    setSearch,
+    SearchData,
   } = props;
 
   return (
@@ -283,6 +310,10 @@ const HomeScreen = (props: HomeScreen) => {
             <TextInput
               style={styles.searchInput}
               placeholder="search food..."
+              value={search.text}
+              onChangeText={(item: string) =>
+                setSearch({text: item, state: true})
+              }
             />
             <TouchableOpacity onPress={() => setFilter(true)}>
               <Image source={icons.filter} style={styles.searchIcons} />
@@ -290,106 +321,150 @@ const HomeScreen = (props: HomeScreen) => {
           </View>
         </View>
 
-        <ScrollView style={{}} showsVerticalScrollIndicator={false}>
-          <View style={styles.deliveryContainer}>
-            <Text style={styles.deliveryText}>
-              {constants.keywords.Delivery_To}
-            </Text>
-
-            <TouchableOpacity style={styles.addressConatiner}>
-              <Text style={styles.addressText}>
-                {constants.keywords.Address}
-              </Text>
-              <Image source={icons.down_arrow} style={styles.downarrow} />
-            </TouchableOpacity>
-          </View>
-
-          <View style={styles.flatListContainer}>
-            {!applyFilter && (
-              <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                data={dummyData.categories}
-                extraData={dummyData.categories}
-                keyExtractor={(_, index) => index.toString()}
-                renderItem={({item, index}) => (
-                  <CategoryRenderItem
-                    item={item}
-                    select={select}
-                    setSelect={setSelect}
-                    index={index}
-                  />
-                )}
-              />
-            )}
-
-            {!applyFilter && (
-              <View style={styles.textContainer}>
-                <Text style={styles.addressText}>
-                  {constants.keywords.Popular}
-                </Text>
-                <TouchableOpacity>
-                  <Text style={styles.deliveryText}>
-                    {constants.keywords.Show_All}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            )}
-
-            {!applyFilter && (
-              <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                data={selectData}
-                extraData={selectData}
-                keyExtractor={(_, index) => index.toString()}
-                renderItem={({item, index}) => (
-                  <FoodMennuRenderItem item={item} navigation={navigation} />
-                )}
-              />
-            )}
-
-            {!applyFilter && (
-              <View style={styles.textContainer}>
-                <Text style={styles.addressText}>
-                  {constants.keywords.Recommended}
-                </Text>
-                <TouchableOpacity>
-                  <Text style={styles.deliveryText}>
-                    {constants.keywords.Show_All}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            )}
-
-            {applyFilter && (
-              <View style={styles.textContainer}>
-                <Text style={styles.addressText}>
-                  {constants.keywords.Filter_List}
-                </Text>
+        {search.state && (
+          <View style={[styles.flatListContainer, {paddingTop: 16}]}>
+            {SearchData.length == 0 ? (
+              <View style={styles.SearchContainer}>
                 <TouchableOpacity
-                  style={styles.ResetFilter}
-                  onPress={() => {
-                    ResetFilter();
-                  }}>
-                  <Text style={styles.ResetFilterText}>
-                    {constants.keywords.Reset_Filter}
+                  style={[styles.ResetFilter, {flexDirection: 'row'}]}
+                  onPress={() => setSearch({text: '', state: false})}>
+                  <Text style={[styles.Search, {textAlign: 'center'}]}>
+                    {constants.keywords.NOT_FOUND}
                   </Text>
+                  <Image source={icons.cross} style={styles.SearchCross} />
                 </TouchableOpacity>
               </View>
+            ) : (
+              <View>
+                <View style={styles.SearchContainer}>
+                  <TouchableOpacity
+                    style={[styles.ResetFilter, {flexDirection: 'row'}]}
+                    onPress={() => setSearch({text: '', state: false})}>
+                    <Text style={[styles.Search, {color: 'white'}]}>
+                      {constants.keywords.Result_FOUND}
+                    </Text>
+                    <Image source={icons.cross} style={styles.SearchCross} />
+                  </TouchableOpacity>
+                </View>
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  data={SearchData}
+                  extraData={SearchData}
+                  keyExtractor={(_, index) => index.toString()}
+                  renderItem={({item, index}) => (
+                    <FoodMennuRenderItem item={item} navigation={navigation} />
+                  )}
+                />
+              </View>
             )}
-
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={filterData}
-              extraData={filterData}
-              keyExtractor={(_, index) => index.toString()}
-              renderItem={({item, index}) => <FooterFoodMenu item={item} />}
-              ListFooterComponent={<View style={{height: 175}} />}
-            />
           </View>
-        </ScrollView>
+        )}
+
+        {!search.state && (
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.deliveryContainer}>
+              <Text style={styles.deliveryText}>
+                {constants.keywords.Delivery_To}
+              </Text>
+
+              <View style={styles.addressConatiner}>
+                <Text style={styles.addressText}>
+                  {constants.keywords.Address}
+                </Text>
+                <TouchableOpacity>
+                  <Image source={icons.down_arrow} style={styles.downarrow} />
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            <View style={styles.flatListContainer}>
+              {!applyFilter && (
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  data={dummyData.categories}
+                  extraData={dummyData.categories}
+                  keyExtractor={(_, index) => index.toString()}
+                  renderItem={({item, index}) => (
+                    <CategoryRenderItem
+                      item={item}
+                      select={select}
+                      setSelect={setSelect}
+                      index={index}
+                    />
+                  )}
+                />
+              )}
+
+              {!applyFilter && (
+                <View style={styles.textContainer}>
+                  <Text style={styles.addressText}>
+                    {constants.keywords.Popular}
+                  </Text>
+                  <TouchableOpacity>
+                    <Text style={styles.deliveryText}>
+                      {constants.keywords.Show_All}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+
+              {!applyFilter && (
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  data={selectData}
+                  extraData={selectData}
+                  keyExtractor={(_, index) => index.toString()}
+                  renderItem={({item, index}) => (
+                    <FoodMennuRenderItem item={item} navigation={navigation} />
+                  )}
+                />
+              )}
+
+              {!applyFilter && (
+                <View style={styles.textContainer}>
+                  <Text style={styles.addressText}>
+                    {constants.keywords.Recommended}
+                  </Text>
+                  <TouchableOpacity>
+                    <Text style={styles.deliveryText}>
+                      {constants.keywords.Show_All}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+
+              {applyFilter && (
+                <View style={styles.textContainer}>
+                  <Text style={styles.addressText}>
+                    {constants.keywords.Filter_List}
+                  </Text>
+                  <TouchableOpacity
+                    style={styles.ResetFilter}
+                    onPress={() => {
+                      ResetFilter();
+                    }}>
+                    <Text style={styles.ResetFilterText}>
+                      {constants.keywords.Reset_Filter}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              )}
+
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                data={filterData}
+                extraData={filterData}
+                keyExtractor={(_, index) => index.toString()}
+                renderItem={({item, index}) => <FooterFoodMenu item={item} />}
+                ListFooterComponent={<View style={{height: 175}} />}
+              />
+            </View>
+          </ScrollView>
+        )}
       </View>
     </View>
   );

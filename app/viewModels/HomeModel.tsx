@@ -16,6 +16,7 @@ const HomeModel = (props: HomeModelProps) => {
   const [deliveryTime, setDeliveryTime] = useState('');
   const [price, setPrice] = useState([]);
   const [rating, setRating] = useState(0);
+  const [search, setSearch] = useState({text: '', state: false});
 
   let filterData = dummyData.menu;
 
@@ -40,9 +41,11 @@ const HomeModel = (props: HomeModelProps) => {
   }
 
   const selectData = dummyData.menu.filter(data => data.categories == select);
+
   type state = {
     Profile: string;
   };
+
   const ProfileImage = useSelector<state>(state => state.Profile);
 
   const ResetFilter = () => {
@@ -52,6 +55,11 @@ const HomeModel = (props: HomeModelProps) => {
       setPrice([]),
       setRating(0);
   };
+
+  const SearchData = dummyData.menu.filter(key =>
+    key.name.toLowerCase().match(search.text.toLowerCase()),
+  );
+
   return (
     <HomeScreen
       navigation={navigation}
@@ -73,6 +81,9 @@ const HomeModel = (props: HomeModelProps) => {
       selectData={selectData}
       ProfileImage={ProfileImage}
       ResetFilter={ResetFilter}
+      search={search}
+      setSearch={setSearch}
+      SearchData={SearchData}
     />
   );
 };

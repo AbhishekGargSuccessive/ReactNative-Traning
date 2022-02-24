@@ -1,6 +1,11 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeModel, MyCartModel, NotificationTabModel} from '../../viewModels';
+import {
+  HomeModel,
+  MyCartModel,
+  NotificationTabModel,
+  MyOrdersModel,
+} from '../../viewModels';
 import {Image, Text, View} from 'react-native';
 import {COLORS, constants, icons} from '../../constants';
 import styles from './styles';
@@ -125,7 +130,7 @@ const MainTab = ({navigation}: any) => {
       />
       <Tab.Screen
         name="Favourite"
-        component={HomeModel}
+        component={MyOrdersModel}
         options={{
           tabBarIcon: ({focused}) => {
             return (

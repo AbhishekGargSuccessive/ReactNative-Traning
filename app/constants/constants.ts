@@ -133,6 +133,8 @@ const keywords = {
   Abhishek_Garg: 'Abhishek Garg',
   Filter_List: 'Filtered List :',
   Reset_Filter: 'Reset Filter',
+  NOT_FOUND: 'Not Found',
+  Result_FOUND: 'Search Found',
 };
 
 const screens = {

@@ -313,6 +313,19 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     ...FONTS.h3,
   },
+  Search: {
+    color: COLORS.white,
+    ...FONTS.h3,
+  },
+  SearchContainer: {
+    paddingBottom: 20,
+    alignItems: 'flex-start',
+  },
+  SearchCross: {
+    tintColor: 'white',
+    height: 27,
+    width: 27,
+  },
 });
 
 export default styles;
