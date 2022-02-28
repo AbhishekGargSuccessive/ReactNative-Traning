@@ -15,8 +15,6 @@ interface SignIn {
   invalidPassword: boolean;
   setEmail: (text: string) => void;
   setPassword: (text: string) => void;
-  setInvalidEmail: (text: boolean) => void;
-  setInvalidPassword: (text: boolean) => void;
   Submit: () => void;
 }
 
@@ -31,15 +29,12 @@ const SignIn = (props: SignIn) => {
     invalidPassword,
     setEmail,
     setPassword,
-    setInvalidEmail,
-    setInvalidPassword,
     Submit,
   } = props;
 
   return (
     <View style={styles.container}>
       <HeaderLogo />
-
       <ScrollView
         style={styles.marginContainer}
         showsVerticalScrollIndicator={false}>
@@ -49,8 +44,7 @@ const SignIn = (props: SignIn) => {
         <View style={styles.ScrollContainer}>
           <TextInputs
             name="Email"
-            Switch={invalidEmail}
-            setSwitch={setInvalidEmail}
+            Switch={!invalidEmail}
             onchangeText={email => setEmail(email)}
             placeholder={''}
             placeholderTextColor={undefined}
@@ -58,8 +52,7 @@ const SignIn = (props: SignIn) => {
 
           <TextPasswords
             name="Password"
-            Switch={invalidPassword}
-            setSwitch={setInvalidPassword}
+            Switch={!invalidPassword}
             onchangeText={password => setPassword(password)}
           />
 

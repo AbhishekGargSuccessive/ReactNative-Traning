@@ -1,62 +1,48 @@
-import React, { useEffect, useState } from "react";
-import SignIn from "../views/SignIn/SignIn";
-import { EmailValidation, PasswordValidation } from '../config/validation'
+import React, {useRef, useState} from 'react';
+import SignIn from '../views/SignIn/SignIn';
+import {EmailValidation, PasswordValidation} from '../config/validation';
 
 interface SignInModel {
-    navigation: any
+  navigation: any;
 }
 
 const SignInModel = (props: SignInModel) => {
-    const { navigation } = props
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const {navigation} = props;
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
-    const [email, setEmail] = useState("");
-    const [invalidEmail, setInvalidEmail] = useState(false)
+  const [email, setEmail] = useState('');
+  const [invalidEmail, setInvalidEmail] = useState(true);
 
-    const [password, setPassword] = useState("");
-    const [invalidPassword, setInvalidPassword] = useState(false)
+  const [password, setPassword] = useState('');
+  const [invalidPassword, setInvalidPassword] = useState(true);
 
-    useEffect(()=>{
-        if(invalidEmail && invalidPassword)
-        navigation.navigate('Drawer')
-    },[invalidEmail,invalidPassword])
+  const EmailRef = useRef(false);
+  const PasswordRef = useRef(false);
 
-    // invalidEmail == true && invalidPassword ==true ? navigation.navigate('Drawer'): null
-    // },[invalidEmail, invalidPassword])
-
-    const Submit = async() => {
-        // let validate = EmailValidation(email)
-        // setInvalidEmail(validate)
-
-        // validate = PasswordValidation(password)
-        // setInvalidPassword(validate)
-
-       await setInvalidEmail(EmailValidation(email))
-        setInvalidPassword(PasswordValidation(password))
+  const Submit = () => {
+    EmailRef.current = !EmailValidation(email);
+    PasswordRef.current = !PasswordValidation(password);
+    setInvalidEmail(EmailRef.current);
+    setInvalidPassword(PasswordRef.current);
+    if (EmailRef.current && PasswordRef.current) {
+      navigation.navigate('Drawer');
     }
-    return (
-        <SignIn
-            navigation={navigation}
-
-            isEnabled={isEnabled}
-            toggleSwitch={toggleSwitch}
-
-            email={email}
-            password={password}
-
-            invalidEmail={invalidEmail}
-            invalidPassword={invalidPassword}
-
-            setEmail={(email) => setEmail(email)}
-            setPassword={(password) => setPassword(password)}
-
-            setInvalidEmail={(isvalidEmail) => setInvalidEmail(isvalidEmail)}
-            setInvalidPassword={(invalidPassword) => setInvalidPassword(invalidPassword)}
-
-            Submit={Submit}
-        />
-    )
-}
+  };
+  return (
+    <SignIn
+      navigation={navigation}
+      isEnabled={isEnabled}
+      toggleSwitch={toggleSwitch}
+      email={email}
+      password={password}
+      invalidEmail={invalidEmail}
+      invalidPassword={invalidPassword}
+      setEmail={email => setEmail(email)}
+      setPassword={password => setPassword(password)}
+      Submit={Submit}
+    />
+  );
+};
 
 export default SignInModel;

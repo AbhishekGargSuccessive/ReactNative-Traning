@@ -16,9 +16,6 @@ interface SignUp {
   setEmail: (text: string) => void;
   setUsername: (text: string) => void;
   setPassword: (text: string) => void;
-  setInvalidEmail: (text: boolean) => void;
-  setInvalidUsername: (text: boolean) => void;
-  setInvalidPassword: (text: boolean) => void;
   Submit: () => void;
 }
 
@@ -34,9 +31,6 @@ const SignUpScreen = (props: SignUp) => {
     setEmail,
     setUsername,
     setPassword,
-    setInvalidEmail,
-    setInvalidUsername,
-    setInvalidPassword,
     Submit,
   } = props;
   return (
@@ -54,24 +48,21 @@ const SignUpScreen = (props: SignUp) => {
         <View style={styles.ScrollContainer}>
           <TextInputs
             name="Email"
-            Switch={invalidEmail}
-            setSwitch={setInvalidEmail}
+            Switch={!invalidEmail}
             onchangeText={email => setEmail(email)}
             placeholder={''}
             placeholderTextColor={undefined}
           />
           <TextInputs
             name="Username"
-            Switch={invalidUsername}
-            setSwitch={setInvalidUsername}
+            Switch={!invalidUsername}
             onchangeText={username => setUsername(username)}
             placeholder={''}
             placeholderTextColor={undefined}
           />
           <TextPasswords
             name="Password"
-            Switch={invalidPassword}
-            setSwitch={setInvalidPassword}
+            Switch={!invalidPassword}
             onchangeText={password => setPassword(password)}
           />
 

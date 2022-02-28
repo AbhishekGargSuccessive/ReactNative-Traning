@@ -9,18 +9,11 @@ interface TextProps {
   placeholder: string;
   placeholderTextColor: any;
   onchangeText: (t: string) => void;
-  setSwitch: (t: boolean) => void;
 }
 
 const TextInputs = (props: TextProps) => {
-  const {
-    name,
-    Switch,
-    onchangeText,
-    setSwitch,
-    placeholder,
-    placeholderTextColor,
-  } = props;
+  const {name, Switch, onchangeText, placeholder, placeholderTextColor} = props;
+  const [check, setCheck] = useState(false);
   return (
     <View>
       <View style={styles.container}>
@@ -40,14 +33,16 @@ const TextInputs = (props: TextProps) => {
           placeholder={placeholder}
           placeholderTextColor={placeholderTextColor}
           onChangeText={text => {
-            onchangeText(text), setSwitch(false);
+            onchangeText(text), setCheck(true);
           }}
         />
-        {Switch && (
-          <Image
-            source={!Switch ? icons.check_circle : icons.cancel}
-            style={styles.icon}
-          />
+        {check && (
+          <TouchableOpacity onPress={() => onchangeText('')}>
+            <Image
+              source={!Switch ? icons.check_circle : icons.cancel}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
         )}
       </View>
     </View>
