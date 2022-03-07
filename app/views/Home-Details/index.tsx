@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
   FlatList,
   Image,
+  SafeAreaView,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -23,7 +24,7 @@ interface DetailProps {
 const DetailScreen = (props: DetailProps) => {
   const {navigation, counter, setCounter, size, setSize} = props;
   return (
-    <View style={styles.backcontainer}>
+    <SafeAreaView style={styles.backcontainer}>
       <BackHeader
         navigation={navigation}
         HeaderText={constants.keywords.Details}
@@ -113,7 +114,7 @@ const DetailScreen = (props: DetailProps) => {
           <Text style={styles.buyNowText}>{dummyData.hamburger.price}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

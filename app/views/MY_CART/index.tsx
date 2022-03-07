@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {
   Modal,
+  SafeAreaView,
   Text,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import {BackHeader} from '../../common';
@@ -20,7 +20,7 @@ interface CartProps {
 const MyCartScreen = (props: CartProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <BackHeader
         navigation={navigation}
         HeaderText={constants.keywords.My_Cart}
@@ -61,7 +61,7 @@ const MyCartScreen = (props: CartProps) => {
           <Text style={styles.OrderButtonText}>{constants.keywords.Place}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

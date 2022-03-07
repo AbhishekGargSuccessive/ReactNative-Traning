@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {constants, dummyData, icons} from '../../constants';
 import RenderItems from './renderItems';
 import styles from './styles';
@@ -11,7 +11,7 @@ interface AcccountProps {
 const MyAccountScreen = (props: AcccountProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.colorcontainer}>
+    <SafeAreaView style={styles.colorcontainer}>
       <View style={styles.marginContainer}>
         <View style={styles.Container}>
           <TouchableOpacity
@@ -43,7 +43,7 @@ const MyAccountScreen = (props: AcccountProps) => {
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

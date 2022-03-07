@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {FlatList, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {HeaderComponents} from '../../common';
 import {COLORS, constants, dummyData, icons, images} from '../../constants';
@@ -19,7 +19,7 @@ const MyCouponScreen = (props: RiderProps) => {
   };
   const ProfileImage = useSelector<state>(state => state.Profile);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -82,7 +82,7 @@ const MyCouponScreen = (props: RiderProps) => {
           </View>
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

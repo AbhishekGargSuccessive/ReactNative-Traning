@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Switch, Text, View} from 'react-native';
+import {Image, SafeAreaView, Switch, Text, View} from 'react-native';
 import {COLORS} from '../../constants';
 import styles from './stylels';
 
@@ -16,7 +16,7 @@ const RenderItems = (props: RenderProps) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
-    <View style={styles.RenderVerticalContainer}>
+    <SafeAreaView style={styles.RenderVerticalContainer}>
       <View style={styles.renderContainer}>
         <View style={styles.innerRenderContainer}>
           <Image source={item.icon} style={styles.notificationIcon} />
@@ -36,7 +36,7 @@ const RenderItems = (props: RenderProps) => {
           value={isEnabled}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

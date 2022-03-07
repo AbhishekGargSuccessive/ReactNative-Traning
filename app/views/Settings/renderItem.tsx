@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 
 interface RenderProps {
@@ -16,7 +16,7 @@ interface RenderProps {
 const RenderItems = (props: RenderProps) => {
   const {item, index, navigation} = props;
   return (
-    <View>
+    <SafeAreaView>
       <TouchableOpacity
         style={styles.renderContainer}
         disabled={item.navigate != '' ? false : true}
@@ -25,7 +25,7 @@ const RenderItems = (props: RenderProps) => {
         <Text style={styles.NameText}>{item.name}</Text>
       </TouchableOpacity>
       {index != 9 && <View style={styles.line} />}
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, SafeAreaView, Text, View} from 'react-native';
 import {COLORS, icons} from '../../constants';
 import styles from './styles';
 
@@ -16,7 +16,7 @@ interface renderProps {
 const RenderItems = (props: renderProps) => {
   const {item, index} = props;
   return (
-    <View style={styles.renderContainer}>
+    <SafeAreaView style={styles.renderContainer}>
       <View>
         <Image source={icons.check_circle} style={[styles.tickIcon]} />
         {index != 4 && (
@@ -27,7 +27,7 @@ const RenderItems = (props: renderProps) => {
         <Text style={styles.trackOrderText}>{item.title}</Text>
         <Text style={styles.IDText}>{item.sub_title}</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

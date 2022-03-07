@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, SafeAreaView, View} from 'react-native';
 import {HeaderComponents} from '../../common';
 import {constants, dummyData, icons} from '../../constants';
 import RenderItems from './renderItem';
@@ -12,7 +12,7 @@ interface SettingProps {
 const SettingScreen = (props: SettingProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -30,7 +30,7 @@ const SettingScreen = (props: SettingProps) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

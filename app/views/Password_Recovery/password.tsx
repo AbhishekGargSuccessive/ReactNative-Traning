@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {SafeAreaView, TouchableOpacity} from 'react-native';
 import {Text, View} from 'react-native-animatable';
 import {HeaderLogo, TextInputs} from '../../common';
 import {constants} from '../../constants';
@@ -12,7 +12,7 @@ interface PasswordProps {
 const PasswordScreen = (props: PasswordProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.marginContainer}>
         <HeaderLogo />
         <Text style={styles.PasswordText}>
@@ -23,7 +23,6 @@ const PasswordScreen = (props: PasswordProps) => {
           <TextInputs
             name="Email"
             Switch={false}
-            setSwitch={() => false}
             onchangeText={() => false}
             placeholder={''}
             placeholderTextColor={undefined}
@@ -39,7 +38,7 @@ const PasswordScreen = (props: PasswordProps) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

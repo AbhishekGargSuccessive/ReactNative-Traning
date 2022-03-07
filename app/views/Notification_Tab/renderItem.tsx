@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {icons} from '../../constants';
 import styles from './styles';
 
@@ -16,7 +16,7 @@ interface RenderProps {
 const RenderItems = (props: RenderProps) => {
   const {item} = props;
   return (
-    <View style={styles.renderContainer}>
+    <SafeAreaView style={styles.renderContainer}>
       <View style={styles.innerRenderContainer}>
         <View style={styles.IconContainer}>
           <Image source={item.icon} style={styles.icon} />
@@ -31,7 +31,7 @@ const RenderItems = (props: RenderProps) => {
       <TouchableOpacity>
         <Image source={icons.three_dots} style={styles.threeDots} />
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 

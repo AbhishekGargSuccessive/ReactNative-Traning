@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {constants, icons, SIZES} from '../../constants';
 import styles from './styles';
 
@@ -23,7 +23,7 @@ interface FooterProps {
 const FooterFoodMenu = (props: FooterProps) => {
   const {item} = props;
   return (
-    <View>
+    <SafeAreaView>
       <View style={styles.FooterContainer}>
         <Image source={item.image} style={styles.footerfoodsImages} />
         <View>
@@ -38,7 +38,7 @@ const FooterFoodMenu = (props: FooterProps) => {
           </Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

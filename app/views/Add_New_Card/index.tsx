@@ -2,8 +2,7 @@ import React from 'react';
 import {
   Image,
   ImageBackground,
-  KeyboardAvoidingView,
-  ScrollView,
+  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -20,7 +19,7 @@ interface NewCardProps {
 const AddNewCardScreen = (props: NewCardProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -106,7 +105,7 @@ const AddNewCardScreen = (props: NewCardProps) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

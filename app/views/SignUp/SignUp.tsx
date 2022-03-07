@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ScrollView, TouchableOpacity} from 'react-native';
+import {Image, SafeAreaView, ScrollView, TouchableOpacity} from 'react-native';
 import {Text, View} from 'react-native-animatable';
 import {HeaderLogo, TextInputs, TextPasswords} from '../../common';
 import {constants, icons} from '../../constants';
@@ -34,7 +34,7 @@ const SignUpScreen = (props: SignUp) => {
     Submit,
   } = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderLogo />
 
       <ScrollView
@@ -100,7 +100,7 @@ const SignUpScreen = (props: SignUp) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

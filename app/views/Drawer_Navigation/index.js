@@ -7,6 +7,7 @@ import {
   FlatList,
   Modal,
   TouchableWithoutFeedback,
+  SafeAreaView,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {constants, dummyData, icons} from '../../constants';
@@ -18,10 +19,7 @@ const CustomDrawer = props => {
   const [modalVisible, setModalVisible] = useState(false);
   const dispatch = useDispatch();
   const ProfileData = useSelector(state => state.Profile);
-  // const UserData = useSelector(state => state.DATA);
-  // const [image, setImage] = useState(
-  //   'https://shop.byprogrammers.com/img/logo/logo.png',
-  // );
+
   const openCamara = () => {
     const options = {
       storageOptions: {
@@ -37,7 +35,6 @@ const CustomDrawer = props => {
       } else if (response.customButton) {
       } else {
         const source = {uri: response.assets[0].uri};
-        // setImage(source.uri);
         setModalVisible(false);
         dispatch({type: 'PROFILE', payload: source.uri});
       }
@@ -62,14 +59,13 @@ const CustomDrawer = props => {
         Alert.alert(response.customButton);
       } else {
         const source = {uri: response.assets[0].uri};
-        // setImage(source.uri);
         setModalVisible(false);
         dispatch({type: 'PROFILE', payload: source.uri});
       }
     });
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Modal animationType="slide" transparent={true} visible={modalVisible}>
         <View style={styles.modalContainer}>
           <TouchableWithoutFeedback
@@ -136,7 +132,7 @@ const CustomDrawer = props => {
           />
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

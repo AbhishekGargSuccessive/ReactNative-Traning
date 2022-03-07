@@ -634,7 +634,7 @@ const RiderReview = {
 
 const My_Account = [
   {
-    'Full Name': 'Abhishek Garg',
+    'Full Name': 'Alex!',
   },
   {
     'Phone Number': '8923735637',
@@ -658,7 +658,7 @@ const My_Account_Details = [
     Joined: 'October 2021',
   },
   {
-    Email: 'byprogrammers@gmail.com',
+    Email: 'alex123@gmail.com',
   },
   {
     Address: 'E-29, Budh Vihar, Noida',

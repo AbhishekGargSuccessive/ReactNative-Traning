@@ -9,6 +9,7 @@ import {
   ScrollView,
   Modal,
   TouchableWithoutFeedback,
+  SafeAreaView,
 } from 'react-native';
 import {COLORS, constants, dummyData, icons, SIZES} from '../../constants';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
@@ -117,7 +118,7 @@ const HomeScreen = (props: HomeScreen) => {
   } = props;
 
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <Modal
         animationType="slide"
         transparent={true}
@@ -466,7 +467,7 @@ const HomeScreen = (props: HomeScreen) => {
           </ScrollView>
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

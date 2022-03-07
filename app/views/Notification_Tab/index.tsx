@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, Text, View} from 'react-native';
+import {SafeAreaView, SectionList, Text, View} from 'react-native';
 import {HeaderComponents} from '../../common';
 import {useSelector} from 'react-redux';
 import {constants, dummyData, icons, images} from '../../constants';
@@ -17,7 +17,7 @@ const NotificationTabScreen = (props: Props) => {
   };
   const ProfileImage = useSelector<state>(state => state.Profile);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.menu}
         LeftImageNavigate={navigation.openDrawer}
@@ -36,7 +36,7 @@ const NotificationTabScreen = (props: Props) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

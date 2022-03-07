@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS, constants, icons} from '../../constants';
 import styles from './styles';
 
@@ -24,7 +24,7 @@ interface FoodMenu {
 const FoodMennuRenderItem = (props: FoodMenu) => {
   const {item, navigation} = props;
   return (
-    <View>
+    <SafeAreaView>
       <TouchableOpacity
         style={styles.FoodContainer}
         onPress={() => navigation.navigate('Detail')}>
@@ -52,7 +52,7 @@ const FoodMennuRenderItem = (props: FoodMenu) => {
           <Text style={styles.priceText}>{item.price}</Text>
         </View>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 

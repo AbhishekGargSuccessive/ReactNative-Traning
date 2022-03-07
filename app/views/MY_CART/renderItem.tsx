@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS, icons} from '../../constants';
 import styles from './styles';
 
@@ -21,7 +21,7 @@ const RenderItem = (props: RenderProps) => {
   const {item} = props;
   const [counter, setCounter] = useState(0);
   return (
-    <View style={styles.renderContainer}>
+    <SafeAreaView style={styles.renderContainer}>
       <View style={styles.renderInnerContainer}>
         <Image source={item.image} style={styles.foodIcon} />
         <View>
@@ -41,7 +41,7 @@ const RenderItem = (props: RenderProps) => {
           <Image source={icons.plus} style={styles.CounterIcons} />
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

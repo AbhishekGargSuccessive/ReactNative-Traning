@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {HeaderComponents, TextInputs} from '../../common';
 import {constants, icons} from '../../constants';
 import styles from './styles';
@@ -11,7 +11,7 @@ interface EditProps {
 const EditAccountScreen = (props: EditProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -27,15 +27,13 @@ const EditAccountScreen = (props: EditProps) => {
               <TextInputs
                 name="Full Name"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
-                placeholder={'Abhishek Garg'}
+                placeholder={'Alex'}
                 placeholderTextColor={'black'}
               />
               <TextInputs
                 name="Phone Number"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
                 placeholder={'8923735637'}
                 placeholderTextColor={'black'}
@@ -43,7 +41,6 @@ const EditAccountScreen = (props: EditProps) => {
               <TextInputs
                 name="ID Card"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
                 placeholder={'ST/SD/21/820'}
                 placeholderTextColor={'black'}
@@ -51,7 +48,6 @@ const EditAccountScreen = (props: EditProps) => {
               <TextInputs
                 name="Date of Birth"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
                 placeholder={'26/02/1999'}
                 placeholderTextColor={'black'}
@@ -59,7 +55,6 @@ const EditAccountScreen = (props: EditProps) => {
               <TextInputs
                 name="Gender"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
                 placeholder={'Male'}
                 placeholderTextColor={'black'}
@@ -67,15 +62,13 @@ const EditAccountScreen = (props: EditProps) => {
               <TextInputs
                 name="Email"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
-                placeholder={'byprogrammers@gmail.com'}
+                placeholder={'alex123@gmail.com'}
                 placeholderTextColor={'black'}
               />
               <TextInputs
                 name="Address"
                 onchangeText={() => false}
-                setSwitch={() => false}
                 Switch={false}
                 placeholder={'E-29, Budh Vihar, Noida'}
                 placeholderTextColor={'black'}
@@ -87,7 +80,7 @@ const EditAccountScreen = (props: EditProps) => {
           <Text style={styles.SaveButtonText}>{constants.keywords.Save}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

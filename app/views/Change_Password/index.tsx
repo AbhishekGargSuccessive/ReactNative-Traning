@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {HeaderComponents, TextPasswords} from '../../common';
 import {constants, icons} from '../../constants';
 import styles from './styles';
@@ -11,7 +11,7 @@ interface Props {
 const ChangePasswordScreen = (props: Props) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -25,19 +25,16 @@ const ChangePasswordScreen = (props: Props) => {
           <TextPasswords
             name="Current Password"
             onchangeText={() => false}
-            setSwitch={() => false}
             Switch={false}
           />
           <TextPasswords
             name="New Password"
             onchangeText={() => false}
-            setSwitch={() => false}
             Switch={false}
           />
           <TextPasswords
             name="Retype New Password"
             onchangeText={() => false}
-            setSwitch={() => false}
             Switch={false}
           />
         </View>
@@ -51,7 +48,7 @@ const ChangePasswordScreen = (props: Props) => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

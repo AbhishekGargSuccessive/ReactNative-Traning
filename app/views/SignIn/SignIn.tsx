@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ScrollView, Switch, TouchableOpacity} from 'react-native';
+import {SafeAreaView, ScrollView, Switch, TouchableOpacity} from 'react-native';
 import {Image, Text, View} from 'react-native-animatable';
 import {HeaderLogo, TextInputs, TextPasswords} from '../../common';
 import {COLORS, constants, icons} from '../../constants';
@@ -33,7 +33,7 @@ const SignIn = (props: SignIn) => {
   } = props;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderLogo />
       <ScrollView
         style={styles.marginContainer}
@@ -108,7 +108,7 @@ const SignIn = (props: SignIn) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

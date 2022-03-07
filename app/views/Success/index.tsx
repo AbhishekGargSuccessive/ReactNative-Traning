@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {constants, images} from '../../constants';
 import styles from './styles';
 
@@ -10,7 +10,7 @@ interface SuccessProps {
 const SuccessScreen = (props: SuccessProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.marginContainer}>
         <View style={styles.midContainer}>
           <Image source={images.success} style={styles.Images} />
@@ -25,7 +25,7 @@ const SuccessScreen = (props: SuccessProps) => {
           <Text style={styles.DoneButtonText}>{constants.keywords.Done}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

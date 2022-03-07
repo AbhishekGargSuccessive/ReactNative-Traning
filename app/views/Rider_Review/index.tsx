@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {
   FlatList,
   Image,
-  KeyboardAvoidingView,
+  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -20,7 +20,7 @@ const RiderReviewScreen = (props: RiderProps) => {
   const {navigation} = props;
   const [select, setSelect] = useState(0);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -95,7 +95,7 @@ const RiderReviewScreen = (props: RiderProps) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

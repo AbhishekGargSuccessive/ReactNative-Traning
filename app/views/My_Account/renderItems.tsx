@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import styles from './styles';
 
 interface RenderProps {
@@ -11,7 +11,7 @@ interface RenderProps {
 const RenderItems = (props: RenderProps) => {
   const {item, index, select} = props;
   return (
-    <View
+    <SafeAreaView
       style={[
         select
           ? index == 2
@@ -23,7 +23,7 @@ const RenderItems = (props: RenderProps) => {
       ]}>
       <Text style={styles.TitleText}>{Object.keys(item)}</Text>
       <Text style={styles.ValueText}>{Object.values(item)}</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {HeaderComponents} from '../../common';
 import {constants, dummyData, icons} from '../../constants';
@@ -15,7 +15,7 @@ interface CardProps {
 const MyCardScreen = (props: CardProps) => {
   const {navigation, select, setSelect} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -56,7 +56,7 @@ const MyCardScreen = (props: CardProps) => {
         onPress={() => navigation.navigate('AddNewCard')}>
         <Text style={styles.AddButtonText}>{constants.keywords.Add}</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 

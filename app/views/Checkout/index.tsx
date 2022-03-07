@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
   FlatList,
   Image,
+  SafeAreaView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -21,7 +22,7 @@ interface CheckoutProps {
 const CheckoutScreen = (props: CheckoutProps) => {
   const {navigation, select, setSelect} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -95,7 +96,7 @@ const CheckoutScreen = (props: CheckoutProps) => {
           <Text style={styles.OrderButtonText}>{constants.keywords.Place}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

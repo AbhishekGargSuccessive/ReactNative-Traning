@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../../constants';
 import styles from './styles';
 
@@ -16,7 +16,7 @@ interface SizesProps {
 const SizeRenderItem = (props: SizesProps) => {
   const {item, index, size, setSize} = props;
   return (
-    <View>
+    <SafeAreaView>
       <TouchableOpacity
         style={[
           styles.sizeRenderContainer,
@@ -31,7 +31,7 @@ const SizeRenderItem = (props: SizesProps) => {
           {item.label}
         </Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 

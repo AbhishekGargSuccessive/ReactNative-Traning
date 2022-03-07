@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, Text, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView, SectionList, Text, TouchableOpacity, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {HeaderComponents} from '../../common';
 import {COLORS, constants, dummyData, icons, images} from '../../constants';
@@ -19,7 +19,7 @@ const MyOrderScreen = (props: OrderProps) => {
   };
   const ProfileImage = useSelector<state>(state => state.Profile);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -101,7 +101,7 @@ const MyOrderScreen = (props: OrderProps) => {
           </View>
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

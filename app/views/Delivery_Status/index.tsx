@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {HeaderComponents} from '../../common';
 import {constants, dummyData, icons} from '../../constants';
 import RenderItems from './renderItem';
@@ -12,7 +12,7 @@ interface DeliveryProps {
 const DeliveryStatusScreen = (props: DeliveryProps) => {
   const {navigation} = props;
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <HeaderComponents
         LeftImage={icons.back}
         LeftImageNavigate={navigation.goBack}
@@ -48,7 +48,7 @@ const DeliveryStatusScreen = (props: DeliveryProps) => {
           <Text style={styles.DoneButtonText}>{constants.keywords.Done}</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

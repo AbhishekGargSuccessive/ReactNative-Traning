@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../../constants';
 import styles from './styles';
 
@@ -18,7 +18,7 @@ const CategoryRenderItem = (props: Category) => {
   const {item, index, select, setSelect} = props;
 
   return (
-    <View>
+    <SafeAreaView>
       <TouchableOpacity
         style={[
           styles.foodContainer,
@@ -37,7 +37,7 @@ const CategoryRenderItem = (props: Category) => {
           {item.name}
         </Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
