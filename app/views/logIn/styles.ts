@@ -1,10 +1,19 @@
 import {StyleSheet} from 'react-native';
-import {COLORS, SIZES} from '../../constant/Theme';
+import {COLORS, FONTS} from '../../constant/Theme';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  headingContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 15,
+  },
+  headingText: {
+    color: COLORS.black,
+    ...FONTS.body2,
   },
   marginContainer: {
     flex: 1,

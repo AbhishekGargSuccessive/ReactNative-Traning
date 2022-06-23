@@ -6,37 +6,37 @@ import styles from './styles';
 
 interface SignIn {
   navigation: any;
-  username: string;
-  email: string;
-  password: string;
   invalidUsername: boolean;
   invalidEmail: boolean;
   invalidPassword: boolean;
+  invalidNumber: boolean;
   setUsername: (text: string) => void;
   setEmail: (text: string) => void;
   setPassword: (text: string) => void;
+  setNumber: (number: any) => void;
   Submit: () => void;
 }
 
 const LoginScreen = (props: SignIn) => {
   const {
     navigation,
-    // isEnabled,
-    username,
-    email,
-    password,
     invalidUsername,
     invalidEmail,
     invalidPassword,
+    invalidNumber,
     setUsername,
     setEmail,
     setPassword,
+    setNumber,
     Submit,
   } = props;
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.marginContainer}>
+        <View style={styles.headingContainer}>
+          <Text style={styles.headingText}>LOGIN</Text>
+        </View>
         <TextInputs
           name="Email"
           Switch={!invalidEmail}
@@ -49,6 +49,14 @@ const LoginScreen = (props: SignIn) => {
           name="Username"
           Switch={!invalidUsername}
           onchangeText={username => setUsername(username)}
+          placeholder={''}
+          placeholderTextColor={undefined}
+        />
+
+        <TextInputs
+          name="Contact"
+          Switch={!invalidNumber}
+          onchangeText={Number => setNumber(Number)}
           placeholder={''}
           placeholderTextColor={undefined}
         />

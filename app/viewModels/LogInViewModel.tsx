@@ -4,6 +4,7 @@ import {
   EmailValidation,
   PasswordValidation,
   UsernameValidation,
+  ContactValidation,
 } from '../config/Validation';
 
 interface LogInViewModel {
@@ -14,6 +15,7 @@ const LogInViewModel = (props: LogInViewModel) => {
   const {navigation} = props;
 
   const [username, setUsername] = useState('');
+  console.log('Username ==>', username);
   const [invalidUsername, setInvalidUsername] = useState(true);
 
   const [email, setEmail] = useState('');
@@ -22,33 +24,46 @@ const LogInViewModel = (props: LogInViewModel) => {
   const [password, setPassword] = useState('');
   const [invalidPassword, setInvalidPassword] = useState(true);
 
+  const [number, setNumber] = useState('');
+  const [invalidNumber, setInvalidNumber] = useState(true);
+
   const UsernameRef = useRef(false);
   const EmailRef = useRef(false);
   const PasswordRef = useRef(false);
+  const NumberRef = useRef(false);
 
   const Submit = () => {
     UsernameRef.current = !UsernameValidation(username);
     EmailRef.current = !EmailValidation(email);
     PasswordRef.current = !PasswordValidation(password);
+    NumberRef.current = !ContactValidation(number);
     setInvalidUsername(UsernameRef.current);
     setInvalidEmail(EmailRef.current);
     setInvalidPassword(PasswordRef.current);
-    if (UsernameRef.current && EmailRef.current && PasswordRef.current) {
+    setInvalidNumber(NumberRef.current);
+    if (
+      UsernameRef.current &&
+      EmailRef.current &&
+      PasswordRef.current &&
+      NumberRef.current
+    ) {
       navigation.navigate('BookMark');
     }
   };
   return (
     <LoginScreen
       navigation={navigation}
-      username={username}
-      email={email}
-      password={password}
+
       invalidUsername={invalidUsername}
       invalidEmail={invalidEmail}
-      setUsername={username => setUsername(username)}
       invalidPassword={invalidPassword}
+      invalidNumber={invalidNumber}
+
+      setUsername={username => setUsername(username)}
       setEmail={email => setEmail(email)}
       setPassword={password => setPassword(password)}
+      setNumber={number => setNumber(number)}
+      
       Submit={Submit}
     />
   );

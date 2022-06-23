@@ -26,5 +26,18 @@ const UsernameValidation = (text: string) => {
     return false;
   }
 };
+const ContactValidation = (number: string) => {
+  const contact = /^(\+91[\-\s]?)?[0]?(91)?[7896]\d{9}$/;
+  if (!contact.test(number)) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
-export {EmailValidation, PasswordValidation, UsernameValidation};
+export {
+  EmailValidation,
+  PasswordValidation,
+  UsernameValidation,
+  ContactValidation,
+};
